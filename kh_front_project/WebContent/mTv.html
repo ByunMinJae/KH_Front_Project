@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-/* 추가사항 */
+
 body {
 	height: 100%;
 	margin: 0;
@@ -33,8 +33,6 @@ body {
 	width: 100%;
    	min-width: 1048px;
 	height: 242px;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_repeat.jpg)
-		repeat-x center top;
 }
 
 #header_wrap {
@@ -67,6 +65,10 @@ body {
 	clear: both;
 }
 
+.top_left {
+	display: inline-block;
+}
+
 #util_menu .top_left .clfix {
 	margin: 0;
 	padding: 0;
@@ -75,6 +77,15 @@ body {
 	vertical-align: baseline;
 	list-style: none;
 }
+
+#util_menu .top_right .clfix {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 35px;
+	vertical-align: baseline;
+	list-style: none;
+} 
 
 #util_menu .top_left .clfix li {
 	float: left;
@@ -103,6 +114,173 @@ body {
 #util_menu .top_left .clfix li a span.melon_ticket:hover {
 	background-position: -150px -31px;
 }
+
+#util_menu .top_right {
+	float: right;
+	margin-top: 3px;
+	width: 313px;
+	height: 35px;
+}
+
+/* 이용권구매 */
+#util_menu .top_right .clfix li.first_child {
+	position: relative;
+    float: left;
+	padding-left: 0;
+	margin: 0 7px 0 0;
+	width: 93px;
+	height: 35px;
+	text-align: center;
+}
+#util_menu .top_right .clfix li.first_child a {
+	margin: 0;
+	padding: 11px 7px;
+	display: inline-block;
+}
+#util_menu .top_right ul li a span.use {
+	width: 79px;
+	height: 13px;
+	background-position: 0 -60px;
+}
+#util_menu .top_right ul li a span.use:hover {
+	background-position: -150px -60px; 
+}
+
+/* 멜론라운지 */
+#util_menu .top_right .clfix li.second_child {
+	position: relative;
+    float: left;
+	padding-left: 9px;
+	margin: 0 7px 0 0;
+	width: 68px;
+	height: 35px;
+	text-align: center;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg)
+				 0px 12px no-repeat;
+}
+#util_menu .top_right .clfix li.second_child a {
+	margin: 0;
+	padding: 11px 7px;
+	display: inline-block;
+}
+#util_menu .top_right ul li a span.lounge {
+	width: 54px;
+	height: 12px;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_benefit.png);
+}
+#util_menu .top_right ul li a span.lounge:hover {
+	background-position: 0 12px; 
+}
+
+/* 이벤트 */
+#util_menu .top_right .clfix li.third_child {
+	position: relative;
+    float: left;
+	padding-left: 9px;
+	margin: 0 7px 0 0;
+	width: 46px;
+	height: 35px;
+	text-align: center;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg)
+				 0px 12px no-repeat;
+}
+#util_menu .top_right .clfix li.third_child a {
+	margin: 0;
+	padding: 11px 7px;
+	display: inline-block;
+}
+#util_menu .top_right ul li a span.event {
+	width: 32px;
+	height: 12px;
+	background-position: 0 -122px;
+}
+#util_menu .top_right ul li a span.event:hover {
+	background-position: -150px -122px; 
+}
+
+/* 공지사항 */
+#util_menu .top_right .clfix li.last_child {
+	position: relative;
+    float: left;
+	padding-left: 0;
+	padding-right: 0;
+	margin: 0; 
+	width: 67px;
+	height: 35px;
+	text-align: center;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg)
+				 0px 12px no-repeat;
+}
+#util_menu .top_right .clfix li.last_child a {
+	margin-left: 8px;
+	padding: 11px 7px;
+	display: inline-block;
+}
+#util_menu .top_right ul li a span.notice {
+	width: 44px;
+	height: 12px;
+	background-position: 0 -154px;
+}
+#util_menu .top_right ul li a span.notice:hover {
+	background-position: -150px -154px; 
+}
+
+/* top_menu 공통 */
+#util_menu .top_right ul li a span {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png)
+				 no-repeat;
+}
+
+/* 검색창 */
+#gnb fieldset {
+	border: 0;
+	display: inline;
+	position: relative;
+	float: left;
+	width: 322px !important;
+	height: 40px;
+	margin: 36px 0 0 11px;
+	padding: 0;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_cmn_search322.png)
+				 no-repeat;
+}
+
+#gnb fieldset input {
+	display: block; 
+	float: left;
+	padding: 3px 7px 0 0;
+	margin: 7px 0 0 18px;
+	height: 20px; 
+	line-height: 20px;
+	border-style: none;
+}
+
+#gnb fieldset button {
+	float: right;
+	width: 45px;
+	height: 40px;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/btn_search_bar.png)
+				 no-repeat 0 0;
+	vertical-align: top;
+}
+#gnb fieldset button:hover {
+	background-position: 0 -40px; 
+}
+/* #gnb fieldset button span { */
+/* 	width: 45px; */
+/* 	height: 40px; */
+/* 	display: inline-block; */
+/* 	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/btn_search_bar.png) */
+/* 				 no-repeat 0 0; */
+/* 	vertical-align: top; */
+/* 	overflow: hidden; */
+/* } */
 
 /* content */
 #conts_section {
@@ -148,6 +326,30 @@ body {
 						</li>
 					</ul>
 				</div>
+				<div class="top_right">
+					<ul class="clfix">
+						<li class="first_child">
+							<a href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm" title="이용권구매">
+								<span class="use"></span>
+							</a>
+						</li>
+						<li class="second_child">
+							<a href="https://www.melon.com/event/vip/index.htm">
+								<span class="lounge"></span>
+							</a>
+						</li>
+						<li class="third_child">
+							<a href="https://www.melon.com/event/index.htm">
+								<span class="event"></span>
+							</a>
+						</li>
+						<li class="last_child">
+							<a href="https://www.melon.com/customer/announce/index.htm">
+								<span class="notice"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			
 			<h1>
@@ -155,6 +357,12 @@ body {
 					<img width="142px" height="99px" alt="Melon" src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png">
 				</a>
 			</h1>
+			<fieldset>
+				<input type="text" title="검색 입력 편집창" id="top_search" style="width: 249px" autocomplete="off">
+				<button type="button" title="검색">
+					<span class="odd_span"></span>
+				</button>
+			</fieldset>
 		</div>
 		
 		<div id="gnb_menu">
