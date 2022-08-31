@@ -7,7 +7,7 @@
 <style type="text/css">
 #header{
 	border-top: 5px solid #00b523;
-
+	border-bottom: 1px solid #ccc;
 }
 
  #header_content{ 
@@ -20,8 +20,8 @@ fieldset{
 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_cmn_search322.png);
 	float: left;
 	position: relative;
-	left:17px;
-	top:34px;
+	left:8px;
+	top:14px;
 	width:298px;
 	height:24px;
 	
@@ -31,6 +31,8 @@ fieldset{
 
 #utilmenu{
 	border-top: 2px;
+	
+	height: 19px;
 
 
 }
@@ -46,27 +48,57 @@ fieldset{
 	
 }
 
-ul.fix>li.melon_ticket>a {
-	text-decoration: none;
-	font-family: "돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
-	font-size: 12px;
-	
-	color: #969696;
-	
-	font-weight: bold;
-}
-ul.fix>li.melon_ticket>a:hover{
-	color: #00b423;
-}
-
-
-.top_left{
+.top_left>ul.fix>li>a>span.ticket {
 	float: left;
 	position: relative;
 	margin: 0;
-	
-
+	left:-65px;
+	text-decoration: none;
+	font-size: 0px;
+	padding: 19px 28px 0px;
+	top: 5px;
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+	background-size: 220px;
 }
+
+
+
+
+ ul.fix>li.melon_ticket>a { 
+ 	width: 0px;
+ 	height: 15px;
+ 	position: absolute;
+ 	text-decoration: none; 
+	font-size: 0px; 
+ 	padding: 23px 32px 0px; 
+ 	top: -5px; 
+ 	background-position: 0 -31px; 
+ 	background-size: 220px;
+ } 
+
+
+
+  .top_left>ul.fix>li>a>span.ticket:hover{  
+  	background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+  	width: 0;
+  	height: 0px;  
+  	top:5px;
+  	left:-65px;
+  	padding: 23px 32px 0px; 
+	background-repeat: no-repeat;  
+  	background-position: -146px -30px;
+  	background-size: 221px; 
+
+  } 
+
+
+
+
+
+
+
 .top_right{
 
 	float: right;
@@ -78,12 +110,22 @@ ul.fix>li.melon_ticket>a:hover{
 	
 }
 
+
 .top_right>ul.fix>li{
 	float: left;
 	position: relative;
-	padding: 11px 0px;
-	color: #666;
+	padding: 0px;
+	font-size:0;
+	background: url(	https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg);
+	background-repeat: no-repeat;
+	background-size: 1px;
+	top:-9px;
+	height: 10px;
+	height:29px;
+	
 }
+
+
 
 
 .top_right>ul.fix>li>a{
@@ -91,16 +133,163 @@ ul.fix>li.melon_ticket>a:hover{
 	font-weight: bold;;
 	text-decoration: none;
 	font-family: "돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
-	font-size: 12px;
-	padding: 0 15px;
+	font-size:  1px;
+	padding: 15px;
 
 }
 
 
-.melon_ticket{
 
-	left: 0;
+.top_right>ul>li>a>span.ticket_buy{
+	float: left;
+	position: relative;
+	font-size: 0px;
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+	background-repeat: no-repeat;
+	background-position: -2% 40%;
+	width: 82px;
+	height:22px;
+	left: 15px;
+	top:-2px;
+	background-size: inherit;
+	padding:0px;
+	margin:0px;
+	
+
 }
+.top_right>ul>li>a>span.ticket_buy:hover{
+	float: left;
+	position: relative;
+	font-size: 0px;
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+	background-repeat: no-repeat;
+	background-position: 101% 40%;
+	width: 82px;
+	height:22px;
+	top:-3x;
+	left:14px;
+	background-size: inherit;
+	padding:0px;
+	margin:0px;
+	
+
+}
+
+.top_right>ul.fix>li.right_second>a{
+	float: left;
+	position: relative;
+	padding: 0px;
+	left:-1px;
+	
+}
+
+
+
+
+ .top_right>ul.fix>li>a>span.lounge{ 
+	float: left;
+	position: relative;
+	font-size:0;
+ 	width: 82px;
+ 	height:22px;
+ 	background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_benefit.png	); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 58% -195%; 
+ 	background-size: inherit; 
+ 	padding:0 px;
+ 	top:-9px; 
+	
+ } 
+
+ .top_right>ul.fix>li>a>span.lounge:hover{ 
+	float: left;
+	position: relative;
+	font-size:0;
+ 	width: 82px;
+ 	height:22px;
+ 	background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_benefit.png	); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 58%  350%; 
+ 	background-size: inherit; 
+ 	padding:0 px;
+ 	top:-2px; 
+	
+ } 
+
+
+
+ .top_right>ul.fix>li>a>span.event{ 
+	float: left;
+	position: relative;
+	font-size:0;
+ 	width: 64px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: -14% 79%; 
+ 	background-size: 228px; 
+ 	padding:0 px;
+ 	top:-8px; 
+ 	left: -3px;
+	
+ } 
+ 
+ 
+  .top_right>ul.fix>li>a>span.event:hover{ 
+	float: left;
+	position: relative;
+	font-size:0;
+ 	width: 64px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 78% 79%; 
+ 	background-size: 228px; 
+ 	padding:0 px;
+ 	top:-8px; 
+ 	left: -3px;
+	
+ } 
+ .top_right>ul.fix>li.right_third>a {
+ 
+ 	float: left;
+	position: relative;
+	padding: 0px;
+	left:-1px;
+ }
+ 
+ 
+  .top_right>ul.fix>li>a>span.notice{ 
+	float: left;
+	position: relative;
+	font-size:0;
+ 	width: 67px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: -12% 101%; 
+ 	background-size: 227px; 
+ 	padding:0 px;
+ 	top:-9px; 
+ 	left: -3px;
+	
+ } 
+ .top_right>ul.fix>li>a>span.notice:hover{ 
+	float: left;
+	position: relative;
+	font-size:0;
+ 	width: 67px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 82% 101%; 
+ 	background-size: 227px; 
+ 	padding:0 px;
+ 	top:-9px; 
+ 	left: -3px;
+	
+ } 
+ 
 
 #logo{
 	clear: both;
@@ -111,7 +300,13 @@ ul.fix>li.melon_ticket>a:hover{
 	height: 99px;
 }
 
+img.logo{
 
+	float: left;
+	position: relative;
+	top: -25px;
+
+}
 .search_textbox{
 
 	float: left;
@@ -125,7 +320,7 @@ ul.fix>li.melon_ticket>a:hover{
 	left: -4px;
 }
 
-input.enter{
+button.enter{
 	left: 257px;
 	top: -16px;
 	float: left;
@@ -138,6 +333,7 @@ input.enter{
 	left: 265px;
 	border: 0;
 	background-color: transparent;
+	font-size: 0; 
 
 }
 
@@ -147,20 +343,127 @@ input.enter{
 	position: relative;
 	padding: 0px;
 	margin: 0px;
-	top: 40px;
-	left: 81px;
+	top: 26px;
+	left: 20px;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/main/bg_loce_151207.png);
+	background-repeat: no-repeat;
+	width:49px;
+	height: 30px;
+	font-size: 0;
 }
 
-.realtime_keyword{
+
+
+
+.real_time_keyword{
+	
+	
+	padding: 0;
+	margin: 0;
+
+
+}
+
+.keyword{
+	float: left;
+	position: relative;
+	padding-left: 0px;
+
+	border-bottom: none;
+	left: 24px;
+	top: 4px;
+	width: 198px;
+	
+}
+
+
+ul.keyword>li{
 
 	float:left;
 	position: relative;
-	padding: 0;
-	margin: 0;
-	top: 40px;
-	left: 97px;
+	line-height: 24px;
+	font-size:12px;
+	list-style-type: none;
+	top:0px;
+	left: 5px;
+	padding: 0px;
 }
 
+ul.keyword>li>a{
+	font-family:"돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	text-decoration: none;
+	margin: 0;
+	padding: 10px 0px;
+	color: black;
+}
+
+ul.keyword>li:hover>a{
+	font-weight: bold;
+
+}
+
+ul.keyword>li:hover{
+	border: 1px solid black;
+	border-bottom: none;
+	width: 189px;
+	padding: 12px 0px 10px 9px;
+}
+ul.keyword>li>ul{
+
+	position: absolute;
+	list-style-type: none;
+	padding:10px;
+	margin: 0px;
+	
+	width: 178px;
+	
+	height: 250px;
+	left: -1px;
+	
+	
+}
+
+
+ul.keyword>li>ul>li{
+
+	display: none;
+}
+
+
+ul.keyword>li:hover>ul{
+	
+	border: 1px solid black;
+	border-top: none;
+
+}
+
+
+ul.keyword>li:hover>ul>li{
+	display: block;
+	width: 200px;
+	height: 28px;
+	font-size: 12px;
+	line-height:13px;
+	
+	
+
+}
+
+
+ul.keyword>li>ul>li>a{
+	text-decoration: none;
+	display: block;
+	color: black;
+	font-family:"돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	
+
+}
+
+ul.keyword>li>ul>li>a:hover{
+	font-weight: bold;
+	
+
+}
 </style>
 
 </head>
@@ -172,55 +475,82 @@ input.enter{
 	 	<div id="utilmenu">
 	 		<div class="top_left">
 				<ul class="fix">
-					<li class="melon_ticket"><a href="https://ticket.melon.com/main/index.htm" style ="width: 320px; height: 40px;">멜론티켓</a></li>
+					<li class="melon_ticket">
+					<a href="https://ticket.melon.com/main/index.htm" style ="width: 320px; height: 40px;">
+					<span class="ticket">멜론티켓</span>
+					</a>
+					</li>
 				
 				</ul>
 			</div>
 			<div class="top_right">
 			<ul class="fix">
-				<li>
+				<li class=right_first>
 				
-				<a href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm">
+				<a id="ticket_buy" href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm">
+				
 			
-				<span>이용권구매</span>
+				<span class="ticket_buy">이용권구매</span>
 				</a>
 				</li>
 				
-				<li>
+				<li class="right_second">
 				<a href="https://www.melon.com/event/vip/index.htm">
-				<span>멜론라운지</span>
+				<span class="lounge">멜론라운지</span>
 				</a>
 				</li>
 				
-				<li> 
+				<li class="right_third"> 
 				<a href="https://www.melon.com/event/index.htm">
-				<span>이벤트</span>
+				<span class="event">이벤트</span>
 				</a>
 				</li>
 				
-				<li>
+				<li class="right_fourth">
 				<a href="https://www.melon.com/customer/announce/index.htm">
-				<span>공지사항</span>
+				<span class="notice">공지사항</span>
 				</a>
 				</li>
 			</ul>
 			</div>
 	
-			
 			<div id="logo" > 
-			<img src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="Melon" >
+			<a href="https://www.melon.com/index.htm">
+			
+			<img src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="Melon" class="logo">
+			</a>
 			</div>
 			
 			<form>
 				<fieldset>
 				<input type="text" class="search_textbox" placeholder="오직멜론에서만 볼 수 있는 독점 영상 확인"  >
-				<input type="button" id="enter" name="enter" class="enter">
+				<button type="button" id="enter" name="enter" class="enter">엔터</button>
 				</fieldset>
 			</form>
 			
 			
 			<div class="realtime" >급상승</div>
-			<div class="realtime_keyword">실시간 순위 </div>
+			<div class="realtime_keyword">
+				<ul class ="keyword">
+					<li><a href= "">1. BLACKPINK</a> 
+						<ul>
+							<li><a href= "">2. 소녀시대(GrilsGeneration)</a></li>
+							<li><a href= "">3. 10CM</a></li>
+							<li><a href= "">4. 시스타</a></li>
+							<li><a href= "">5. 홍대광</a></li>
+							<li><a href= "">6. 호미들</a></li>
+							<li><a href= "">7. 박상민</a></li>
+							<li><a href= "">8. 티아라</a></li>
+							<li><a href= "">9. 비가와</a></li>
+							<li><a href= "">10. BIGBANG(빅뱅)</a></li>
+						
+						</ul>
+					</li>
+	
+				</ul>
+			
+			
+			</div>
 		
 		</div>
 		
