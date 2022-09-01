@@ -248,7 +248,7 @@ body {
 				 no-repeat;
 }
 
-#gnb fieldset input {
+#gnb fieldset input[type=text] {
 	display: block; 
 	float: left;
 	padding: 3px 7px 0 0;
@@ -258,7 +258,7 @@ body {
 	border-style: none;
 }
 
-#gnb fieldset button {
+#gnb fieldset input[type=submit] {
 	float: right;
 	width: 45px;
 	height: 40px;
@@ -269,18 +269,134 @@ body {
 				 no-repeat 0 0;
 	vertical-align: top;
 }
-#gnb fieldset button:hover {
+#gnb fieldset input[type=submit]:hover {
 	background-position: 0 -40px; 
+ 	cursor: pointer;
+}  
+
+/* 급상승 */
+.realtime {
+	float: left;
+	margin-top: 45px;
+	padding-left: 9px; 
+	width: 226px;
 }
-/* #gnb fieldset button span { */
-/* 	width: 45px; */
-/* 	height: 40px; */
-/* 	display: inline-block; */
-/* 	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/btn_search_bar.png) */
-/* 				 no-repeat 0 0; */
-/* 	vertical-align: top; */
-/* 	overflow: hidden; */
+
+.realtime span.timeUp {
+	float: left;
+	display: block;
+	width: 42px;
+	height: 16px;
+	margin: 3px 0 0 3px;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/main/bg_loce_151207.png)
+				 no-repeat;
+}
+
+/* 롤링바 */
+.rollingBar {
+	float: left;
+}
+/* .rollingBar li { */
+/* 	animation-duration: 1s; */
+/* 	animation-timing-function: 4s; */
+/* 	animation-name: slidein;  */
+/* 	animation-iteration-count: infinite; */
 /* } */
+/* @keyframes slidein {  */
+/* 	from { */
+/*      margin-top: 20px;  */
+/* 	} */
+
+/* 	to {  */
+/*      margin-top: 0;  */
+/* 	}  */
+/* }  */
+/* .rollingBar:hover {  */
+/* 	transform:translate(0, -23px); */
+/*  	transition-delay: 2s;  */
+/* } */
+
+.rollingBar {
+	display: inline-block;
+	width: 162px;
+	height: 20px;
+	margin: 3px 0 0 10px;
+/* 	overflow: hidden; */
+}
+.rollingBar ul { 
+	list-style: none;
+	width: 162px;
+	height: 20px;
+	padding: 0;
+	margin: 0;
+} 
+.rollingBar ul li {
+	width: 162px;
+	display: inline-block;
+	margin: 0 0 4px 0;
+}
+.rollingBar ul li strong {
+	float: left;
+	margin: 1px 1px 0 0;
+	width: 19px;
+	height: 14px;
+	font-size: 12px;
+	padding-right: 4px;
+	color: #777;
+	text-align: right;
+}
+.rollingBar ul li a {
+	float: left;
+	width: 96px;
+	height: 14px;
+	color: #333;
+	font-size: 12px;
+	margin: 1px 1px 0 0;
+	vertical-align: top;
+	text-decoration: none;
+}
+.rollingBar ul li span.viwes {
+	float: left;
+}
+.rollingBar ul li span.viwes {
+	display: inline-block;
+	width: 40px;
+	height: 14px;
+	margin: 2px 0 0 1px;
+	color: #3d464b;
+}
+.rollingBar ul li span.viwes .icon {
+	float: left;
+}
+.rollingBar ul li span.viwes .icon {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin: 3px 3px 0 0;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png)
+				 no-repeat 0 -155px;
+}
+.rollingBar ul li span.viwes .newIcon {
+	display: inline-block;
+	width: 21px;
+	height: 7px;
+	margin: 3px 3px 0 0;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png)
+				 no-repeat 0 -169px;
+}
+.rollingBar ul li span.viwes .viwesNum {
+	float: left;
+}
+.rollingBar ul li span.viwes .viwesNum {
+	display: inline-block;
+	margin: 0;
+	color: #ff4e78;
+	font-size: 10px;
+	line-height: 13px;
+	vertical-align: top;
+	font-weight: normal;
+}
+
 
 /* content */
 #conts_section {
@@ -317,6 +433,7 @@ body {
 	<div id="header_wrap" class="my_fold">
 		<div id="gnb" class="clfix">
 			<div id="util_menu">
+				<!-- 상단 왼쪽 -->
 				<div class="top_left">
 					<ul class="clfix">
 						<li class="first_melon_ticket">
@@ -326,6 +443,7 @@ body {
 						</li>
 					</ul>
 				</div>
+				<!-- 상단 오른쪽 -->
 				<div class="top_right">
 					<ul class="clfix">
 						<li class="first_child">
@@ -351,18 +469,108 @@ body {
 					</ul>
 				</div>
 			</div>
-			
+			<!-- 멜론 로고 -->
 			<h1>
 				<a href="https://www.melon.com/index.htm" title="Melon 로고 - 홈으로 이동">
 					<img width="142px" height="99px" alt="Melon" src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png">
 				</a>
 			</h1>
+			<!-- 멜론 검색창 -->
+			<form action="" method="get">
 			<fieldset>
 				<input type="text" title="검색 입력 편집창" id="top_search" style="width: 249px" autocomplete="off">
-				<button type="button" title="검색">
-					<span class="odd_span"></span>
-				</button>
+				<input type="submit" title="검색" value="">
 			</fieldset>
+			</form>
+			<!-- 급상승 로고 -->
+			<div class="realtime">
+				<span class="timeUp"></span>
+				<div></div>
+				<div class="rollingBar">
+					<ul>
+						<li>
+							<strong class="num">1.</strong>
+							<a href="" class="songName">상어가족</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">14</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">2.</strong>
+							<a href="" class="songName">신호등</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">8</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">3.</strong>
+							<a href="" class="songName">김범수</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">7</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">4.</strong>
+							<a href="" class="songName">다시 사랑이</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">5.</strong>
+							<a href="" class="songName">해요</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">28</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">6.</strong>
+							<a href="" class="songName">미아</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">7.</strong>
+							<a href="" class="songName">너의 모든 순간</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">205</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">8.</strong>
+							<a href="" class="songName">너의 모든 순간</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">26</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">9.</strong>
+							<a href="" class="songName">검정치마</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">157</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">10.</strong>
+							<a href="" class="songName">Tomboy</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">108</span>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		
 		<div id="gnb_menu">
