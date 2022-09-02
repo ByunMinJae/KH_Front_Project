@@ -123,6 +123,20 @@ ul.nav > li {
 .wrap_search_dj {
     margin-bottom: 30px;
     }
+    
+.wrap_search_dj .page_header { float: left; }
+
+.page_header {
+position: relative;
+margin-bottom: 8px;
+}
+
+.page_header:after {
+content: '';
+display: block;
+clear: both;
+}
+  
 	
 	
 .rangking {
@@ -134,6 +148,199 @@ ul.nav > li {
 
 }	
 
+
+
+
+h5.title { width: 175px; height: 28px; line-height: 28px; font-size: 28px; float: left; 
+			color: #2f2f2f; font-family: "맑은 고딕","Malgun Gothic",sans-serif; vertical-align: middle;  }
+
+
+h5 {
+display: block;
+font-size: 0.83em;
+margin-block-start: 1.67em;
+margin-block-end: 1.67em;
+margin-inline-start: 0px;
+margin-inline-end: 0px; }
+
+
+.rolling { position: relative; top: -20px; height: 460px; }
+
+
+.rolling .service_list_play {position: relative; overflow: hidden; width: 1008px !important; height: 445px; padding-top: 20px; 
+							vertical-align: baseline;	}
+
+.none {position: absolute; top: -5000em; left: 0; width: 0; height: 0; font-size: 0; line-height: 0;
+		overflow: hidden;}
+
+
+
+.service_list_play>ul {margin: -20px 0 0 -21px; display: block;
+list-style-type: disc;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px; padding-inline-start: 40px;}
+
+
+.service_list_play>ul:after {
+content: "";
+display: block;
+clear: both;
+height: 0;
+visibility: hidden;
+}
+
+.rolling .service_list_play .d_content {
+position: absolute;
+width: 1029px;
+height: 425px;
+}
+
+
+.service_list_play>ul>li {
+float: left;
+width: 236px;
+margin: 20px 0 0 21px; 
+list-style: none;
+font-weight: normal;
+display: list-item;
+text-align: match-parent;}
+
+li {
+display: list-item;
+text-align: match-parent;
+}
+
+
+
+
+::marker {
+unicode-bidi: isolate;
+font-variant-numeric: tabular-nums;
+white-space: pre;
+text-transform: none;}
+
+
+.service_list_play .paging_nav {
+position: absolute;
+top: 0;
+right: 0;
+}
+
+paging_nav {
+display: inline-block;
+line-height: 0;
+font-size: 0;
+}
+
+.paging_nav a {
+display: inline-block;
+width: 10px;
+height: 10px;
+margin-left: 4px;
+border: 1px solid #b4b4b4;
+border-radius: 10px;
+}
+
+a:visited {
+color: #1a1a1a;
+text-decoration: none;}
+
+
+.rolling .play_control .d_indicator.on { border-color: #515151; }
+
+
+.pick_song {
+margin: 10px 0 40px;
+background-color: #fafafa;}
+
+.full_content {
+position: relative;
+}
+
+.full_content .inner {
+position: absolute;
+width: 500%;
+height: 100%;
+margin-left: -200%;
+background-color: #fafafa;
+z-index: -1;
+}
+
+.pick_song .content {
+padding: 40px;
+overflow: hidden;
+}
+
+.pick_song .thumb {
+position: relative;
+float: left;
+}
+
+.pick_song .thumb .image_typeAll {
+width: 160px;
+height: 160px;
+overflow: hidden;
+border-radius: 100px;
+}
+
+.pick_song .thumb img {
+border-radius: 100px;
+}
+
+.image_typeAll {
+display: block;
+position: relative;
+font-size: 0;
+line-height: 0; }
+
+
+a:any-link {
+color: -webkit-link;
+text-decoration: underline;
+cursor: auto;}
+
+a img {
+border: 0;
+}
+
+img {
+line-height: 0;
+font-size: 0;
+}
+
+
+
+.pick_song .thumb .icon {
+display: inline-block;
+position: absolute;
+top: 10px;
+right: -10px;
+width: 50px;
+height: 32px;
+background: url(//cdnimg.melon.co.kr/resource/image/web/dj_4x/pick_song_icon.png) no-repeat 0 0;
+}
+
+.pick_song .entry {
+padding-top: 17px;
+margin-left: 220px;
+}
+
+div {display: block;}
+
+
+
+.popular_tag {
+margin-bottom: 35px;
+overflow: hidden;
+}
+
+.popular_tag:after {
+content: '';
+display: block;
+clear: both;
+}
 
 </style>
 
@@ -263,7 +470,9 @@ ul.nav > li {
 <!-- 콘텐츠 - 투데이 -->
 
 	<div id="content1" class="wrap_search_dj">
-		<div class="content-container"><h2 style="float: left;">투데이</h2></div>
+		<div class="page_header"><h2 class="title">투데이</h2></div>
+		
+
 		
 		<div class="search_dj">
 			<div class="select_wrap">
@@ -313,7 +522,7 @@ ul.nav > li {
 <div class="rolling">
 	<div class="service_list_play d_djcol_list" style="width: 1029px;">
 	<h3 class="none">플레이 리스트</h3>
-		<ul class="d_content">
+		<ul class="d_content" style="list-style: none; font-weight: normal;" }>
 			<li>
 	
 				<div class="thumb">
