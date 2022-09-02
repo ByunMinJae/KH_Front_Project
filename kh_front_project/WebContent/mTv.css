@@ -394,22 +394,27 @@ body {
 }
 
 /* hiddenBoard */
-div.two {
-	position: fixed;
-    top: 31px;
-    left: 553px;
-    padding: 0;
-    width: 165px;
-    height: 244px;
-    border: 1px solid #ccc;
+div.hidden {
+	float: left;
+	margin: -9px 0 0 5px;
+	width: 166px;
+	height: 253px;
+	border: 1px solid #ccc;	
 	background-color: #fff;
-	z-index: 1;
+	visibility: hidden;
 }
+div.realtime:hover div.hidden {
+	visibility: visible;
+}
+div.realtime:hover div.rollingBar {
+	z-index: -1;
+}
+
 .hiddenBoard {
 	display: inline-block;
 	width: 162px;
 	height: 20px;
-	margin: 9px 0 0 5px;
+	margin: 11px 0 0 4px;
 }
 .hiddenBoard ul { 
 	list-style: none;
@@ -421,7 +426,7 @@ div.two {
 .hiddenBoard ul li {
 	width: 162px;
 	display: inline-block;
-	margin: 0 0 4px 0;
+	margin: 0 0 5px 0;
 }
 .hiddenBoard ul li strong {
 	float: left;
