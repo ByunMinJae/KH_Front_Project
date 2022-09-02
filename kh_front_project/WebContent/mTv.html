@@ -6,415 +6,7 @@
 
 <style type="text/css">
 
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-family: "돋움", Dotum, "맑은 고딕", "Malgun Gothic";
-	font-size: 12px;
-	color: #666;
-	background: #fff;
-}
-
-.clfix:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
-}
-
-/* div {	border: 1px solid #ccc; } /* 테두리 표현 */  */
-
-/* header */
-#header {
-	position: relative;
-	width: 100%;
-   	min-width: 1048px;
-	height: 242px;
-}
-
-#header_wrap {
-	width: 1008px;
-	height: 100%;
-	margin: 0 auto;
-	padding: 0 20px;
-}
-
-#header_wrap #gnb {
-	width: 100%;
-	height: 137px;
-}
-
-#header_wrap #gnb_menu {
-	width: 100%;
-	height: 105px;
-}
-
-#util_menu {
-	position: relative;
-	width: 1008px;
-	margin: 0 auto;
-	height: 38px;
-}
-
-#gnb h1 {
-	float: left;
-	margin: 0 auto;
-	clear: both;
-}
-
-.top_left {
-	display: inline-block;
-}
-
-#util_menu .top_left .clfix {
-	margin: 0;
-	padding: 0;
-	width: 68px;
-	height: 36px;
-	vertical-align: baseline;
-	list-style: none;
-}
-
-#util_menu .top_right .clfix {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 35px;
-	vertical-align: baseline;
-	list-style: none;
-} 
-
-#util_menu .top_left .clfix li {
-	float: left;
-	margin: 5px 7px 0 0;
-}
-
-#util_menu .top_left .clfix li a {
-	display: inline-block;
-	padding: 9px 7px;
-}
-
-#util_menu .top_left .clfix li a span.melon_ticket {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	width: 47px;
-	height: 13px; 
-}
-
-#util_menu .top_left .clfix li a span.melon_ticket {
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png)
-		no-repeat;
-	background-position: 0 -31px;
-}
-
-#util_menu .top_left .clfix li a span.melon_ticket:hover {
-	background-position: -150px -31px;
-}
-
-#util_menu .top_right {
-	float: right;
-	margin-top: 3px;
-	width: 313px;
-	height: 35px;
-}
-
-/* 이용권구매 */
-#util_menu .top_right .clfix li.first_child {
-	position: relative;
-    float: left;
-	padding-left: 0;
-	margin: 0 7px 0 0;
-	width: 93px;
-	height: 35px;
-	text-align: center;
-}
-#util_menu .top_right .clfix li.first_child a {
-	margin: 0;
-	padding: 11px 7px;
-	display: inline-block;
-}
-#util_menu .top_right ul li a span.use {
-	width: 79px;
-	height: 13px;
-	background-position: 0 -60px;
-}
-#util_menu .top_right ul li a span.use:hover {
-	background-position: -150px -60px; 
-}
-
-/* 멜론라운지 */
-#util_menu .top_right .clfix li.second_child {
-	position: relative;
-    float: left;
-	padding-left: 9px;
-	margin: 0 7px 0 0;
-	width: 68px;
-	height: 35px;
-	text-align: center;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg)
-				 0px 12px no-repeat;
-}
-#util_menu .top_right .clfix li.second_child a {
-	margin: 0;
-	padding: 11px 7px;
-	display: inline-block;
-}
-#util_menu .top_right ul li a span.lounge {
-	width: 54px;
-	height: 12px;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_benefit.png);
-}
-#util_menu .top_right ul li a span.lounge:hover {
-	background-position: 0 12px; 
-}
-
-/* 이벤트 */
-#util_menu .top_right .clfix li.third_child {
-	position: relative;
-    float: left;
-	padding-left: 9px;
-	margin: 0 7px 0 0;
-	width: 46px;
-	height: 35px;
-	text-align: center;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg)
-				 0px 12px no-repeat;
-}
-#util_menu .top_right .clfix li.third_child a {
-	margin: 0;
-	padding: 11px 7px;
-	display: inline-block;
-}
-#util_menu .top_right ul li a span.event {
-	width: 32px;
-	height: 12px;
-	background-position: 0 -122px;
-}
-#util_menu .top_right ul li a span.event:hover {
-	background-position: -150px -122px; 
-}
-
-/* 공지사항 */
-#util_menu .top_right .clfix li.last_child {
-	position: relative;
-    float: left;
-	padding-left: 0;
-	padding-right: 0;
-	margin: 0; 
-	width: 67px;
-	height: 35px;
-	text-align: center;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg)
-				 0px 12px no-repeat;
-}
-#util_menu .top_right .clfix li.last_child a {
-	margin-left: 8px;
-	padding: 11px 7px;
-	display: inline-block;
-}
-#util_menu .top_right ul li a span.notice {
-	width: 44px;
-	height: 12px;
-	background-position: 0 -154px;
-}
-#util_menu .top_right ul li a span.notice:hover {
-	background-position: -150px -154px; 
-}
-
-/* top_menu 공통 */
-#util_menu .top_right ul li a span {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png)
-				 no-repeat;
-}
-
-/* 검색창 */
-#gnb fieldset {
-	border: 0;
-	display: inline;
-	position: relative;
-	float: left;
-	width: 322px !important;
-	height: 40px;
-	margin: 36px 0 0 11px;
-	padding: 0;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_cmn_search322.png)
-				 no-repeat;
-}
-
-#gnb fieldset input[type=text] {
-	display: block; 
-	float: left;
-	padding: 3px 7px 0 0;
-	margin: 7px 0 0 18px;
-	height: 20px; 
-	line-height: 20px;
-	border-style: none;
-}
-
-#gnb fieldset input[type=submit] {
-	float: right;
-	width: 45px;
-	height: 40px;
-	border: 0;
-	padding: 0;
-	margin: 0;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/btn_search_bar.png)
-				 no-repeat 0 0;
-	vertical-align: top;
-}
-#gnb fieldset input[type=submit]:hover {
-	background-position: 0 -40px; 
- 	cursor: pointer;
-}  
-
-/* 급상승 */
-.realtime {
-	float: left;
-	margin-top: 45px;
-	padding-left: 9px; 
-	width: 226px;
-}
-
-.realtime span.timeUp {
-	float: left;
-	display: block;
-	width: 42px;
-	height: 16px;
-	margin: 3px 0 0 3px;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/main/bg_loce_151207.png)
-				 no-repeat;
-}
-
-/* 롤링바 */
-.rollingBar {
-	float: left;
-}
-/* .rollingBar li { */
-/* 	animation-duration: 1s; */
-/* 	animation-timing-function: 4s; */
-/* 	animation-name: slidein;  */
-/* 	animation-iteration-count: infinite; */
-/* } */
-/* @keyframes slidein {  */
-/* 	from { */
-/*      margin-top: 20px;  */
-/* 	} */
-
-/* 	to {  */
-/*      margin-top: 0;  */
-/* 	}  */
-/* }  */
-/* .rollingBar:hover {  */
-/* 	transform:translate(0, -23px); */
-/*  	transition-delay: 2s;  */
-/* } */
-
-.rollingBar {
-	display: inline-block;
-	width: 162px;
-	height: 20px;
-	margin: 3px 0 0 10px;
-/* 	overflow: hidden; */
-}
-.rollingBar ul { 
-	list-style: none;
-	width: 162px;
-	height: 20px;
-	padding: 0;
-	margin: 0;
-} 
-.rollingBar ul li {
-	width: 162px;
-	display: inline-block;
-	margin: 0 0 4px 0;
-}
-.rollingBar ul li strong {
-	float: left;
-	margin: 1px 1px 0 0;
-	width: 19px;
-	height: 14px;
-	font-size: 12px;
-	padding-right: 4px;
-	color: #777;
-	text-align: right;
-}
-.rollingBar ul li a {
-	float: left;
-	width: 96px;
-	height: 14px;
-	color: #333;
-	font-size: 12px;
-	margin: 1px 1px 0 0;
-	vertical-align: top;
-	text-decoration: none;
-}
-.rollingBar ul li span.viwes {
-	float: left;
-}
-.rollingBar ul li span.viwes {
-	display: inline-block;
-	width: 40px;
-	height: 14px;
-	margin: 2px 0 0 1px;
-	color: #3d464b;
-}
-.rollingBar ul li span.viwes .icon {
-	float: left;
-}
-.rollingBar ul li span.viwes .icon {
-	display: inline-block;
-	width: 7px;
-	height: 7px;
-	margin: 3px 3px 0 0;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png)
-				 no-repeat 0 -155px;
-}
-.rollingBar ul li span.viwes .newIcon {
-	display: inline-block;
-	width: 21px;
-	height: 7px;
-	margin: 3px 3px 0 0;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png)
-				 no-repeat 0 -169px;
-}
-.rollingBar ul li span.viwes .viwesNum {
-	float: left;
-}
-.rollingBar ul li span.viwes .viwesNum {
-	display: inline-block;
-	margin: 0;
-	color: #ff4e78;
-	font-size: 10px;
-	line-height: 13px;
-	vertical-align: top;
-	font-weight: normal;
-}
-
-
-/* content */
-#conts_section {
-	position: relative;
-	width: 1008px;
-	height: 1758px;
-	margin: 0 auto;
-	padding: 0 20px;
-}
-
-/* footer */
-#footer {	width: 100%; }
-
-#footer .footer_cont {
-	width: 1008px;
-	height: 204px;
-	margin: 0 auto;
-}
+@import url("/khfp/mTv.css");
 
 </style>
 
@@ -546,7 +138,93 @@ body {
 						</li>
 						<li>
 							<strong class="num">8.</strong>
+							<a href="" class="songName">김필</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">26</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">9.</strong>
+							<a href="" class="songName">검정치마</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">157</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">10.</strong>
+							<a href="" class="songName">Tomboy</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">108</span>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="realtime two">
+				<div class="hiddenBoard">
+					<ul>
+						<li>
+							<strong class="num">1.</strong>
+							<a href="" class="songName">상어가족</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">14</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">2.</strong>
+							<a href="" class="songName">신호등</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">8</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">3.</strong>
+							<a href="" class="songName">김범수</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">7</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">4.</strong>
+							<a href="" class="songName">다시 사랑이</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">5.</strong>
+							<a href="" class="songName">해요</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">28</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">6.</strong>
+							<a href="" class="songName">미아</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">7.</strong>
 							<a href="" class="songName">너의 모든 순간</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">205</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">8.</strong>
+							<a href="" class="songName">김필</a>
 							<span class="viwes">
 								<span class="icon"></span>
 								<span class="viwesNum">26</span>
