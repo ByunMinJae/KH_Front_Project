@@ -291,8 +291,9 @@ body {
 	float: left;
 }
 .rollingBar li { 
-	animation-duration: 1s; 
- 	animation-timing-function: 4s; 
+	animation-direction: alternate;
+	animation-duration: 2s; 
+ 	animation-timing-function: cubic-bezier(0.41, -0.15, 0, 1.21);
  	animation-name: slidein;  
  	animation-iteration-count: infinite; 
 }
@@ -330,6 +331,17 @@ body {
 	display: inline-block;
 	width: 162px;
 	margin: 0 0 4px 0;
+}
+.rollingBar ul li sapn {
+	float: left;
+	margin: 1px 1px 0 0;
+	width: 19px;
+	height: 14px;
+	font-size: 12px;
+	font-weight: bold;
+	padding-right: 4px;
+	color: #777;
+	text-align: right;
 }
 .rollingBar ul li strong {
 	float: left;
@@ -423,17 +435,17 @@ div.realtime:hover div.rollingBar {
 	margin: 0;
 } 
 .hiddenBoard ul li {
-	width: 162px;
+	width: 164px;
 	display: inline-block;
 	margin: 0 0 5px 0;
 }
 .hiddenBoard ul li strong.num {
 	float: left;
-	margin: 1px 1px 0 0;
-	width: 19px;
+	margin: 1px 5px 0 0;
+	width: 14px;
 	height: 14px;
 	font-size: 12px;
-	padding-right: 4px;
+	padding-right: 5px;
 	color: #777;
 	text-align: right;
 }
@@ -489,6 +501,63 @@ div.realtime:hover div.rollingBar {
 	font-weight: normal;
 }
 
+/* 메거진 */
+div.mg_banner {
+	float: right;
+	width: 280px;	
+	position: relative;
+	top: 24px;
+}
+
+div.mg_banner a {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+div.mg_banner a img {
+	display: inline-block;
+}
+/* 메거진 버튼 */
+#mg_button {
+	position: absolute;
+	top: 47px;
+	right: 0;
+}
+#left_button {
+ 	float: left;
+}
+#left_button {
+ 	display: inline-block;
+	border: 0;	
+	width: 20px;
+	height: 17px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/main/bg_btn_page02.png")
+					no-repeat left -220px;
+	cursor: pointer;
+}
+#left_button:hover {
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/main/bg_btn_page02.png")
+					no-repeat left -238px;
+}
+#right_button {
+	float: left;
+}
+#right_button {
+	display: inline-block;
+	border: 0;	
+	width: 20px;
+	height: 17px;
+	margin-left: -2px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/main/bg_btn_page02.png")
+					no-repeat right -220px;
+	cursor: pointer;
+}
+#right_button:hover {
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/main/bg_btn_page02.png")
+					no-repeat right -238px;
+}
+
 /* content */
 #conts_section {
 	position: relative;
@@ -497,10 +566,8 @@ div.realtime:hover div.rollingBar {
 	margin: 0 auto;
 	padding: 0 20px;
 }
-
 .my_fold p {
 	color: red;
-	background-color: #ccc; 
 }
 
 /* footer */

@@ -5,12 +5,104 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="/khfp/mTv.css?after">
+<script type="text/javascript">
 
-<!-- <style type="text/css"> -->
+window.onload = function() {
+	var num = 1
+	function roll() {
+		
+		var number = document.getElementById("num")
+		var name = document.getElementById("name")
+		var icon = document.getElementById("icon")
+		var viwesNum = document.getElementById("viwesNum")
+		
+		num++
+		
+		if(num==1) {
+			number.innerHTML = "1."
+			number.style = "color: #e55e4a"
+			name.innerHTML = "상어가족"
+			viwesNum.innerHTML = "14"
+		} else if(num==2) {
+			number.innerHTML = "2."
+			name.innerHTML = "신호등"
+			viwesNum.innerHTML = "8"
+		} else if(num==3) {
+			number.innerHTML = "3."
+			name.innerHTML = "김범수"
+			viwesNum.innerHTML = "7"
+		} else if(num==4) {
+			number.innerHTML = "4."
+			number.style = "color: #777"
+			name.innerHTML = "다시 사랑이"
+			icon.style = "width: 21px; background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -169px;"
+			viwesNum.innerHTML = ""
+		} else if(num==5) {
+			number.innerHTML = "5."
+			name.innerHTML = "해요"
+			icon.style = "background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -155px;"
+			viwesNum.innerHTML = "28"
+		} else if(num==6){
+			number.innerHTML = "6."
+			name.innerHTML = "미아"
+			icon.style = "width: 21px; background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -169px;"
+			viwesNum.innerHTML = ""
+		} else if(num==7){
+			number.innerHTML = "7."
+			name.innerHTML = "metallica"
+			icon.style = "background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -155px;"
+			viwesNum.innerHTML = "205"
+		} else if(num==8){
+			number.innerHTML = "8."
+			name.innerHTML = "김필"
+			viwesNum.innerHTML = "26"
+		} else if(num==9){
+			number.innerHTML = "9."
+			name.innerHTML = "검정치가"
+			viwesNum.innerHTML = "157"
+		} else {
+			number.innerHTML = "10."
+			name.innerHTML = "Tomboy"
+			viwesNum.innerHTML = "108"
+			num = 0
+		}
+		
+	}
+	
+	setInterval( roll, 4000 )
+	
+}
 
-<!-- @import url("/khfp/mTv.css"); -->
+var count = 0
+function clicked1() {
+	
+	var button = document.getElementById("left_button")
+	
+	nextImg( button )
+	
+}
+function clicked2() {
+	
+	var button = document.getElementById("right_button")
+	
+	nextImg( button )
+	
+}
+function nextImg( button ) {
+	var img = document.getElementById("img")
+	
+	button.click = count++
+	
+	if(count%2==1) {
+		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png";
+	} else {
+		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg"
+	}
+}
+//----------------------------------------------------------------
 
-<!-- </style> -->
+
+</script>
 
 </head>
 <body>
@@ -84,83 +176,11 @@
 				<div class="rollingBar">
 					<ul>
 						<li>
-							<strong class="num">1.</strong>
-							<a href="" class="songName">상어가족</a>
+							<strong id="num" class="num" style="color: #e55e4a">1.</strong>
+							<a id="name" href="" class="songName">상어가족</a>
 							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">14</span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">2.</strong>
-							<a href="" class="songName">신호등</a>
-							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">8</span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">3.</strong>
-							<a href="" class="songName">김범수</a>
-							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">7</span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">4.</strong>
-							<a href="" class="songName">다시 사랑이</a>
-							<span class="viwes">
-								<span class="icon newIcon"></span>
-								<span class="viwesNum"></span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">5.</strong>
-							<a href="" class="songName">해요</a>
-							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">28</span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">6.</strong>
-							<a href="" class="songName">미아</a>
-							<span class="viwes">
-								<span class="icon newIcon"></span>
-								<span class="viwesNum"></span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">7.</strong>
-							<a href="" class="songName">너의 모든 순간</a>
-							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">205</span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">8.</strong>
-							<a href="" class="songName">김필</a>
-							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">26</span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">9.</strong>
-							<a href="" class="songName">검정치마</a>
-							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">157</span>
-							</span>
-						</li>
-						<li>
-							<strong class="num">10.</strong>
-							<a href="" class="songName">Tomboy</a>
-							<span class="viwes">
-								<span class="icon"></span>
-								<span class="viwesNum">108</span>
+								<span id="icon" class="icon"></span>
+								<span id="viwesNum" class="viwesNum">14</span>
 							</span>
 						</li>
 					</ul>
@@ -169,7 +189,7 @@
 					<div class="hiddenBoard">
 						<ul>
 							<li>
-								<strong class="num" style="margin-right: 1px">1</strong>
+								<strong class="num">1</strong>
 								<a href="" class="songName">상어가족</a>
 								<span class="viwes">
 									<span class="icon"></span>
@@ -252,6 +272,16 @@
 					</div>
 				</div>
 			</div>
+			<!-- 매거진 -->
+			<div class="mg_banner"> 
+				<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
+					<img id="img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg">
+				</a>
+				<div id="mg_button">
+					<input type="button" id="left_button" title="이전 이벤트 보기" onclick="clicked1()">
+					<input type="button" id="right_button" title="다음 이벤트 보기" onclick="clicked2()">
+				</div>
+			</div>
 		</div>
 		
 		<div id="gnb_menu">
@@ -263,7 +293,7 @@
 
 <div id="cont_wrap" class="clfix"> <!-- clfix : clearfix -->
 	<div id="conts_section" class="my_fold">
-		<p>HIHI</p> 
+	
 	</div>
 </div>
 
