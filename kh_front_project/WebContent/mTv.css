@@ -409,7 +409,6 @@ div.realtime:hover div.hidden {
 div.realtime:hover div.rollingBar {
 	z-index: -1;
 }
-
 .hiddenBoard {
 	display: inline-block;
 	width: 162px;
@@ -428,7 +427,7 @@ div.realtime:hover div.rollingBar {
 	display: inline-block;
 	margin: 0 0 5px 0;
 }
-.hiddenBoard ul li strong {
+.hiddenBoard ul li strong.num {
 	float: left;
 	margin: 1px 1px 0 0;
 	width: 19px;
@@ -497,6 +496,11 @@ div.realtime:hover div.rollingBar {
 	height: 1758px;
 	margin: 0 auto;
 	padding: 0 20px;
+}
+
+.my_fold p {
+	color: red;
+	background-color: #ccc; 
 }
 
 /* footer */
