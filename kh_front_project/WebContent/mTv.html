@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="/khfp/mTv.css?after">
+<link rel="stylesheet" href="/khfp/mTv.css">
 <script type="text/javascript">
 
 window.onload = function() {
@@ -71,9 +71,20 @@ window.onload = function() {
 	
 	setInterval( roll, 4000 )
 	
-}
+	//----------------------------------------------------------------
 
-var count = 0
+	navHover(0, 0)
+	navHover(1, "-87px")
+	navHover(2, "-174px")
+	navHover(3, "-261px")
+// 	navHover(4, "-336px") mTv쪽은 페이지 열린 상태이므로 적용 안 함
+	navHover(5,"-413px")
+	navHover(6, "-513px")
+	navHover(7,"-583px")
+	navHover(8, "-684px")
+	
+}
+//----------------------------------------------------------------
 function clicked1() {
 	
 	var button = document.getElementById("left_button")
@@ -88,19 +99,32 @@ function clicked2() {
 	nextImg( button )
 	
 }
+var count = 0
 function nextImg( button ) {
 	var img = document.getElementById("img")
 	
 	button.click = count++
 	
-	if(count%2==1) {
-		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png";
-	} else {
+	if(count==0) {
 		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg"
+	} else if(count==1) {
+		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png"
+	} else {
+		img.src =  "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg"
+		count = -1
 	}
 }
 //----------------------------------------------------------------
-
+function navHover(idx, height) {
+	var ons = document.getElementsByClassName("ons")
+	
+	ons[idx].onmouseover = function() {
+		ons[idx].style = "background-position: " + height + " -70px;"
+	}
+	ons[idx].onmouseout = function() {
+		ons[idx].style = "background-position: " + height + " 0;"
+	}
+}
 
 </script>
 
@@ -283,9 +307,56 @@ function nextImg( button ) {
 				</div>
 			</div>
 		</div>
-		
+		<!-- 헤더 네비 -->
 		<div id="gnb_menu">
-		
+			<ul>
+				<li class="nav1">
+					<a href="https://www.melon.com/chart/index.htm" class="menu1 ons"></a>
+				</li>
+				<li class="nav2">
+					<a href="https://www.melon.com/new/index.htm" class="menu2 ons"></a>
+				</li>
+				<li class="nav3">
+					<a href="https://www.melon.com/genre/song_list.htm?gnrCode=GN0100" class="menu3 ons"></a>
+				</li>
+				<li class="nav4">
+					<a href="https://www.melon.com/dj/today/djtoday_list.htm" class="menu4 ons"></a>
+				</li>
+				<li class="nav5">
+					<a href="" class="menu5 ons"></a>
+					<div class="sub_menu">
+						<ul>
+							<li class="sub1">
+								<a href="https://www.melon.com/tv/index.htm"></a>
+							</li>
+							<li class="sub2">
+								<a href="https://www.melon.com/tv/mv/index.htm"></a>
+							</li>
+							<li class="sub3">
+								<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1"></a>
+							</li>
+							<li class="sub4">
+								<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=4"></a>
+							</li>
+							<li class="sub5">
+								<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3"></a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav6">
+					<a href="https://www.melon.com/artistplus/todayupdate/index.htm" class="menu6 ons"></a>
+				</li>
+				<li class="nav7">
+					<a href="https://www.melon.com/musicstory/today/index.htm" class="menu7 ons"></a>
+				</li>
+				<li class="nav8">
+					<a href="https://www.melon.com/mma/home.htm" class="menu8 ons"></a>
+				</li>
+				<li class="nav9">
+					<a href="https://www.melon.com/edu/index.htm" class="menu9 ons"></a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>
