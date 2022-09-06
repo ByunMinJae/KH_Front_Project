@@ -21,11 +21,11 @@
 #header-mi {margin: 0 auto; width: 1008px; height: 150px; }
 #header-bo {margin: 0 auto; width: 1008px; height: 55px; font-weight: bold; list-style: none; }
 
-#content1 {width: 1008px; height: 48px; }
-#content2 {}
-#content3 {background-color: #FAFAFA; border: 1px solid #666666; font-size: 12px; font-weight:400px; height:240px;  }	/* PICK송 */
-#content4 {}
-#content5 {}
+#content1 {margin: 0 auto; width: 1008px; height: 48px; }
+#content2 {margin: 0 auto; width: 1008px; }
+#content3 {margin: 0 auto; width: 1008px; background-color: #FAFAFA; border: 1px solid #666666; font-size: 12px; font-weight:400px; height:240px;  }	/* PICK송 */
+#content4 {margin: 0 auto;  width: 1008px;  }
+#content5 {margin: 0 auto; width: 1008px; height: 39px; }
 #content6 {}
 #content7 {}
 #content8 {}
@@ -251,96 +251,322 @@ text-decoration: none;}
 .rolling .play_control .d_indicator.on { border-color: #515151; }
 
 
-.pick_song {
-margin: 10px 0 40px;
-background-color: #fafafa;}
+/* pick song */
 
-.full_content {
-position: relative;
+.pick_song {
+    margin: 10px 0 40px;
+    background-color: #fafafa;
 }
 
 .full_content .inner {
-position: absolute;
-width: 500%;
-height: 100%;
-margin-left: -200%;
-background-color: #fafafa;
-z-index: -1;
+    position: absolute;
+    width: 500%;
+    height: 100%;
+    margin-left: -200%;
+    background-color: #fafafa;
+    z-index: -1;
 }
 
 .pick_song .content {
-padding: 40px;
-overflow: hidden;
+    padding: 40px;
+    overflow: hidden;
 }
 
 .pick_song .thumb {
-position: relative;
-float: left;
+    position: relative;
+    float: left;
 }
 
 .pick_song .thumb .image_typeAll {
-width: 160px;
-height: 160px;
-overflow: hidden;
-border-radius: 100px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 100px;
+}
+a:link {
+    color: #1a1a1a;
+    text-decoration: none;
 }
 
 .pick_song .thumb img {
-border-radius: 100px;
+    border-radius: 100px;
 }
 
-.image_typeAll {
-display: block;
-position: relative;
-font-size: 0;
-line-height: 0; }
-
-
-a:any-link {
-color: -webkit-link;
-text-decoration: underline;
-cursor: auto;}
-
-a img {
-border: 0;
+.image_typeAll .bg_album_frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #e5e5e5;
+    border: 1px solid rgba(0,0,0,0.1);
 }
-
-img {
-line-height: 0;
-font-size: 0;
-}
-
-
 
 .pick_song .thumb .icon {
-display: inline-block;
-position: absolute;
-top: 10px;
-right: -10px;
-width: 50px;
-height: 32px;
-background: url(//cdnimg.melon.co.kr/resource/image/web/dj_4x/pick_song_icon.png) no-repeat 0 0;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 50px;
+    height: 32px;
+    background: url(//cdnimg.melon.co.kr/resource/image/web/dj_4x/pick_song_icon.png) no-repeat 0 0;
 }
 
 .pick_song .entry {
-padding-top: 17px;
-margin-left: 220px;
+    padding-top: 17px;
+    margin-left: 220px;
 }
 
-div {display: block;}
-
-
-
-.popular_tag {
-margin-bottom: 35px;
-overflow: hidden;
+.pick_song .entry .title {
+    color: #00b423;
+    font-size: 20px;
 }
 
-.popular_tag:after {
-content: '';
-display: block;
-clear: both;
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
+
+.pick_song .entry .lead {
+    margin: 12px 0 35px;
+    color: #575757;
+    font-size: 22px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#conts a {
+    letter-spacing: -1px;
+}
+
+.pick_song .entry .partner {
+    height: 38px;
+}
+
+.pick_song .entry .partner .thumb {
+    margin-right: 10px;
+}
+
+.pick_song .entry .partner .thumb .image_typeAll {
+    width: 38px;
+    height: 38px;
+}
+
+ul {list-style: none;
+    font-weight: normal;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;}
+
+
+li {list-style: none;
+    font-weight: normal;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.pick_song .entry .partner .dot_bg {
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    width: 18px;
+    height: 4px;
+    margin: 0 15px 0 10px;
+    background: url(//cdnimg.melon.co.kr/resource/image/web/dj_4x/pick_song_icon02.png) no-repeat 0 0;
+    vertical-align: top;
+}
+
+.pick_song .entry .partner .link {
+    display: inline-block;
+    color: #767676;
+    font-size: 16px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.pick_song .entry .partner .link .num {
+    position: relative;
+    top: 2px;
+    color: #575757;
+    font-size: 20px;
+}
+.pick_song .entry .partner .link img {
+    position: relative;
+    top: -2px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+
+/* 인기태그 - */
+
+
+
+.popular_tag { margin-bottom: 35px; overflow: hidden; }
+
+.popular_tag:after { content: ''; display: block; clear: both; }
+
+.popular_tag .page_header { float: left; width: 83px; margin-top: 3px; margin-right: 70px; }
+
+.page_header { position: relative; margin-bottom: 8px; }
+
+.page_header .title { float: left; color: #2f2f2f; font-family: "맑은 고딕","Malgun Gothic",sans-serif;
+    					vertical-align: middle; }
+    					
+h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.popular_tag .tag_list { float: left; width: 855px; height: 36px; margin-top: 42px; overflow: hidden; }
+
+
+
+.tag_list { display: inline-block; line-height: 0; font-size: 0; }
+
+#conts a { letter-spacing: -1px; }
+
+.tag_list.type02 .tag_item { margin-right: 14px; }
+
+.tag_list.type02 .tag_item { height: 34px; line-height: 36px; font-size: 13px; font-family: "맑은 고딕","Malgun Gothic"; }
+
+.tag_list .tag_item { margin-right: 6px; }
+
+
+.tag_list .tag_item {
+    display: inline-block;
+    height: 28px;
+    line-height: 30px;
+    padding: 0 15px;
+    border: 1px solid #c8c8c8;
+    border-radius: 100px;
+    color: #767676;
+    font-size: 12px;
+    font-family: "돋움",Dotum,Arial,sans-serif;
+    letter-spacing: -1px;
+    box-sizing: content-box;
+    text-decoration: none;
+}
+
+
+/* 우울할 땐 더 우울한  */
+
+.rolling {
+    position: relative;
+    top: -20px;
+    height: 460px;
+}
+
+.rolling .service_list_play {
+    position: relative;
+    overflow: hidden;
+    width: 1008px !important;
+    height: 445px;
+    padding-top: 20px;
+}
+
+.none {
+    position: absolute;
+    top: -5000em;
+    left: 0;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.rolling .service_list_play .d_content {
+    position: absolute;
+    width: 1029px;
+    height: 425px;
+}
+
+.service_list_play>ul {
+    margin: -20px 0 0 -21px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.service_list_play>ul:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.service_list_play>ul>li {
+    float: left;
+    width: 236px;
+    margin: 20px 0 0 21px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.service_list_play .thumb {
+    position: relative;
+    width: 236px;
+    height: 236px;
+    overflow: hidden;
+}
+
+
+
+
+a:link {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+.image_typeAll {
+    display: block;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+}
+
+
+
 
 </style>
 
@@ -351,6 +577,7 @@ clear: both;
 
 <div id="wrap">
 	<div id="header">
+	
 	
 	
 <!-- 상단 빠른메뉴 -->
@@ -1069,75 +1296,301 @@ clear: both;
 
 <!-- 콘텐츠 - PICK 송 -->
 
-	<div id="content3">
-		<div class="content3-container">
-			<h4 class="title">PICK송 #163</h4>
-			<p class="lead">잠이 오지 않는 밤, 나를 재워주는 소중한 노래를 소개해 주세요.</p>
-		</div>
-		
-					<div class="partner">
-						<ul>
+<div id="content3" class="full_content pick_song">
+	<div class="inner"></div>
+	
+		<div class="content">
+			<div class="thumb">
+				<a href="javascript:dj.djLink.goMelgunsPick('164');" title="무한 재생 중~♬ 요즘 가장 많이 듣고 있는 곡을 알려주세요! - 페이지 이동" class="image_typeAll">
+					<img onerror="WEBPOCIMG.defaultImg(this);" src="https://cdnimg.melon.co.kr/svc/images/melondj/melgunpick/imgUrl20220901024425153.jpg/melon/resize/x160/quality/100/optimize" alt="">
+					<span class="bg_album_frame"></span>
+				</a>
+					<span class="icon"></span>
+			</div>
+			
+				<div class="entry">
+					<h4 class="title">PICK송 #164</h4>
+					<p class="lead">무한 재생 중~♬ 요즘 가장 많이 듣고 있는 곡을 알려주세요!</p>
+					
+						<div class="partner">
+							<ul>
 						
-							
 								<li>
 									<div class="thumb">
-										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('43969436');" class="image_typeAll">
-											<img onerror="javascript:defaultPickArtistImg(this, '38');" width="38" height="38" src="https://cdnimg.melon.co.kr/svc/user_images/user/440/70/43969436_194.jpg?tm=20220501145835/melon/optimize/90/melon/resize/38/quality/100/optimize" alt="">
+										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('60180749');" class="image_typeAll">
+											<img onerror="javascript:defaultPickArtistImg(this, '38');" width="38" height="38" src="https://cdnimg.melon.co.kr/svc/user_images/user/602/81/60180749_194.jpg?tm=20220906004114/melon/optimize/90/melon/resize/38/quality/100/optimize" alt="">
 											<span class="bg_album_frame"></span>
 										</a>
 									</div>
 								</li>
+
 							
 								<li>
 									<div class="thumb">
-										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('60987857');" class="image_typeAll">
-											<img onerror="javascript:defaultPickArtistImg(this, '38');" width="38" height="38" src="https://cdnimg.melon.co.kr/svc/user_images/user/610/88/60987857_194.jpg?tm=20220825143100/melon/optimize/90/melon/resize/38/quality/100/optimize" alt="">
+										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('1961986');" class="image_typeAll">
+											<img onerror="javascript:defaultPickArtistImg(this, '38');" width="38" height="38" src="https://cdnimg.melon.co.kr/svc/user_images/user/20/62/1961986_194.jpg?tm=20220828203220/melon/optimize/90/melon/resize/38/quality/100/optimize" alt="">
 											<span class="bg_album_frame"></span>
 										</a>
 									</div>
 								</li>
+
 							
 								<li>
 									<div class="thumb">
-										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('43209313');" class="image_typeAll">
+										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('48238876');" class="image_typeAll">
 											<img onerror="javascript:defaultPickArtistImg(this, '38');" width="38" height="38" src="//cdnimg.melon.co.kr/resource/image/web/default/noArtist_38.jpg" alt="">
 											<span class="bg_album_frame"></span>
 										</a>
 									</div>
 								</li>
 							
+							
 								<li>
 									<div class="thumb">
-										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('447209');" class="image_typeAll">
-											<img onerror="javascript:defaultPickArtistImg(this, '38');" width="38" height="38" src="https://cdnimg.melon.co.kr/svc/user_images/user/5/48/447209_194.jpg?tm=20220712170756/melon/optimize/90/melon/resize/38/quality/100/optimize" alt="">
+										<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('60076424');" class="image_typeAll">
+											<img onerror="javascript:defaultPickArtistImg(this, '38');" width="38" height="38" src="https://cdnimg.melon.co.kr/svc/user_images/user/601/77/60076424_194.jpg?tm=20220823113619/melon/optimize/90/melon/resize/38/quality/100/optimize" alt="">
 											<span class="bg_album_frame"></span>
 										</a>
 									</div>
 								</li>
 							
-						
 						</ul>
+
 						<span class="dot_bg"></span>
-						<a href="javascript:dj.djLink.goMelgunsPick('163');" class="link"><span class="num">15</span>명 참여중 <img src="https://cdnimg.melon.co.kr/resource/image/web/dj_4x/pick_song_btn.png" alt="참여하기"></a>
+						<a href="javascript:dj.djLink.goMelgunsPick('164');" class="link"><span class="num">4</span>명 참여중 <img src="https://cdnimg.melon.co.kr/resource/image/web/dj_4x/pick_song_btn.png" alt="참여하기"></a>
 					</div>
+					
 				</div>
-	</div>
+		</div>
+</div>
 
 
 
 <!-- 콘탠츠 - 인기태그 -->
+	
+<div id="content4" class="popular_tag">
 
-	<div id="content4">
-		<div class="content-container">content4</div>
+	<div class="page_header">
+	<h5 class="title">인기 태그</h5>
 	</div>
 
+		<div class="tag_list type02">
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('2184');" class="tag_item"><span>#나들이</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('1027');" class="tag_item"><span>#빈티지</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('2');" class="tag_item"><span>#가을</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('959');" class="tag_item"><span>#일상</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('1413');" class="tag_item"><span>#버스</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('1597');" class="tag_item"><span>#감수성</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('37');" class="tag_item"><span>#발라드</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('3762');" class="tag_item"><span>#도입부</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('3');" class="tag_item"><span>#기분전환</span></a>
+			
+			<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('37');" class="tag_item"><span>#발라드</span></a>
+			
+		
+		</div>
+</div>		<!-- 콘탠츠 끝 - 인기태그 -->
 
 
-<!-- 콘텐츠 - 리듬에 몸을 맡겨봐  -->
 
-	<div id="content5">
-		<div class="content-container">content5</div>
+<!-- 콘텐츠 - 우울할 땐 더 깊은 우울 속으로  -->
+
+<div id="content5" class="page_header mb15">
+					<h5 class="title">우울할 땐 더 깊은 우울 속으로</h5>
+				</div>
+				
+	
+<div class="rolling">
+	<div class="service_list_play d_djcol_list" style="width: 1029px;">
+	<h3 class="none">플레이 리스트</h3>
+		
+		<ul class="d_content">
+			<li>
+				<div class="thumb">
+					<a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','510666196');" title="INFP 울리는 감성 알앤비 힙합 - 페이지 이동" class="image_typeAll">
+					<img onerror="WEBPOCIMG.defaultPlaylistImg(this);" src="https://cdnimg.melon.co.kr/svc/user_images/plylst/2022/06/502/63/510666196_org.jpg?tm=20220829043536/melon/resize/x236/quality/80/optimize" alt="">
+						<span class="bg_album_frame"></span>
+					</a>
+				</div>
+
+
+				<div class="entry">
+					<div class="info">
+						<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('50162126');" title="monzz. - 페이지 이동" class="dj_name">
+						<img onerror="WEBPOCIMG.defaultMemberImg(this);" width="44" class="ie_pie" height="44" src="https://cdnimg.melon.co.kr/resource/image/web/default/noArtist_300_160727.jpg/melon/resize/44" alt=""></a>
+						<a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','510666196');" class="ellipsis album_name" title="INFP 울리는 감성 알앤비 힙합 - 이동">
+							INFP 울리는 감성 알앤비 힙합</a>
+														
+						<div class="artist_name">
+							<span class="label_dj dj-normal">DJ</span>
+							<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('50162126');" class="user_id ellipsis" title="monzz. - 이동">monzz.</a>
+						</div>
+													
+					</div>
+										
+										
+					<div class="meta">
+						<button type="button" class="button_etc like btn_djplylst_like" title="Surrf (Feat. Shupie, Woon) (Prod. Naked) 좋아요" data-djcol-no="510666196" data-djcol-menuid="67140101111"><span class="odd_span">좋아요</span> <span class="cnt"> <span class="none">총건수</span> 26 </span></button>
+						<i class="bar"></i>
+						<span class="tot_song" title="총 수록곡">20곡</span>
+					</div>
+										
+					<div class="tag_list">
+						<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('230');" class="tag_item"><span>#국내힙합</span></a>
+						<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('1072');" class="tag_item"><span>#국힙</span></a>
+					</div>
+										
+				</div>
+		
+			</li>
+								
+					
+									
+			<li>
+				<div class="thumb">
+					<a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','479503196');" title="아름답고도 슬픈 선율의 클래식 연주곡 - 페이지 이동" class="image_typeAll">
+					<img onerror="WEBPOCIMG.defaultPlaylistImg(this);" src="https://cdnimg.melon.co.kr/svc/images/melondj/playlist/imgUrl20200706021720477.jpg?tm=20220811050812/melon/resize/x236/quality/80/optimize" alt="">
+					<span class="bg_album_frame"></span></a>
+				</div>
+								
+									
+					<div class="entry">
+						<div class="info">
+							<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('37667317');" title="CLASSIC마스터 - 페이지 이동" class="dj_name">
+							<img onerror="WEBPOCIMG.defaultMemberImg(this);" width="44" class="ie_pie" height="44" src="https://cdnimg.melon.co.kr/svc/user_images/user/377/68/37667317_46.jpg?tm=20220127091751" alt="">
+							</a><a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','479503196');" class="ellipsis album_name" title="아름답고도 슬픈 선율의 클래식 연주곡 - 이동">
+									아름답고도 슬픈 선율의 클래식 연주곡</a>
+									
+														
+							<div class="artist_name">
+								<span class="label_dj dj-power">DJ</span>
+								<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('37667317');" class="user_id ellipsis" title="CLASSIC마스터 - 이동">CLASSIC마스터</a>
+								<span class="label_verify">
+									<span class="hide">인증DJ</span>
+								</span>
+							</div>
+													
+						</div>
+								
+										
+							<div class="meta">
+								<button type="button" class="button_etc like btn_djplylst_like" title="Surrf (Feat. Shupie, Woon) (Prod. Naked) 좋아요" data-djcol-no="479503196" data-djcol-menuid="67140101111"><span class="odd_span">좋아요</span> <span class="cnt"> <span class="none">총건수</span> 434 </span></button>
+								<i class="bar"></i>
+								<span class="tot_song" title="총 수록곡">20곡</span>
+							</div>
+									
+										
+							<div class="tag_list">
+								<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('39');" class="tag_item"><span>#클래식</span></a>
+								<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('226');" class="tag_item"><span>#슬픈</span></a>
+							</div>
+										
+					</div>
+				</li>
+								
+				
+				
+				<li>
+					<div class="thumb">
+						<a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','510846320');" title="혼자 있고 싶을 때 듣는 팝 - 페이지 이동" class="image_typeAll">
+							<img onerror="WEBPOCIMG.defaultPlaylistImg(this);" src="https://cdnimg.melon.co.kr/svc/user_images/plylst/2022/08/583/81/510846320_org.jpg?tm=20220828100636/melon/resize/x236/quality/80/optimize" alt="">
+							<span class="bg_album_frame"></span>
+						</a>
+										
+					</div>
+									
+						<div class="entry">
+							<div class="info">
+								<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('58280178');" title="meiso - 페이지 이동" class="dj_name">
+								<img onerror="WEBPOCIMG.defaultMemberImg(this);" width="44" class="ie_pie" height="44" src="https://cdnimg.melon.co.kr/svc/user_images/user/583/81/58280178_46.jpg?tm=20220828034848" alt="">
+								</a><a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','510846320');" class="ellipsis album_name" title="혼자 있고 싶을 때 듣는 팝 - 이동">
+										혼자 있고 싶을 때 듣는 팝</a>
+													
+								<div class="artist_name">
+									<span class="label_dj dj-normal">DJ</span>
+									<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('58280178');" class="user_id ellipsis" title="meiso - 이동">meiso</a>
+								</div>
+													
+												
+							</div>
+								
+								
+								<div class="meta">
+									<button type="button" class="button_etc like btn_djplylst_like" title="Surrf (Feat. Shupie, Woon) (Prod. Naked) 좋아요" data-djcol-no="510846320" data-djcol-menuid="67140101111"><span class="odd_span">좋아요</span> <span class="cnt"> <span class="none">총건수</span> 172 </span></button>
+									<i class="bar"></i>
+									<span class="tot_song" title="총 수록곡">30곡</span>
+								</div>
+										
+								
+								<div class="tag_list">
+									<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('14');" class="tag_item"><span>#밤</span></a>
+									<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('73');" class="tag_item"><span>#감성</span></a>
+								</div>
+									
+										
+						</div>
+				</li>
+								
+				
+							
+				<li>
+					<div class="thumb">
+						<a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','509586776');" title="공허하고 울적한 날, 감성을 채워줄 Lofi - 페이지 이동" class="image_typeAll">
+							<img onerror="WEBPOCIMG.defaultPlaylistImg(this);" src="https://cdnimg.melon.co.kr/svc/user_images/plylst/2022/09/570/14/509586776_org.jpg?tm=20220902081718/melon/resize/x236/quality/80/optimize" alt="">
+							<span class="bg_album_frame"></span>
+						</a>
+					</div>
+					
+					
+						<div class="entry">
+							<div class="info">
+								<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('56913649');" title="omda - 페이지 이동" class="dj_name">
+								<img onerror="WEBPOCIMG.defaultMemberImg(this);" width="44" class="ie_pie" height="44" src="https://cdnimg.melon.co.kr/svc/user_images/user/570/14/56913649_46.jpg?tm=20220905094411" alt="">
+								</a><a href="javascript:MELON.WEBSVC.POC.link.goDjPlaylistDetail('0','Y','N','509586776');" class="ellipsis album_name" title="공허하고 울적한 날, 감성을 채워줄 Lofi - 이동">
+										공허하고 울적한 날, 감성을 채워줄 Lofi</a>
+										
+										
+								<div class="artist_name">
+									<span class="label_dj dj-power">DJ</span>
+									<a href="javascript:MELON.WEBSVC.POC.link.goMyMusic('56913649');" class="user_id ellipsis" title="omda - 이동">omda</a>
+								</div>
+											
+							</div>
+						
+						
+								<div class="meta">
+									<button type="button" class="button_etc like btn_djplylst_like" title="Surrf (Feat. Shupie, Woon) (Prod. Naked) 좋아요" data-djcol-no="509586776" data-djcol-menuid="67140101111"><span class="odd_span">좋아요</span> <span class="cnt"> <span class="none">총건수</span> 863 </span></button>
+									<i class="bar"></i>
+									<span class="tot_song" title="총 수록곡">80곡</span>
+								</div>
+											
+												
+								<div class="tag_list">
+									<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('77101');" class="tag_item"><span>#mbti</span></a>
+									<a href="javascript:MELON.WEBSVC.POC.link.goDjTagHub('78044');" class="tag_item"><span>#isfp</span></a>
+								</div>
+							
+										
+						</div>
+				</li>
+		</ul>
+	
 	</div>
+</div>		<!-- 콘텐츠 끝 - 우울할 땐 더 깊은 우울 속으로  -->
+				
+				
+
+
+
 	
 	
 	
