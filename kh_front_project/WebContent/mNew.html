@@ -6,6 +6,16 @@
 
 <style type="text/css">
 
+.left_menu{float: left;
+position: relative;}
+.right_menu{float: right;
+position: relative;}
+
+ul.nav > li{
+	display: inline;
+}
+
+
 th,td,tr{ border: 1px solid black;}
 
 /* 듣기버튼 */
@@ -16,9 +26,14 @@ th,td,tr{ border: 1px solid black;}
 	border-style: soild;
 	border-width: 15px 0 15px 20px;
 }
-ddddd
+
 ul{
 	list-style-type: none;
+}
+
+.wrapper{
+	width: 1200px;
+	margin: 0 auto;
 }
 
 
@@ -26,20 +41,73 @@ ul{
 
 </head>
 <body>
+
+<div class="wrapper">
+<header>
 <div>
-	<div align="left">멜론티켓</div>
-	<div align="right">
+	<div class="left_menu">
+		<ul>
+			<li>멜론 차트</li>
+		</ul>
+	</div>
+	
+	
+	<div class="right_menu">
 		<ul class="top">
 			<li>이용권구매 |</li>
+		</ul>
+	</div>
+	
+	<div class="right_menu">
+		<ul>
 			<li>멜론라운지 |</li>
 		</ul>
 	</div>
-</div>	
 	
-<h1>melon</h1>
-<div class="searchbar">
-	<input type="text" placeholder="검색"></input>
+	<div class="right_menu">
+		<ul>
+			<li>이벤트|</li>
+		</ul>
+	</div>
+	
+	<div class="right_menu">
+		<ul>
+			<li>공지사항|</li>
+		</ul>
+	</div>
+</div>	
+</header>
+
+<br>
+	
+<h1>
+	<img src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png">
+</h1>
+
+<fieldset style="width: 280px; padding: 3px;">
+	<input type="text" id=searchbar name="searchbar" placeholder="오직 멜론에서만 볼 수 있는 독점 영상 확인!">
+	<button>돋보기</button>
+</fieldset>
+
+<div>급상승
+	<div>
+		<ol>
+			<li>블랙핑크</li>
+			<li>아이브</li>
+			<li>에스파</li>
+			<li>박재정</li>
+			<li>이병찬</li>
+			<li>뉴진스</li>
+			<li>트와이스</li>
+			<li>있을때 잘하자</li>
+			<li>자장가</li>
+			<li>BTS</li>
+		</ol>
+	</div>
 </div>
+
+<div>이벤트보기 배너</div>
+
 
 <ul class="nav">
 	<li><a href="">멜론차트</a></li>
@@ -51,14 +119,15 @@ ul{
 			<li><a href="">최신 뮤직비디오</a></li>
 		</ul>
 	</li>
-	<li>장르음악</li>
-	<li>멜론DJ</li>
-	<li>스타포스트</li>
-	<li>매거진</li>
-	<li>뮤직어워드</li>
-	<li>어학</li>
-	<li>마이뮤직</li>
+	<li><a href="">장르음악</a></li>
+	<li><a href="">멜론DJ</a></li>
+	<li><a href="">스타포스트</a></li>
+	<li><a href="">매거진</a></li>
+	<li><a href="">뮤직어워드</a></li>
+	<li><a href="">어학</a></li>
+	<li><a href="">마이뮤직</a></li>
 </ul>
+
 <hr>
 
 <h3>최신곡</h3>
@@ -127,34 +196,8 @@ ul{
 
 </tbody>
 
-<tfoot>
-
-</tfoot>
 
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -189,6 +232,8 @@ ul{
             </div>
         </div>
     </footer>
+    
+</div>
 
 </body>
 </html>
