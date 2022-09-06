@@ -11,6 +11,12 @@ ul {
 a {
   text-decoration-line: none;
 }
+a:visited {
+	color : black;
+}
+a:hover {
+	color : #00CD3C;
+}
 hr {
   width: 100%;
 }
