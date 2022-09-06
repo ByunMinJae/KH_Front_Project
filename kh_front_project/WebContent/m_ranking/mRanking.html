@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멜론차트</title>
+
+<style type="text/css">
+#header{
+	position: relative;
+	width: 105%;
+	height:242px;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_repeat.jpg);
+	background-repeat: repeat-x;
+	z-index: 20;
+	margin: -16px -8px -51px;
+}
+
+ #header_content{ 
+ 	width: 1046px; 
+ 	padding: 0px; 
+ 	margin: 0px auto;
+ 	height: 38px;
+ } 
+
+
+/*  상단바  */
+#utilmenu{
+	border-top: 2px;
+	height: 19px;
+}
+.fix{
+
+	list-style-type: none;
+	clear: both;
+	display: block;
+}
+
+.top_left>ul.fix>li>a>span.ticket {
+	float: left;
+	position: relative;
+	margin: 0;
+	left: 55px;
+	text-decoration: none;
+	font-size: 0px;
+	padding: 19px 28px 0px;
+	top: 0px;
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+	background-repeat: no-repeat;
+	background-position: 2px -30px;
+	background-size: 230px;
+}
+ ul.fix>li.melon_ticket>a { 
+ 	position: relative;
+ 	width: 0px;
+ 	height: 12px;
+ 	text-decoration: none; 
+	font-size: 0px; 
+ 	padding: 23px 32px 0px; 
+ 	top: 13px; 
+ 	background-position: 0 -31px; 
+ 	background-size: 220px;
+ 	left:-90px;
+ } 
+  .top_left>ul.fix>li>a>span.ticket:hover{  
+  	background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+   
+  	top:0px;
+  	left:56px;
+  	padding: 19px 29px 0px; 
+	background-repeat: no-repeat;  
+  	background-position: -151px -30px;
+  	background-size: 230px; 
+  	margin: 0px;
+
+  } 
+.top_right{
+
+	float: right;
+	position: relative;
+	padding: 0;
+	display: block;
+	margin: 0px; 
+	top:-40px;
+	left: -25px;	
+}
+.top_right>ul.fix li{
+	float: left;
+	position: relative;
+	padding: 0;
+	font-size:0;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bl_head_menu.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 1px;
+	top:-8px;
+	height:29px;
+	left: 23px;
+	width: 57px;
+	background-position: 99%;
+	
+}
+.top_right>ul.fix li a{	
+	padding: 22px 0px 8px;
+	display:inline-block;
+	margin-top: -20px;
+	position:relative;
+	left:-4px;
+	width: 57px;
+}
+.top_right>ul>li>a>span.ticket_buy{
+	float: right;
+	position: relative;
+	font-size: 0px;
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+	background-repeat: no-repeat;
+	background-position: -4% 40%;
+	width: 82px;
+	height:22px;
+	right: 14px;
+	top:5px;
+	background-size: 221px;
+	padding:0px;
+	margin:0px;
+}
+.top_right>ul>li>a>span.ticket_buy:hover{
+	float: right;
+	position: relative;
+	font-size: 0px;
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_161206.png);
+	background-repeat: no-repeat;
+	background-position: 102% 40%;
+	width: 82px;
+	height:22px;
+	top: 5px;
+	right: 13px;
+	background-size: 220px;
+	padding:0px;
+	margin:0px;
+}
+ .top_right>ul.fix>li>a>span.lounge{ 
+	float: right;
+	position: relative;
+	font-size:0;
+ 	width: 82px;
+ 	height:23px;
+ 	background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_benefit.png	); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 58% -236%; 
+ 	background-size: 55px; 
+ 	top:-2px; 
+	right: -18px;
+ } 
+
+ .top_right>ul.fix>li>a>span.lounge:hover{ 
+	float: right;
+	position: relative;
+	font-size:0;
+ 	width: 82px;
+ 	height:21px;
+ 	background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/head_menu_benefit.png	); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 58%  254%; 
+ 	background-size: 55px; 
+ 	top:6px;
+ 	right: -18px; 
+	
+ } 
+ .top_right>ul.fix>li>a>span.event{ 
+	float: right;
+	position: relative;
+	font-size:0;
+ 	width: 67px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: -2% 79%; 
+ 	background-size: 231px; 
+ 	top: -2px; 
+ 	right: -23px;
+ } 
+  .top_right>ul.fix>li>a>span.event:hover{ 
+	float: right;
+	position: relative;
+	font-size:0;
+ 	width: 67px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 90% 79%; 
+ 	background-size: 229px; 
+ 	top:-2px; 
+ 	right: -21px;
+ } 
+  .top_right>ul.fix>li>a>span.notice{ 
+	float: right;
+	position: relative;
+	font-size:0;
+ 	width: 67px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: -10% 101%; 
+ 	background-size: 227px; 
+ 	padding:0 px;
+ 	top: -2px; 
+ 	right:-12px;
+	
+ } 
+ 
+ .top_right>ul.fix>li>a>span.notice:hover{ 
+	float: right;
+	position: relative;
+	font-size:0;
+ 	width: 67px;
+ 	height:22px;
+ 	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/head_menu_201014.png); 
+ 	background-repeat: no-repeat; 
+ 	background-position: 82% 101%; 
+ 	background-size: 227px;
+ 	top: -2px; 
+ 	right:-9px;
+ } 
+ 
+ .topright>ul.fix>li.right_fourth{
+ 
+    padding-left: -12px;
+    width: 48px;
+    padding-right: -2px;
+    padding-left: 0px;
+    position: relative;
+    right: -16px;
+
+ 
+ }
+ 
+ /* 로고, 검색창 */
+
+#logo{
+	clear: both;
+	float: left;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	width: 142px;
+	height: 99px;
+	top: -21px;
+}
+
+img.logo{
+
+	float: left;
+	position: relative;
+	top: -25px;
+}
+.search_textbox{
+
+	float: left;
+	position: relative;
+	border: 0;
+	width: 256px;
+	height: 5px;
+	background-size: 320px;
+	padding: 7px;
+	top: 4px;
+	left: -4px;
+}
+
+fieldset{
+	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_cmn_search322.png);
+	float: left;
+	position: relative;
+	left:8px;
+	top:-11px;
+	width:298px;
+	height:25px;
+	border:0;
+	background-position: 322px 40px;	
+}
+
+button.enter{
+	left: 257px;
+	top: -16px;
+	float: left;
+	position:relative;
+	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/btn_search_bar.png);
+	background-repeat: no-repeat;
+	width: 44px;
+	height: 40px;
+	top: -25px;
+	left: 266px;
+	border: 0;
+	background-color: transparent;
+	background-size: 45px;
+	background-position: 116% -2%;
+	font-size: 0; 
+}
+
+button.enter:hover{
+	left: 257px;
+	top: -16px;
+	float: left;
+	position:relative;
+	background-image: url(https://cdnimg.melon.co.kr/resource/image/web/common/btn_search_bar.png);
+	background-repeat: no-repeat;
+	width: 44px;
+	height: 36px;
+	top: -24px;
+	left: 266px;
+	border: 0;
+	background-color: transparent;
+	background-size: 45px;
+	background-position: 116% 91%;
+	font-size: 0; 
+
+}
+
+/*급상승, 실시간 순위  */
+.realtime{
+	float: left;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	top: 2px;
+	left: 20px;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/main/bg_loce_151207.png);
+	background-repeat: no-repeat;
+	width:49px;
+	height: 30px;
+	font-size: 0;
+}
+
+.realtime_keyword{	
+	padding: 0;
+	margin: 0;
+	position:relative;
+	left: 537px;
+	top:39px;
+	width: 128px;
+	height:29px;
+	
+}
+
+.keyword{
+	float: left;
+	position: relative;
+	padding-left: 0px;
+	border-bottom: none;
+	left: 5px;
+	top: -158px;
+	width: 198px;
+	
+}
+
+
+ul.keyword>li{
+	float:left;
+	position: relative;
+	line-height: 9px;
+	font-size:12px;
+	list-style-type: none;
+	top:9px;
+	left: 5px;
+	padding: 0px;
+}
+
+ul.keyword>li>a{
+	font-family:"돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	position: relative;
+	text-decoration: none;
+	margin: 0;
+	padding: 10px 12px;
+	top: -9px;
+	left: 6px;
+	color: black;
+}
+
+ul.keyword>li>.number, ul.keyword>li>ul>li>.number{
+	display: block;
+	color: gray;
+}
+
+ul.keyword>li>span.rNumber_first{
+	position: relative;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png);
+	font-size: 0;
+	padding: 7px 18px;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-position: -3% 37%;
+	background-size: 235px;
+	top:-12px;
+	left: 7px;
+	
+}
+
+ul.keyword>li:hover>a{
+	text-decoration: underline;
+	
+}
+
+ul.keyword>li:hover{
+	border: 1px solid gray;
+	position:relative;
+	border-bottom: none;
+	width: 149px;
+	padding: 12px 4px 0px 13px;
+	background: white;
+	top: -5px;
+	left: -5px;
+}
+
+ul.keyword>li>ul{
+	position: absolute;
+	list-style-type: none;
+	padding:14px;
+	margin: 0px;
+	width: 138px;
+	height: 190px;
+	left: -1px;
+	top: 27px;
+	z-index: 1;
+
+}
+
+
+
+ul.keyword>li>ul>li{
+	display: none;
+}
+
+ul.keyword>li:hover>ul{
+	border: 1px solid gray;
+	border-top: none;
+	background: white;
+	line-height: 7px;
+}
+ul.keyword>li:hover>ul>li{
+	display: block;
+	width: 200px;
+	height: 28px;
+	font-size: 11px;
+	line-height:0px;
+	height: 23px;
+}
+
+
+ul.keyword>li>ul>li>a{
+	text-decoration: none;
+	display: block;
+	color: black;
+	font-family:"돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	padding: 0px 15px;
+
+}
+
+ul.keyword>li>ul>li>a:hover{
+	text-decoration: underline;
+	
+}
+
+ul.keyword>li>ul>li>span.rNumber{
+	text-decoration: none;
+	font-family:"돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	position: relative;
+	left: 193px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+
+ul.keyword>li>ul>li>span.updown_second, span.updown_third, span.updown_six, span.updown_seven{
+	position: relative;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png);
+	padding: 0px 11px;
+	margin: -46px;
+	background-repeat: no-repeat;
+	background-position: -4% 34%;
+	background-size: 255px;
+	top:2px;
+	left: 149px;
+}
+
+
+ul.keyword>li>ul>li>span.updown_four, span.updown_ten{
+	position: relative;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png);
+	padding: 0px 11px;
+	margin: -46px;
+	background-repeat: no-repeat;
+	background-position: 9% 34%;
+	background-size: 255px;
+	top:2px;
+	left: 152px;
+
+}
+
+ul.keyword>li>ul>li>span.updown_five, span.updown_eight, span.updown_nine{
+	position: relative;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png);
+	padding: 0px 8px;
+	margin: -46px;
+	background-repeat: no-repeat;
+	background-position: 4% 34%;
+	background-size: 255px;
+	top: -2px;
+	left: 155px;
+
+}
+
+/* 배너 */
+
+
+.mlog{
+	position: relative;
+	left: 239px;
+	top: -22px;
+}
+
+
+
+div.banner_btn>a{
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/main/bg_btn_page02.png);
+	background-repeat: no-repeat;
+	float: right;
+	position: relative;
+	width:20px;
+	height:17px;
+	font-size: 0;
+	line-height: 0;
+	top:-75px;
+	right: 2px;
+
+}
+div.banner_btn>a.banner_prev_btn{
+	background-position: 0% 57.3%;
+	
+
+
+}
+div.banner_btn>a.banner_prev_btn:hover{
+	background-position: 0% 62%;
+
+
+}
+div.banner_btn>a.banner_next_btn{
+	background-position: 103% 57.3%;
+
+	
+}
+div.banner_btn>a.banner_next_btn:hover{
+	background-position: 103% 62%;
+
+	
+}
+
+
+#mainMenu{
+
+	width: 1046px; 
+ 	padding: 0px; 
+ 	margin: 0px auto;
+ 	height: 38px;
+ 	top:112px;
+ 	position:relative;
+
+
+
+}
+#mainMenu ul{
+
+	float: left;
+	position: relative;
+	left: 10px;
+	top: 20px;
+	list-style-type: none;
+	
+	
+	
+	
+}
+
+
+#mainMenu>ul.menuBar>li{
+
+	float:left;
+	position: relative;
+	top: -210px;
+	left:-247px;
+	width: 75px;
+	height: 55px;
+	padding: 7px;
+	font-size: 0;
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+	background-repeat: no-repeat;
+}
+
+
+.nth1>.lay_menu>ul{
+	float:right;
+	position: relative; 
+	padding: 0;
+	margin: 0;
+	top: 10px;
+	left: -247px;
+
+}
+
+.nth1>.lay_menu>ul>li{
+	float:left;
+	position: relative;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	
+	
+	
+
+}
+
+
+.chart_finder{
+	float: right;
+	position: relative;
+	right: -800px;
+	top: 33px;
+
+}
+#mainMenu ul.submenu{
+	float:right;
+}
+</style>
+
+</head>
+<body>
+
+<!-- 상단바 -->
+<div id="header" >
+
+	<div id="header_content">
+	
+	 	<div id="utilmenu">
+	 		<div class="top_left">
+				<ul class="fix">
+					<li class="melon_ticket">
+					<a href="https://ticket.melon.com/main/index.htm">
+					<span class="ticket">멜론티켓</span>
+					</a>
+					</li>
+				
+				</ul>
+			</div>
+			<div class="top_right">
+			<ul class="fix">
+				<li class=right_first>
+					<a id="ticket_buy" href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm">
+					<span class="ticket_buy">이용권구매</span>
+					</a>
+				</li>
+				
+				<li class="right_second" style=" width: 73px; padding-right:1px; padding-left:11px;">
+					<a href="https://www.melon.com/event/vip/index.htm">
+					<span class="lounge">멜론라운지</span>
+					</a>
+				</li>
+				
+				<li class="right_third"> 
+					<a href="https://www.melon.com/event/index.htm">
+					<span class="event">이벤트</span>
+					</a>
+				</li>
+				
+				<li class="right_fourth">
+					<a href="https://www.melon.com/customer/announce/index.htm">
+					<span class="notice">공지사항</span>
+					</a>
+				</li>
+			</ul>
+			</div>
+			
+	<!-- 로고 및 검색창 -->
+			<div id="logo" > 
+				<a href="https://www.melon.com/index.htm">
+				<img src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="Melon" class="logo">
+				</a>
+			</div>
+			<form>
+				<fieldset>
+				<input type="text" class="search_textbox" placeholder="오직멜론에서만 볼 수 있는 독점 영상 확인"  >
+				<button type="button" id="enter" name="enter" class="enter">엔터</button>
+				</fieldset>
+			</form>
+			
+			<!-- 급상승, 실시간 검색어 -->
+			<div class="realtime" >급상승</div>
+			<div class="realtime_keyword">
+				<ul class ="keyword">
+				
+					<li>
+						<strong class="number">1 </strong>
+						<a href= "" class="hide">BLACKPINK</a> 
+						<span class="rNumber_first">상승</span>
+					
+						<ul>
+							<li>
+								<strong class="number">2 </strong>
+								<a href= "">방탄소년단</a>
+								<span class="updown_second"></span> 
+								<span class ="rNumber" style="color: #FF4E78">29</span>
+							</li>
+							<li>
+								<strong class="number">3 </strong>
+								<a href= "">aespa</a>
+								<span class="updown_third"></span> 
+								<span  class ="rNumber" style="color: #FF4E78">9</span>
+							</li>
+							<li>
+								<strong class="number">4 </strong>
+								<a href= "">태연</a>
+								<span class="updown_four"></span> 
+								<span class ="rNumber" style="color:#74CDBD">3</span>
+							</li>
+							<li>
+								<strong class="number">5 </strong>
+								<a href= "">임영웅</a>
+								<span class="updown_five"></span> 
+								<span class ="rNumber"></span>
+							</li>
+							<li>
+								<strong class="number">6 </strong>
+								<a href= "">10CM</a>
+								<span class="updown_six"></span> 
+								<span class ="rNumber" style="color: #FF4E78">446</span>
+							</li>
+							<li>
+								<strong class="number">7 </strong>
+								<a href= "">산해</a>
+								<span class="updown_seven"></span> 
+								<span class ="rNumber" style="color: #FF4E78">9</span>
+								
+							</li>
+							<li>
+								<strong class="number">8 </strong>
+								<a href= "">LOVE DIVE</a>
+								<span class="updown_eight"></span> 
+								<span class ="rNumber"></span>
+								
+							</li>
+							<li>
+								<strong class="number">9 </strong>
+								<a href= "">듀크</a>
+								<span class="updown_nine"></span> 
+								<span class ="rNumber"></span>
+							
+							</li>
+							<li>
+								<strong class="number" style="margin-left: -7px;">10 </strong>
+								<a href= "">BIGBANG(빅뱅)</a>
+								<span class="updown_ten"></span> 
+								<span class ="rNumber" style="color:#74CDBD">1</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			
+			</div>
+			<!-- 광고 배너  -->
+			
+		
+			<div class="'banner">
+				<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885" class="mlog">
+				<img src="	https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035252.jpg" alt="배너">
+				 </a>
+			</div>
+			 
+			<!--  <a href="https://www.melon.com/buy/pamphlet/discount.htm" title="50%discount" class="mlog">
+			 <img src="https://www.melon.com/buy/pamphlet/discount.htm" alt="배너"> -->
+			<!--  </a> -->
+			
+			<div class="banner_btn">
+				 <a href="" class="banner_next_btn" title="next">다음 이벤트 보기 </a>
+				 <a href=" "class="banner_prev_btn" title="before">이전 이벤트 보기</a>
+			
+			 <!--이미지이동 버튼은 javascript로 구현   =>나중에 하기... 
+			   --> 
+			 </div>
+		</div>
+	 </div>
+
+	 <div id="mainMenu">
+				<ul class="menuBar">
+					<li class ="nth1 on">
+					<a href="https://www.melon.com/chart/index.htm">
+					<span class="menu_bg menu01 "> 멜론차트</span>		
+					</a>
+			
+						<div class="lay_menu">
+							<ul class="first_child on">
+							<li>
+								<a href="https://www.melon.com/chart/index.htm">
+								<span class="menu_chart m1" >Top100</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.melon.com/chart/day/index.htm">
+								<span class="menu_chart m2">일간</span>
+								</a>
+							</li>
+							<li>
+								<a href=" https://www.melon.com/chart/week/index.htm">
+								<span class="menu_chart m3">주간</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.melon.com/chart/month/index.htm">
+								<span class="menu_chart m4">월간</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.melon.com/chart/age/index.htm">
+								<span class="menu_chart m5">시대</span>
+								</a>
+							</li>
+							
+							
+							</ul>
+							<div class="chart_finder">
+								<button type="button" class="btn_finder" >
+								<span class="on_finder">차트파인더</span>
+								</button>
+							</div>
+						
+						
+							</div>
+						</li>
+						<li class="nth2">
+							<a href="https://www.melon.com/new/index.htm">
+							<span  class="menu_bg menu02 ">최신음악</span>
+							</a>
+						</li>
+						
+						<li class="nth3">
+							<a href="https://www.melon.com/genre/song_list.htm?gnrCode=GN0100">
+							<span  class="menu_bg menu03 ">장르음악</span>
+							</a>
+						</li>
+						
+						<li class="nth4">
+							<a href="https://www.melon.com/dj/today/djtoday_list.htm">
+							<span  class="menu_bg menu04 ">멜론DJ</span>
+							</a>
+						</li>
+						
+						<li class="nth5">
+							<a href="https://www.melon.com/tv/index.htm">
+							<span  class="menu_bg menu05">멜론TV</span>
+							</a>
+						</li>
+							<li class="nth6">
+							<a href="https://www.melon.com/artistplus/todayupdate/index.htm">
+							<span class="menu_bg menu06">스타포스트</span>
+							</a>
+						</li>
+						<li class="nth7">
+							<a href=" https://www.melon.com/musicstory/today/index.htm">
+							<span class="menu_bg menu07">매거진</span>
+							</a>
+						</li>
+						<li class="nth8">
+							<a href="https://www.melon.com/mma/home.htm">
+							<span class="menu_bg menu08">뮤직어워드</span>
+							</a>
+						</li>
+						<li class="nth9">
+							<a href="https://www.melon.com/edu/index.htm">
+							<span class="menu_bg menu09">어학</span>
+							</a>
+						</li>
+				</ul>
+				<ul class="submenu">
+					<li class="nth10">
+						<a href="https://member.melon.com/muid/web/login/login_inform.htm">
+						<span class="menu_bg menu10">마이뮤직</span>
+						
+						</a>
+					</li>
+						
+				</ul>
+			</div>
+</div>
+
+<!-- content영역 -->
+
+<!-- <div> -->
+<!-- <h2>TOP100</h2> -->
+<!-- </div> -->
+<!-- <div> -->
+<!-- <button>물음표</button> -->
+<!-- </div> -->
+
+<!-- <div> -->
+<!-- <sapn> 2022.08.26</sapn> -->
+<!-- <span>14:00</span> -->
+<!-- <button>화살표</button> -->
+
+<!-- </div> -->
+
+
+<!-- <div> -->
+<!-- 	<form> -->
+<!-- 	셔플듣기 전체 듣기 듣기 담기 다운 FLAC선물  -->
+<!-- 	<div> -->
+<!-- 		<button>담기</button> -->
+<!-- 		<button>전체듣기</button> -->
+<!-- 		<button>듣기</button> -->
+<!-- 		<button>담기</button> -->
+<!-- 		<button>다운</button> -->
+<!-- 		<button>FLAC</button> -->
+<!-- 		<button>선물</button> -->
+		
+<!-- 	</div> -->
+<!-- 	<div> -->
+<!-- 		<button>새로고침</button> -->
+<!-- 	</div> -->
+	
+<!-- 	음원 순위*(본문) -->
+	
+<!-- 	<table> -->
+<!-- 		<thead> -->
+<!-- 		<tr> -->
+<!-- 		<th> -->
+<!-- 			<div> -->
+<!-- 			<input type="checkbox"> -->
+<!-- 			</div> -->
+<!-- 		</th> -->
+		
+		
+<!-- 		<th>순위</th> -->
+<!-- 		<th>순위등락</th> -->
+<!-- 		<th>앨범이미지</th> -->
+<!-- 		<th>앨범정보</th> -->
+<!-- 		<th>곡 상세 가기</th> -->
+<!-- 		<th>곡정보</th> -->
+<!-- 		<th>앨범</th> -->
+<!-- 		<th>좋아요</th> -->
+<!-- 		<th>듣기</th> -->
+<!-- 		<th>담기</th> -->
+<!-- 		<th>뮤비</th> -->
+<!-- 		</tr> -->
+		
+<!-- 		</thead> -->
+		
+<!-- 		<tbody> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 		<!--  1~10--> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		11~20		 -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 			21~30	 --> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		31~40 --> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		41~50	 --> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		51~60		 --> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		61~70 --> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		71~80	 --> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		81~90 --> 
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- 			<tr></tr> -->
+<!-- <!-- 		91~100 --> 
+		
+<!-- 		</tbody> -->
+	
+	
+<!-- 	</table> -->
+	
+<!-- 	</form> -->
+	
+
+
+<!-- </div> -->
+
+<!-- <hr> -->
+<footer>
+<!-- <div> -->
+<!-- 	<div> -->
+<!-- 	<ul> -->
+<!-- 	<li>멜론6.0둘러보기</li> -->
+<!-- 	<li>멜론스튜디오</li> -->
+<!-- 	<li>Windows플레이어</li> -->
+<!-- 	<li>Mac 플레이어 </li> -->
+<!-- 	<li>iPad</li> -->
+<!-- 	<li>고객센터</li> -->
+	
+	
+<!-- 	</ul> -->
+<!-- 	</div> -->
+<!-- 	<div> -->
+<!-- 	<ul> -->
+<!-- 		<li>이용약관</li> -->
+<!-- 		<li>위치기반서비스 이용약관</li> -->
+<!-- 		<li>개인정보처리방침</li> -->
+<!-- 		<li>청소년보호정책</li> -->
+<!-- 		<li>제휴/프로모션문의</li> -->
+<!-- 		<li>이메일주소무단수집거부</li> -->
+<!-- 		<li>파트너센터</li> -->
+<!-- 	</ul> -->
+	
+<!-- 	<p> -->
+<!-- 		<span>(주)카카오엔터테인먼트 경기도 성남시 분당구 판교역로2221</span> -->
+<!-- 		<span>대표이사 : 이진수,김성수</span> -->
+<!-- 		<span>사업자등록번호 : 220-9-02594</span> -->
+<!-- 		<span>통신판매업신고번호 : 2018-성남분당B-0004 사업자정보확인 ></span> -->
+<!-- 		<span>문의전화 : 1566-7727( 평일 9:00-18:00 유료)</span> -->
+<!-- 		<span>이메일 : melon_info@kakaoent.com</span> -->
+<!-- 		<span>호스팅서비스사업자 : (주)카카오엔터테인먼트</span> -->
+<!-- 		<span>&copy; Entertainment Corp. </span> -->
+	
+<!-- 	</p> -->
+	
+<!-- 	</div> -->
+
+
+
+
+<!-- </div> -->
+
+
+
+
+
+</footer>
+
+</body>
+</html>
