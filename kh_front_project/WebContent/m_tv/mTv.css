@@ -789,9 +789,9 @@ div.mg_banner a img {
 	height: 1758px;
 	margin: 0 auto;
 	padding: 0 20px;
-} 
-.my_fold p {
-	color: gray;
+}
+#conts_section p {
+	color: blue;
 }
 
 /* footer */
