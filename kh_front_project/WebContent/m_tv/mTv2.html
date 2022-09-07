@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/khfp/m_tv/mTv2.css">
+<link rel="stylesheet" href="/khfp/m_tv/mTv2.css?after">
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
-	
+	/* 실시간 업슬라이드 */
 	var $slider_list = $("#slider li")
 	
 	//#sliderbox의 높이 만큼 top조절
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		var nextSlide = curSlide + 1;
 		nextSlide %= $slider_list.length;
 		
-		console.log( curSlide, ":", nextSlide )
+// 		console.log( curSlide, ":", nextSlide )
 		
 		$slider_list.eq( curSlide ).animate({ "top": "-="+$("#sliderbox").css("height") })
 		
@@ -38,7 +38,53 @@ $(document).ready(function() {
 	}
 	
 	setInterval( slideOn, 3000 )
+	/* 실시간 업슬라이드 End */
+})
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
 	
+	/* 우측 매거진 클릭 이벤트 */
+	var $mg_list = $("#mg_slider a")
+	
+	$mg_list.css("left", $("#mg_banner").css("width"))
+	
+	$mg_list.eq(0).css("left", 0)
+	
+	var curSlide = 0;
+	
+	$("#left_button").click(function() {
+		
+		//다음에 보여지는 슬라이드의 인덱스
+		var nextSlide = curSlide + 1;
+		nextSlide %= $mg_list.length;
+		
+		console.log( curSlide, ":", nextSlide )
+		
+		$mg_list.eq( curSlide ).css("left", $("#mg_banner").css("width"))
+		$mg_list.eq( nextSlide ).css("left", 0)
+		
+		//증가식
+		curSlide++;
+		curSlide %= $mg_list.length;
+		
+	})
+	
+	$("#right_button").click(function() {
+		
+		nextSlide = curSlide - 1;
+		curSlide = (curSlide+1)%3;
+		nextSlide %= $mg_list.length;
+		
+		console.log( curSlide, ":", nextSlide )
+		
+		$mg_list.eq( curSlide ).css("left", $("#mg_banner").css("width"))
+		$mg_list.eq( nextSlide ).css("left", 0)
+		
+		//증가식
+		curSlide++;
+	})
 	
 })
 </script>
@@ -284,13 +330,21 @@ $(document).ready(function() {
 				</div>
 			</div>
 			<!-- 매거진 -->
-			<div class="mg_banner"> 
-				<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
-					<img id="img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg">
-				</a>
+			<div id="mg_banner"> 
+				<div id="mg_slider">
+					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
+						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg">
+					</a>
+					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
+						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png">
+					</a>
+					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
+						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg">
+					</a>
+				</div>
 				<div id="mg_button">
-					<input type="button" id="left_button" title="이전 이벤트 보기" onclick="clicked1()">
-					<input type="button" id="right_button" title="다음 이벤트 보기" onclick="clicked2()">
+					<input type="button" id="left_button" title="이전 이벤트 보기">
+					<input type="button" id="right_button" title="다음 이벤트 보기">
 				</div>
 			</div>
 		</div>

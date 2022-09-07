@@ -448,21 +448,27 @@ div.realtime:hover div.rollingBar {
 }
 
 /* 메거진 */
-div.mg_banner {
+#mg_banner {
 	float: right;
-	width: 280px;	
-	position: relative;
-	top: 24px;
+	width: 280px;
+	height: 75px;
+	margin: 22px 0;
+	border: 1px solid #ccc;
+	
+	overflow: hidden;
 }
-
-div.mg_banner a {
-	position: relative;
-	margin: 0;
+#mg_slider {
 	padding: 0;
+	margin: 0;
+	position: relative;
+}
+div#mg_banner a {
+	position: absolute;
 }
 
-div.mg_banner a img {
-	display: inline-block;
+div#mg_banner a img {
+	width: 280px;
+	height: 75px;
 }
 /* 메거진 버튼 */
 #mg_button {
