@@ -3,148 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/khfp/m_tv/mTv2.css">
 
-<link rel="stylesheet" href="/khfp/m_tv/mTv.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
 <script type="text/javascript">
-window.onload = function() {
-	var num = 1
-	function roll() {
+$(document).ready(function() {
+	
+	var $slider_list = $("#slider li")
+	
+	//#sliderbox의 높이 만큼 top조절
+	$slider_list.css("top", $("#sliderbox").css("height"))
+	
+	//첫번째 이미지
+	$slider_list.eq(0).css("top", 0) 
+	
+	var curSlide = 0;
+	function slideOn() {
 		
-		var number = document.getElementById("num")
-		var name = document.getElementById("name")
-		var icon = document.getElementById("icon")
-		var viwesNum = document.getElementById("viwesNum")
+		var nextSlide = curSlide + 1;
+		nextSlide %= $slider_list.length;
 		
-		num++
+		console.log( curSlide, ":", nextSlide )
 		
-		if(num==1) {
-			number.innerHTML = "1."
-			number.style = "color: #e55e4a"
-			name.innerHTML = "상어가족"
-			viwesNum.innerHTML = "14"
-		} else if(num==2) {
-			number.innerHTML = "2."
-			name.innerHTML = "신호등"
-			viwesNum.innerHTML = "8"
-		} else if(num==3) {
-			number.innerHTML = "3."
-			name.innerHTML = "김범수"
-			viwesNum.innerHTML = "7"
-		} else if(num==4) {
-			number.innerHTML = "4."
-			number.style = "color: #777"
-			name.innerHTML = "다시 사랑이"
-			icon.style = "width: 21px; background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -169px;"
-			viwesNum.innerHTML = ""
-		} else if(num==5) {
-			number.innerHTML = "5."
-			name.innerHTML = "해요"
-			icon.style = "background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -155px;"
-			viwesNum.innerHTML = "28"
-		} else if(num==6){
-			number.innerHTML = "6."
-			name.innerHTML = "미아"
-			icon.style = "width: 21px; background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -169px;"
-			viwesNum.innerHTML = ""
-		} else if(num==7){
-			number.innerHTML = "7."
-			name.innerHTML = "metallica"
-			icon.style = "background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -155px;"
-			viwesNum.innerHTML = "205"
-		} else if(num==8){
-			number.innerHTML = "8."
-			name.innerHTML = "김필"
-			viwesNum.innerHTML = "26"
-		} else if(num==9){
-			number.innerHTML = "9."
-			name.innerHTML = "검정치마"
-			viwesNum.innerHTML = "157"
-		} else {
-			number.innerHTML = "10."
-			name.innerHTML = "Tomboy"
-			viwesNum.innerHTML = "108"
-			num = 0
-		}
+		$slider_list.eq( curSlide ).animate({ "top": "-="+$("#sliderbox").css("height") })
+		
+		$slider_list.eq( nextSlide ).css("top", $("#sliderbox").css("height"))
+		
+		$slider_list.eq( nextSlide ).animate({ "top": "-="+$("#sliderbox").css("height") })
+		
+		curSlide++;
+		curSlide %= $slider_list.length;
 		
 	}
 	
-	setInterval( roll, 4000 )
+	setInterval( slideOn, 3000 )
 	
-	//----------------------------------------------------------------
-
-	navHover(0, 0)
-	navHover(1, "-87px")
-	navHover(2, "-174px")
-	navHover(3, "-261px")
-// 	navHover(4, "-336px") mTv쪽은 페이지 열린 상태이므로 적용 안 함
-	navHover(5,"-413px")
-	navHover(6, "-513px")
-	navHover(7,"-583px")
-	navHover(8, "-684px")
 	
-//----------------------------------------------------------------
-
-	subHover(1, "-102px")
-	subHover(2, "-193px")
-	subHover(3, "-301px")
-	subHover(4, "-438px")
-
-}
-//----------------------------------------------------------------
-/* 매거진 클릭 이벤트 */
-function clicked1() {
-	
-	var button = document.getElementById("left_button")
-	
-	nextImg( button )
-	
-}
-function clicked2() {
-	
-	var button = document.getElementById("right_button")
-	
-	nextImg( button )
-	
-}
-var count = 0
-function nextImg( button ) {
-	var img = document.getElementById("img")
-	
-	button.click = count++
-	
-	if(count==0) {
-		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg"
-	} else if(count==1) {
-		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png"
-	} else {
-		img.src =  "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg"
-		count = -1
-	}
-}
-//----------------------------------------------------------------
-/* 네비 이벤트 */
-function navHover(idx, height) {
-	var ons = document.getElementsByClassName("ons")
-	
-	ons[idx].onmouseover = function() {
-		ons[idx].style = "background-position: " + height + " -70px;"
-	}
-	ons[idx].onmouseout = function() {
-		ons[idx].style = "background-position: " + height + " 0;"
-	}
-}
-//----------------------------------------------------------------
-/* 서브 네비 이벤트 */
-function subHover(idx, height) {
-	var suba =  document.getElementsByClassName("suba")
-	
-	suba[idx].onmouseover = function() {
-		suba[idx].style = "background: url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -349px;"
-	}
-	suba[idx].onmouseout = function() {
-		suba[idx].style = "background: url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -309px;"
-	}
-}
+})
 </script>
 
 </head>
@@ -216,14 +112,86 @@ function subHover(idx, height) {
 			<div class="realtime">
 				<span class="timeUp"></span>
 				<div></div>
-				<div class="rollingBar">
-					<ul>
+				<div id="sliderbox">
+					<ul id="slider">
 						<li>
 							<strong id="num" class="num" style="color: #e55e4a">1.</strong>
 							<a id="name" href="" class="songName">상어가족</a>
 							<span class="viwes">
-								<span id="icon" class="icon"></span>
-								<span id="viwesNum" class="viwesNum">14</span>
+								<span class="icon" class="icon"></span>
+								<span class="viwesNum" class="viwesNum">14</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num" style="color: #e55e4a">2.</strong>
+							<a href="" class="songName">신호등</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">8</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num" style="color: #e55e4a">3.</strong>
+							<a href="" class="songName">김범수</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">7</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">4.</strong>
+							<a href="" class="songName">다시 사랑이</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">5.</strong>
+							<a href="" class="songName">해요</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">28</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">6.</strong>
+							<a href="" class="songName">미아</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">7.</strong>
+							<a href="" class="songName">너의 모든 순간</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">205</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">8.</strong>
+							<a href="" class="songName">김필</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">26</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">9.</strong>
+							<a href="" class="songName">검정치마</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">157</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">10.</strong>
+							<a href="" class="songName">Tomboy</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">108</span>
 							</span>
 						</li>
 					</ul>

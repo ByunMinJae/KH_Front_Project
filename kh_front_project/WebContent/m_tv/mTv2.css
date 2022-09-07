@@ -292,134 +292,73 @@ body {
 }
 
 /* 롤링바 */
-.rollingBar {
+#sliderbox {
 	float: left;
-}
-.rollingBar li { 
-	animation-direction: alternate;
-	animation-duration: 2s; 
- 	animation-timing-function: cubic-bezier(0.41, -0.15, 0, 1.21);
- 	animation-name: slidein;  
- 	animation-iteration-count: infinite; 
-}
-@keyframes slidein {  
-	from { 
-      margin-top: 20px;  
-} 
-
- 	to {  
-      margin-top: 0;  
- 	}  
-}  
-
-/*.rollingBar:hover {  
- 	transform:translate(0, -23px); 
-  	transition-delay: 2s;  
-}*/
-
-.rollingBar {
-	display: inline-block;
 	width: 162px;
 	height: 20px;
 	margin: 3px 0 0 10px;
-	position: absolute;
- 	overflow: hidden;
+	overflow: hidden;
 }
-.rollingBar ul { 
-	list-style: none;
-	width: 162px;
-	height: 20px;
+#slider {
 	padding: 0;
 	margin: 0;
-} 
-.rollingBar ul li {
-	display: inline-block;
+	list-style-type: none;
+	
+	position: relative;
+}
+#slider li {
+	position: absolute;
 	width: 162px;
-	margin: 0 0 4px 0;
 }
-.rollingBar ul li sapn {
+#slider li strong {
 	float: left;
 	margin: 1px 1px 0 0;
 	width: 19px;
 	height: 14px;
 	font-size: 12px;
-	font-weight: bold;
-	padding-right: 4px;
 	color: #777;
-	text-align: right;
-}
-.rollingBar ul li strong {
-	float: left;
-	margin: 1px 1px 0 0;
-	width: 19px;
-	height: 14px;
-	font-size: 12px;
 	padding-right: 4px;
-	color: #777;
 	text-align: right;
+	line-height: 15px;
 }
-.rollingBar ul li a {
+#slider li a {
 	float: left;
+	text-decoration: none;
 	width: 96px;
 	height: 14px;
+	margin: 1px 0 0 0;
 	color: #333;
-	font-size: 12px;
-	margin: 1px 1px 0 0;
-	vertical-align: top;
-	text-decoration: none;
 }
-.rollingBar ul li span.viwes {
-	float: left;
-}
-.rollingBar ul li span.viwes {
-	display: inline-block;
-	width: 40px;
-	height: 14px;
-	margin: 2px 0 0 1px;
-	color: #3d464b;
-}
-.rollingBar ul li span.viwes .icon {
-	float: left;
-}
-.rollingBar ul li span.viwes .icon {
+span.icon {
 	display: inline-block;
 	width: 7px;
 	height: 7px;
-	margin: 3px 3px 0 0;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png)
-				 no-repeat 0 -155px;
+	margin: 5px 0 0 2px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png")
+					no-repeat 0 -155px;
 }
-.rollingBar ul li span.viwes .newIcon {
-	display: inline-block;
-	width: 21px;
-	height: 7px;
-	margin: 3px 3px 0 0;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png)
-				 no-repeat 0 -169px;
+span.newIcon {
+	width: 22px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png")
+					no-repeat 0 -169px;
 }
-.rollingBar ul li span.viwes .viwesNum {
-	float: left;
-}
-.rollingBar ul li span.viwes .viwesNum {
+span.viwesNum {
 	display: inline-block;
 	margin: 0;
 	color: #ff4e78;
 	font-size: 10px;
 	line-height: 13px;
-	vertical-align: top;
-	font-weight: normal;
 }
-
 /* hiddenBoard */
 div.hidden {
 	float: left;
-	margin: -9px 0 0 5px;
+	margin: -9px 0 0 50px;
 	width: 166px;
 	height: 253px;
 	border: 1px solid #ccc;	
 	background-color: #fff;
 	visibility: hidden;
-	position: relative;
+	position: absolute;
 	z-index: 1;
 }
 div.realtime:hover div.hidden {
