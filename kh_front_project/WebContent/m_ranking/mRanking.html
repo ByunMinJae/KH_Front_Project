@@ -552,7 +552,7 @@ div.banner_btn>a.banner_next_btn:hover{
 	
 }
 
-
+/*  메인 메뉴*/
 #mainMenu{
 
 	width: 1046px; 
@@ -565,56 +565,233 @@ div.banner_btn>a.banner_next_btn:hover{
 
 
 }
-#mainMenu ul{
+ #mainMenu ul.menuBar{ 
 
-	float: left;
-	position: relative;
-	left: 10px;
-	top: 20px;
-	list-style-type: none;
+ 	float: left; 
+ 	position: relative; 
+ 	left: -190px; 
+ 	top: -174px; 
+ 	padding: 0;
+ 	margin: 0;
+ 	list-style-type: none; 
 	
 	
-	
-	
-}
+ } 
 
 
 #mainMenu>ul.menuBar>li{
 
 	float:left;
 	position: relative;
-	top: -210px;
-	left:-247px;
+	top:  17px;
+	left:-11px;
 	width: 75px;
 	height: 55px;
 	padding: 7px;
 	font-size: 0;
+	
+}
+
+#mainMenu>ul.menuBar>li>a{
+	width: 100px;
+    height: 20px;
+    padding: 12px 30px;
+    position: relative;
+    top: 19px;
+
+}
+
+
+
+
+.menu_bg{
+
 	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 10px;
+    float: left;
+    position: relative;
+    top: -26px;
+    font-size: 0;
 }
 
+.menuBar>li.nth1 .menu01 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 10px;
+    float: left;
+    position: relative;
+    top: -26px;
+    background-position: 0% 106%;
+ 
+}
+.menuBar>li .menu02 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 10px;
+    float: left;
+    position: relative;
+    top: -26px;
+    background-position: 9% 0%;
+ 
+}
+.menuBar>li .menu03 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 10px;
+    float: left;
+    position: relative;
+    top: -26px;
+    background-position: 19% 0%;
+ 
+}
+.menuBar>li .menu04 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 58px;
+    height: 43px;
+    padding: 9px 0px 9px 0px;
+    float: left;
+    position: relative;
+    top: -26px;
+    background-position: 28% 0%;
+ 
+}
+.menuBar>li .menu05 {
+    background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 10px;
+    float: left;
+    position: relative;
+    top: -26px;
+    left: -21px;
+    background-position: 35% 0%;
+ 
+}
+.menuBar>li .menu06 {
+	    background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 81px;
+    height: 43px;
+    padding: 10px 0px;
+    float: left;
+    position: relative;
+    top: -26px;
+    background-position: 45% 0%;
+    left: -21px;
+ 
+}
+.menuBar>li .menu07 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 0px;
+    float: left;
+    position: relative;
+    top: -26px;
+    background-position: 54% 0%;
+ 
+}
+.menuBar>li .menu08 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 77px;
+    height: 43px;
+    padding: 10px 0px;
+    float: left;
+    position: relative;
+    top: -26px;
+    left: -18px;
+    background-position: 63% 0%;
+ 
+}
+.menuBar>li .menu09 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 0px;
+    float: left;
+    position: relative;
+    left: -8px;
+    top: -26px;
+    background-position: 71% 0%;
+ 
+}
+.submenu>li .menu10 {
+	background: url(//cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_201008.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 43px;
+    padding: 10px 10px;
+    float: left;
+    position: relative;
+    top: -26px;
+    background-position: 100% 0%
+ 
+}
 
-.nth1>.lay_menu>ul{
-	float:right;
-	position: relative; 
-	padding: 0;
-	margin: 0;
-	top: 10px;
-	left: -247px;
+.lay_menu ul.first_child {
+	   float: left;
+    position: absolute;
+    top: 55px;
+    left: -6px;
+    width: 800px;
+    height: 50px;
+    padding-left: 0;
+    list-style-type: none;
 
 }
 
-.nth1>.lay_menu>ul>li{
-	float:left;
+.lay_menu ul.first_child li{
+	
+	float: left; 
 	position: relative;
-	height: 0;
-	font-size: 0;
-	line-height: 0;
-	
-	
-	
+	top: 16px;
+	left: -8px;
+	height: 18px;
+	padding: 0px 21px;
+	font-size: 12px;
 
 }
+.lay_menu ul.first_child li a{
+   float: left;
+    position: relative;
+    top: -5px;
+    left: 0px;
+    height: 18px;
+    width: 71px;
+    padding: 10px 5px 0 5px;
+  
+}
+
+.menu_chart{ 
+	display: block;
+    background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_20210720.png);
+    position: relative;
+    background-repeat: no-repeat;
+    height: 39px;
+    width: 67px;
+    padding: 0px;
+    left: 1px;
+    top: -7px;
+    font-size: 0;
+    margin: 0;
+    background-position: 21% -1%;
+}
+	
+	
 
 
 .chart_finder{
@@ -625,8 +802,24 @@ div.banner_btn>a.banner_next_btn:hover{
 
 }
 #mainMenu ul.submenu{
-	float:right;
+    float: right;
+    position: relative;
+    top: -217px;
+    list-style-type: none;
+    width: 84px;
+	height: 57px;
+    padding: 0;
+    margin: 0;
 }
+#mainMenu ul.submenu>li.nth10{
+
+    position: relative;
+    top: 18px;
+    left: 28px;
+
+	
+}
+
 </style>
 
 </head>
