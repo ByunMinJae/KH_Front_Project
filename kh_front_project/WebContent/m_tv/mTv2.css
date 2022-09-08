@@ -453,9 +453,8 @@ div.realtime:hover div.rollingBar {
 	width: 280px;
 	height: 75px;
 	margin: 22px 0;
-	border: 1px solid #ccc;
-	
-	overflow: hidden;
+/* 	overflow: hidden; */
+	overflow: visible;
 }
 #mg_slider {
 	padding: 0;
@@ -736,7 +735,7 @@ div#mg_banner a img {
 	padding: 0 20px;
 }
 #conts_section p {
-	color: red;
+	color: blue;
 }
 
 /* footer */

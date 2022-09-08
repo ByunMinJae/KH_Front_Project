@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/khfp/m_tv/mTv2.css?after">
+<link rel="stylesheet" href="/khfp/m_tv/mTv2.css?after?after">
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
-	/* 실시간 업슬라이드 */
+	/* #1 실시간 업슬라이드 */
 	var $slider_list = $("#slider li")
 	
 	//#sliderbox의 높이 만큼 top조절
@@ -24,8 +24,6 @@ $(document).ready(function() {
 		var nextSlide = curSlide + 1;
 		nextSlide %= $slider_list.length;
 		
-// 		console.log( curSlide, ":", nextSlide )
-		
 		$slider_list.eq( curSlide ).animate({ "top": "-="+$("#sliderbox").css("height") })
 		
 		$slider_list.eq( nextSlide ).css("top", $("#sliderbox").css("height"))
@@ -39,54 +37,56 @@ $(document).ready(function() {
 	
 	setInterval( slideOn, 3000 )
 	/* 실시간 업슬라이드 End */
+	
+	/* #2-1 우측 매거진 좌우버튼 */
+	$("#left_button").click( left_click )
+	$("#right_button").click( right_click )
+	/* 우측 매거진 좌우버튼 End */
 })
-</script>
 
-<script type="text/javascript">
-$(document).ready(function() {
+/* #2-2 우측 매거진 좌우버튼 */
+function left_click() {
 	
-	/* 우측 매거진 클릭 이벤트 */
-	var $mg_list = $("#mg_slider a")
+	var $button = $("#left_button")
+	nextImg( $button )
+}
+
+function right_click() {
 	
-	$mg_list.css("left", $("#mg_banner").css("width"))
+	var $button = $("#right_button")
+	nextImg( $button )
+}
+
+//버튼 기능 함수
+var count = 0;
+function nextImg( button ) {
+	var $mg_img = $("#mg_img")
 	
-	$mg_list.eq(0).css("left", 0)
+	if(button.selector == "#right_button") {
+		button.click = count--;
+	} else {
+		button.click = count++;
+	}
 	
-	var curSlide = 0;
+	if(count == -1) {
+		count = 2;
+	} else if(count == -2) {
+		count = 1;
+	}
 	
-	$("#left_button").click(function() {
-		
-		//다음에 보여지는 슬라이드의 인덱스
-		var nextSlide = curSlide + 1;
-		nextSlide %= $mg_list.length;
-		
-		console.log( curSlide, ":", nextSlide )
-		
-		$mg_list.eq( curSlide ).css("left", $("#mg_banner").css("width"))
-		$mg_list.eq( nextSlide ).css("left", 0)
-		
-		//증가식
-		curSlide++;
-		curSlide %= $mg_list.length;
-		
-	})
+	console.log( count )
 	
-	$("#right_button").click(function() {
-		
-		nextSlide = curSlide - 1;
-		curSlide = (curSlide+1)%3;
-		nextSlide %= $mg_list.length;
-		
-		console.log( curSlide, ":", nextSlide )
-		
-		$mg_list.eq( curSlide ).css("left", $("#mg_banner").css("width"))
-		$mg_list.eq( nextSlide ).css("left", 0)
-		
-		//증가식
-		curSlide++;
-	})
-	
-})
+	if(count==0) {
+		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg")
+	} else if(count==1) {
+		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png")
+	} else {
+		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg")
+		count = -1
+	}
+}
+/* 우측 매거진 좌우버튼 End */
+
 </script>
 
 </head>
@@ -335,12 +335,12 @@ $(document).ready(function() {
 					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
 						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg">
 					</a>
-					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
-						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png">
-					</a>
-					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
-						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg">
-					</a>
+<!-- 					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885"> -->
+<!-- 						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png"> -->
+<!-- 					</a> -->
+<!-- 					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885"> -->
+<!-- 						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg"> -->
+<!-- 					</a> -->
 				</div>
 				<div id="mg_button">
 					<input type="button" id="left_button" title="이전 이벤트 보기">
