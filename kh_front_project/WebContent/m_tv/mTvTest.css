@@ -727,22 +727,218 @@ div#mg_banner a img {
 }
 
 /* content */
+#cont_wrap {
+	margin: 0 auto;
+	background: 0;
+}
 #conts_section {
 	position: relative;
 	width: 1008px;
-	height: 1758px;
 	margin: 0 auto;
 	padding: 0 20px;
 }
-#conts_section p {
-	color: gray;
+#conts.cont_type {
+	padding-bottom: 0;
+	position: relative;
+	display: block;
+	width: 1008px;
+	min-height: 800px;
+	padding: 29px 0 88px;
+	font-family: "맑은 고딕","Malgun Gothic","돋움",Dotum,"Apple Gothic",sans-serif;
+}
+#conts .f_tit {
+	width: 1008px;
+	padding-bottom: 9px;
+	border-bottom: 2px solid #808080;
+	margin: 7px 0 8px;
+	height: 22px;
+}
+#conts .f_tit .today {
+	float: left;
+	margin: 0;
+	width: 160px;
+	height: 22px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/tv/bg_sprite_title.png")
+					no-repeat 0 0;
+ 	background-position: 0 -8px;
+}
+#conts .f_tit p {
+	float: left;
+	width: 417px;
+	height: 11px;
+	margin-top: 10px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/tv/bg_sprite_title.png")
+					no-repeat 0 0;
+	background-position: -200px -18px;
+}
+div.s_tit {
+	padding: 10px 0 15px;
+	height: 17px;
+}
+div.s_tit .hotissue {
+	float: left;
+	width: 64px;
+	height: 17px;
+	margin: 0;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/tv/bg_sprite_title.png")
+					no-repeat 0 0;
+	background-position: 0 -193px;
+}
+div.tv_main {
+	position: relative;
+}
+div.hot_issue {
+	height: 496.500px;
+	margin: 0;
+	border: 1px solid #e1e1e1;
+	background: #f5f5f5;
+	padding: 16px 16px 11px 16px;
+}
+div.hot_issue .wrap_hot {
+	position: relative;
+}
+div.hot_issue .wrap_hot .d_video {
+	margin: 0 -16px 0 0;
+	padding: 0;
+	display: block;
+	list-style: none;
+}
+div.hot_issue .wrap_hot .d_video li {
+	float: left;
+	width: 314px;
+	margin-right: 16px;
+	list-style: none;
+}
+.d_video li a {
+	display: block;
+	position: relative;
+	width: 314px;
+	height: 171px;
+	text-decoration: none;
+}
+.d_video li a img {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 314px;
+	height: 171px;
+}
+.d_video li a span.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 314px;
+	height: 171px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/tv/tv_bg_thum_frame.png")
+					no-repeat -320px -232px;
+	cursor: pointer;
+}
+.d_video li a span.playtime {
+	display: block;
+	position: absolute;
+	bottom: 6px;
+	right: 6px;
+	margin-left: 24px;
+	height: 16px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/common/bg_playtime.png")
+					no-repeat right 0;
+}
+.d_video li a span.playtime .time {
+	display: block;
+	position: relative;
+	top: 0;
+	left: -24px;
+	height: 16px;
+	margin-right: -19px;
+	padding-left: 22px;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/common/bg_playtime.png")
+					no-repeat 0 0;
+	color: #fff;
+	font-size: 11px;
+	line-height: 16px;
+    font-family: Arial;
+    letter-spacing: 1px;
+}
+.d_video li dl {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 314px; /* 임시 */
+	height: 77px;
 }
 
-/* footer */
-#footer {	width: 100%; }
 
+
+/* footer */
+#footer {
+	width: 100%;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/common/bg_footer_210109.jpg")
+					repeat-x;
+}
 #footer .footer_cont {
 	width: 1008px;
 	height: 204px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
+/* div.footer_menu { */
+/* } */
+div.footer_menu .fl_right {
+	float: right;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+	overflow: hidden;
+}
+div.footer_menu .fl_right li {
+	float: left;
+	position: relative;
+	margin-left: 22px;
+}
+div.footer_menu .fl_right li a {
+	width: 99px;
+	height: 19px;
+	display: inline-block;
+	padding: 18px 0 15px;
+	cursor: pointer;
+}
+div.footer_menu .fl_right li a span {
+	display: block;
+	background: url("https://cdnimg.melon.co.kr/resource/image/web/common/footer_menu_210109.png")
+					no-repeat;
+}
+div.footer_menu .fl_right li a #flr1 {
+	width: 99px;
+	height: 19px;
+ 	background-position: -843px 0;
+}
+div.footer_menu .fl_right li a #flr2 {
+	width: 99px;
+	height: 19px;
+ 	background-position: -948px 0;
+}
+div.footer_menu .fl_right li a #flr3 {
+	width: 99px;
+	height: 19px;
+ 	background-position: -515px 0;
+}
+div.footer_menu .fl_right li a #flr4 {
+	width: 99px;
+	height: 19px;
+ 	background-position: -627px 0;
+}
+div.footer_menu .fl_right li a #flr5 {
+	width: 99px;
+	height: 19px;
+ 	background-position: -708px 0;
+}
+div.footer_menu .fl_right li a #flr6 {
+	width: 99px;
+	height: 19px;
+ 	background-position: -461px 0;
+}
+
+
+
+

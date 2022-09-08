@@ -102,7 +102,7 @@ $(document).ready(function() {
 	}
 	/* End of hiddenEvent Function */
 	
-	/* 검색창 클릭시 placeholder 제거 */
+	/* 검색창 클릭시 placeholder 제거 */ 
 	var $top_search = $("#top_search")
 	
 	$top_search.click(function() {
@@ -443,12 +443,6 @@ function hiddenLine(idx) {
 					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
 						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg">
 					</a>
-<!-- 					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885"> -->
-<!-- 						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png"> -->
-<!-- 					</a> -->
-<!-- 					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885"> -->
-<!-- 						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg"> -->
-<!-- 					</a> -->
 				</div>
 				<div id="mg_button">
 					<input type="button" id="left_button" title="이전 이벤트 보기">
@@ -519,14 +513,114 @@ function hiddenLine(idx) {
 
 <div id="cont_wrap" class="clfix"> <!-- clfix : clearfix -->
 	<div id="conts_section" class="my_fold">
-		<p>test</p>
+		<div id="conts" class="cont_type">
+			<div class="f_tit">
+				<h2 class="today">
+					<span title="오늘은 뭘 볼까"></span>
+				</h2>
+				<p class="info_txt"></p>
+			</div>
+			<div class="s_tit">
+				<h3 class="hotissue">
+					<span title="핫이슈"></span>
+				</h3>
+			</div>
+			<div class="tv_main">
+				<div class="hot_issue">
+					<div class="wrap_hot">
+						<ul class="d_video" style="display: block;">
+							<li class="f_child">
+								<a href="https://www.melon.com/video/detail2.htm?mvId=50253778&menuId=60010101">
+									<span class="back"></span>
+									<span class="playtime">
+										<span class="time">03:17</span>
+									</span>
+									<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/778/50253778_20220906165104_640.jpg/melon/resize/480/quality/80/optimize">
+								</a>
+								<dl>
+									<dt></dt>
+									<dd></dd>
+									<dd></dd>
+								</dl>
+							</li>
+							<li class="s_child">
+								<a href="https://www.melon.com/video/detail2.htm?mvId=50253734&menuId=60010101">
+									<span class="back"></span>
+									<span class="playtime">
+										<span class="time">03:19</span>
+									</span>
+									<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/734/50253734_20220905164244_640.jpg/melon/resize/480/quality/80/optimize">
+								</a>
+								<dl>
+									<dt></dt>
+									<dd></dd>
+									<dd></dd>
+								</dl>
+							</li>
+							<li class="t_child">
+								<a href="https://www.melon.com/video/detail2.htm?mvId=50253589&menuId=60010101">
+									<span class="back"></span>
+									<span class="playtime">
+										<span class="time">05:33</span>
+									</span>
+									<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/589/50253589_20220831155327_640.jpg/melon/resize/480/quality/80/optimize">
+								</a>
+								<dl>
+									<dt></dt>
+									<dd></dd>
+									<dd></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="cont_area">
+			
+			</div>
+		</div>
 	</div>
 </div>
 
 <!-- footer -->
 <div id="footer" class="my_fold">
 	<div class="footer_cont">
-	
+		<div class="footer_menu">
+			<ul class="fl_right">
+				<li>
+					<a href="https://www.melon.com/m6/campaign.htm">
+						<span id="flr1" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li>
+					<a href="https://studio.melon.com/">
+						<span id="flr2" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.melon.com/customer/serviceintro/index.htm">
+						<span id="flr3" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.melon.com/customer/serviceintro/multi_pc_web.htm">
+						<span id="flr4" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.melon.com/customer/serviceintro/ipad.htm">
+						<span id="flr5" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li>
+					<a href="https://faqs2.melon.com/customer/index.htm">
+						<span id="flr6" class="footer_menu_img"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer_policy">
+		</div>
 	</div>
 </div>
 <!-- //footer -->
