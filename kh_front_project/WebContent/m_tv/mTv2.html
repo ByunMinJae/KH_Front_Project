@@ -36,12 +36,31 @@ $(document).ready(function() {
 	}
 	
 	setInterval( slideOn, 3000 )
-	/* 실시간 업슬라이드 End */
+	/* End of 실시간 업슬라이드 */
 	
 	/* #2-1 우측 매거진 좌우버튼 */
 	$("#left_button").click( left_click )
 	$("#right_button").click( right_click )
-	/* 우측 매거진 좌우버튼 End */
+	/* End of #2-1 우측 매거진 좌우버튼 */
+	
+	/* #3-1 네비 이벤트 */
+	navHover(0, 0)
+	navHover(1, "-87px")
+	navHover(2, "-174px")
+	navHover(3, "-261px")
+// 	navHover(4, "-336px") mTv쪽은 페이지 열린 상태이므로 적용 안 함
+	navHover(5,"-413px")
+	navHover(6, "-513px")
+	navHover(7,"-583px")
+	navHover(8, "-684px")
+	/* End of #3-1 네비 이벤트 */
+	
+	/* #4-1 서브 네비 이벤트 */
+	subHover(1, "-102px")
+	subHover(2, "-193px")
+	subHover(3, "-301px")
+	subHover(4, "-438px")
+	/* End of #4-2 서브 네비 이벤트 */
 })
 
 /* #2-2 우측 매거진 좌우버튼 */
@@ -85,7 +104,33 @@ function nextImg( button ) {
 		count = -1
 	}
 }
-/* 우측 매거진 좌우버튼 End */
+/* End of #2-2 우측 매거진 좌우버튼 */
+
+/* #3-2 네비 이벤트 */
+ function navHover(idx, height) {
+	var $ons = $(".ons")
+	
+	$ons.eq(idx).mouseover(function() {
+		$ons.eq(idx).css("background-position", height + " -70px")
+	})
+	$ons.eq(idx).mouseout(function() {
+		$ons.eq(idx).css("background-position", height + " 0")
+	})
+}
+/* End of #3-2 네비 이벤트 */
+
+/* #4-2 서브 네비 이벤트 */
+function subHover(idx, height) {
+	var $suba = $(".suba")
+	
+	$suba.eq(idx).mouseover(function() {
+		$suba.eq(idx).css("background", "url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -349px")
+	})
+	$suba.eq(idx).mouseout(function() {
+		$suba.eq(idx).css("background", "url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -309px")
+	}) 
+}
+/* End of #4-2 서브 네비 이벤트 */
 
 </script>
 
