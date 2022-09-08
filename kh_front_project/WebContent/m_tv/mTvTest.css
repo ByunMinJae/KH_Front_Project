@@ -452,9 +452,8 @@ div.realtime:hover div.rollingBar {
 	float: right;
 	width: 280px;
 	height: 75px;
-	margin: 22px 0;
-/* 	overflow: hidden; */
-	overflow: visible;
+	margin: 24px 0;
+ 	overflow: hidden;
 }
 #mg_slider {
 	padding: 0;
@@ -471,8 +470,9 @@ div#mg_banner a img {
 }
 /* 메거진 버튼 */
 #mg_button {
-	position: absolute;
+	position: relative;
 	top: 47px;
+	left: 242px;
 	right: 0;
 }
 #left_button {
@@ -735,7 +735,7 @@ div#mg_banner a img {
 	padding: 0 20px;
 }
 #conts_section p {
-	color: blue;
+	color: gray;
 }
 
 /* footer */

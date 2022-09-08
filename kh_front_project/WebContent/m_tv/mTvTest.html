@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/khfp/m_tv/mTv2.css?after?after">
+<link rel="stylesheet" href="/khfp/m_tv/mTvTest.css">
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
-	/* #1 실시간 업슬라이드 */
+	/* 실시간 업슬라이드 */
 	var $slider_list = $("#slider li")
 	
 	//#sliderbox의 높이 만큼 top조절
@@ -35,15 +35,19 @@ $(document).ready(function() {
 		
 	}
 	
-	setInterval( slideOn, 3000 )
+	var tid = setInterval( slideOn, 3000 )
+	
+	/* 마우스 오버아웃시 hidden에 하이라이트 & tid 초기화 */
+	hiddenEvent()
+	
 	/* End of 실시간 업슬라이드 */
 	
-	/* #2-1 우측 매거진 좌우버튼 */
+	/* 우측 매거진 좌우버튼 */
 	$("#left_button").click( left_click )
 	$("#right_button").click( right_click )
-	/* End of #2-1 우측 매거진 좌우버튼 */
+	/* End of 우측 매거진 좌우버튼 */
 	
-	/* #3-1 네비 이벤트 */
+	/* 네비 이벤트 */
 	navHover(0, 0)
 	navHover(1, "-87px")
 	navHover(2, "-174px")
@@ -53,17 +57,54 @@ $(document).ready(function() {
 	navHover(6, "-513px")
 	navHover(7,"-583px")
 	navHover(8, "-684px")
-	/* End of #3-1 네비 이벤트 */
+	/* End of 네비 이벤트 */
 	
-	/* #4-1 서브 네비 이벤트 */
+	/* 서브 네비 이벤트 */
 	subHover(1, "-102px")
 	subHover(2, "-193px")
 	subHover(3, "-301px")
 	subHover(4, "-438px")
-	/* End of #4-2 서브 네비 이벤트 */
-})
+	/* End of 서브 네비 이벤트 */
+	
+	/* hiddenBox underline */
+	hiddenLine(0)
+	hiddenLine(1)
+	hiddenLine(2)
+	hiddenLine(3)
+	hiddenLine(4)
+	hiddenLine(5)
+	hiddenLine(6)
+	hiddenLine(7)
+	hiddenLine(8)
+	hiddenLine(9)
+	/* End of hiddenBox underline */
+	
+	/* hiddenEvent Function */
+	function hiddenEvent() {
+		
+		$(".hidden").mouseover(function() {
+			clearInterval( tid )
+			subHE("underline", "bold")
+		})
+		$(".hidden").mouseout(function() {
+			tid = setInterval( slideOn, 3000 )
+			subHE("none","normal")
+		})
+		
+	}
+	
+	function subHE(textDec, fontWei) {
+		var $curSong = $(".songline")
+		$curSong.eq(curSlide).css({
+			"text-decoration": textDec
+			,"font-weight": fontWei
+		})
+	}
+	/* End of hiddenEvent Function */
+	
+})// End of ready
 
-/* #2-2 우측 매거진 좌우버튼 */
+/* 우측 매거진 좌우버튼 */
 function left_click() {
 	
 	var $button = $("#left_button")
@@ -98,15 +139,15 @@ function nextImg( button ) {
 	if(count==0) {
 		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg")
 	} else if(count==1) {
-		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png")
+		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220906051324.png")
 	} else {
 		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg")
 		count = -1
 	}
 }
-/* End of #2-2 우측 매거진 좌우버튼 */
+/* End of 우측 매거진 좌우버튼 */
 
-/* #3-2 네비 이벤트 */
+/* 네비 이벤트 */
  function navHover(idx, height) {
 	var $ons = $(".ons")
 	
@@ -117,9 +158,9 @@ function nextImg( button ) {
 		$ons.eq(idx).css("background-position", height + " 0")
 	})
 }
-/* End of #3-2 네비 이벤트 */
+/* End of 네비 이벤트 */
 
-/* #4-2 서브 네비 이벤트 */
+/* 서브 네비 이벤트 */
 function subHover(idx, height) {
 	var $suba = $(".suba")
 	
@@ -130,7 +171,22 @@ function subHover(idx, height) {
 		$suba.eq(idx).css("background", "url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -309px")
 	}) 
 }
-/* End of #4-2 서브 네비 이벤트 */
+/* End of 서브 네비 이벤트 */
+
+/* hiddenBox underline */
+function hiddenLine(idx) {
+	var $songline = $(".songline")
+	
+	$songline.eq(idx).mouseover(function() {
+		$songline.eq(idx).css("text-decoration", "underline")
+	})
+	$songline.eq(idx).mouseout(function() {
+		$songline.eq(idx).css("text-decoration", "none")
+	})
+} 
+/* End of hiddenBox underline */
+
+
 
 </script>
 
@@ -207,10 +263,10 @@ function subHover(idx, height) {
 					<ul id="slider">
 						<li>
 							<strong id="num" class="num" style="color: #e55e4a">1.</strong>
-							<a id="name" href="" class="songName">상어가족</a>
+							<a id="name" href="" class="songName">IVE (아이브)</a>
 							<span class="viwes">
 								<span class="icon" class="icon"></span>
-								<span class="viwesNum" class="viwesNum">14</span>
+								<span class="viwesNum" class="viwesNum">124</span>
 							</span>
 						</li>
 						<li>
@@ -218,7 +274,7 @@ function subHover(idx, height) {
 							<a href="" class="songName">신호등</a>
 							<span class="viwes">
 								<span class="icon"></span>
-								<span class="viwesNum">8</span>
+								<span class="viwesNum">234</span>
 							</span>
 						</li>
 						<li>
@@ -292,23 +348,23 @@ function subHover(idx, height) {
 						<ul>
 							<li>
 								<strong class="num">1</strong>
-								<a href="" class="songName">상어가족</a>
+								<a href="" class="songName songline">IVE (아이브)</a>
 								<span class="viwes">
 									<span class="icon"></span>
-									<span class="viwesNum">14</span>
+									<span class="viwesNum">124</span>
 								</span>
 							</li>
 							<li>
 								<strong class="num">2</strong>
-								<a href="" class="songName">신호등</a>
+								<a href="" class="songName songline">신호등</a>
 								<span class="viwes">
 									<span class="icon"></span>
-									<span class="viwesNum">8</span>
+									<span class="viwesNum">234</span>
 								</span>
 							</li>
 							<li>
 								<strong class="num">3</strong>
-								<a href="" class="songName">김범수</a>
+								<a href="" class="songName songline">김범수</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">7</span>
@@ -316,7 +372,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">4</strong>
-								<a href="" class="songName">다시 사랑이</a>
+								<a href="" class="songName songline">다시 사랑이</a>
 								<span class="viwes">
 									<span class="icon newIcon"></span>
 									<span class="viwesNum"></span>
@@ -324,7 +380,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">5</strong>
-								<a href="" class="songName">해요</a>
+								<a href="" class="songName songline">해요</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">28</span>
@@ -332,7 +388,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">6</strong>
-								<a href="" class="songName">미아</a>
+								<a href="" class="songName songline">미아</a>
 								<span class="viwes">
 									<span class="icon newIcon"></span>
 									<span class="viwesNum"></span>
@@ -340,7 +396,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">7</strong>
-								<a href="" class="songName">너의 모든 순간</a>
+								<a href="" class="songName songline">너의 모든 순간</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">205</span>
@@ -348,7 +404,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">8</strong>
-								<a href="" class="songName">김필</a>
+								<a href="" class="songName songline">김필</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">26</span>
@@ -356,7 +412,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">9</strong>
-								<a href="" class="songName">검정치마</a>
+								<a href="" class="songName songline">검정치마</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">157</span>
@@ -364,7 +420,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">10</strong>
-								<a href="" class="songName">Tomboy</a>
+								<a href="" class="songName songline">Tomboy</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">108</span>
