@@ -4,19 +4,20 @@
 <meta charset="UTF-8">
 <title>멜론차트</title>
 
+
 <style type="text/css">
 #header{
 	position: relative;
-	width: 105%;
 	height:242px;
 	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/gnb_menu_repeat.jpg);
+	width: 100%;
 	background-repeat: repeat-x;
 	z-index: 20;
 	margin: -16px -8px -51px;
 }
  #header_content{ 
- 	width: 1046px; 
- 	padding: 0px; 
+ 	width: 1008px; 
+ 	padding: 0 20px; 
  	margin: 0px auto;
  	height: 38px;
  } 
@@ -506,7 +507,7 @@ div.banner_btn>a.banner_next_btn:hover{
  	float: left; 
  	position: relative; 
  	left: -190px; 
- 	top: -174px; 
+ 	top: -191px; 
  	padding: 0;
  	margin: 0;
  	list-style-type: none; 
@@ -651,7 +652,7 @@ div.banner_btn>a.banner_next_btn:hover{
 #mainMenu ul.submenu{
     float: right;
     position: relative;
-    top: -217px;
+    top: -235px;
     list-style-type: none;
     width: 84px;
 	height: 57px;
@@ -796,8 +797,6 @@ ul.first_child span.m2:hover{
     background-position: -50px -38px;
 }
 
-
-
 ul.first_child span.m3{
 	display: block;
     background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_20210720.png);
@@ -813,6 +812,7 @@ ul.first_child span.m3{
     background-size: 1335px;
     background-position: -104px 1px;
 }
+
 ul.first_child span.m3:hover{
     left: -7px;
     top: 2px;
@@ -834,6 +834,7 @@ ul.first_child span.m4{
     background-position: -156px 1px;
     background-size: 1335px;
 }
+
 ul.first_child span.m4:hover{
     left: -7px;
     top: 2px;
@@ -855,6 +856,7 @@ ul.first_child span.m5{
     background-position: -200px 1px;
     background-size: 1335px;
 }
+
 ul.first_child span.m5:hover{
 
     left: -7px;
@@ -862,16 +864,16 @@ ul.first_child span.m5:hover{
     background-position: -200px -38px;
 }
 
-
 .chart_finder>button.btn_finder{
     position: relative;
-    right: -903px;
-    top: 0px;
+    right: -920px;
+    top: -9px;
     appearance: none;
     border: none;
     background: transparent;
     display: inline-block;
 }
+
 .chart_finder>button.btn_finder span.on_finder{
 	position: relative;
     background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png);
@@ -881,10 +883,11 @@ ul.first_child span.m5:hover{
     height: 34px;
     text-indent: -9999px;
     background-position: 10px -469px;
-    top: -7px;
-    right: -44px;
+    top: -1px;
+    right: -6px;
 
 }
+
 .chart_finder>button.btn_finder span.on_finder:hover{
     background-position: 10px -509px;
     top: -7px;
@@ -892,9 +895,207 @@ ul.first_child span.m5:hover{
     cursor: pointer;
 
 }
+#cont_wrap {
+	margin: 0 auto;
+	background: 0;
+}
+
+#contens_section{
+
+	position : relative;
+	width: 1008px;
+	margin: 0 auto;
+	padding: 0 20px;	
+	top:53px;
+}
+#conts{
+	position: relative;
+	z-index: 10;
+	display: block;
+	width: 1008px;
+	min-height: 800px;
+	padding: 29px 0 88px;
+	font-family:"맑은 고딕","Malgun Gothic","돋움",Dotum,"Apple Gothic",sans-serif;
+	zoom:1;
+
+}
+
+.page_header{
+	position: relative;
+	margin-bottom: 8px;
+	height: 40px;
+}
+.page_header:after{
+
+	content:'';
+	display: block;
+	clear:both;
+}
+#conts h2{
+	margin-top: 0 !important;
+	letter-spacing: -1px;
+	font-weight: normal;
+}
+
+.page_header h2.title{
+	float:left;
+	position:relative;
+	height: 40px;
+	line-height: 40px;
+	font-size: 26px;
+	font-family:"맑은 고딕","Malgun Gothic",sans-serif;
+	color: #2f2f2f;
+	vertical-align: middle;
+	top: -47px;
+
+}
+.page_header .tooltip{
+	float: left;
+	position: relative;
+	top: -47px;
+	margin-left: 6px;
+	margin: 0;
+	padding: 0;
 
 
+}
 
+.button_icons{
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+
+}
+.page_header .tooltip .button_icons.tooltip {
+	position:absolute;
+	top: 10px;
+	left: 13px;
+	width: 24px;
+	height: 24px;
+	display:inline-block;
+	background-position:  -458px -31px;
+	border: none;
+	font-size: 0;
+
+}
+
+.layer_popup{
+	display: none;
+	position: absolute;
+	z-index: 30;
+	
+}
+
+.tooltip:hover .layer_popup{
+	 display: block;
+    height: 80px;
+    width: 801px;
+    border: 1px solid #e5e5e5;
+    color: #969696;
+    background-color: white;
+    font-size: 12px;
+    top: 0px;
+    left: 13px;
+    z-index: 9999;
+}
+
+
+.tooltip .layer_popup>p{
+	letter-spacing: -1px;
+	padding-left: 16px;
+	line-height: 20px;
+}
+
+.layer_popup .button_icons.close{
+	position: absolute;
+    background-position: -482px -25px;
+    width: 17px;
+    height: 25px;
+    font-size: 0;
+    top: 10px;
+    left: 771px;
+    border: none;
+}
+
+.multi_row{
+	position: relative;
+}
+
+.calendar{
+	position: relative;
+	min-height: 34px;
+	text-align: center;
+	z-index: 9;
+	margin-bottom: 32px;
+
+}
+.calendar .year{
+	line-height: 34px;
+	color:#575757;
+	font-size: 26px;
+	vertical-align: middle;
+	font-family: 'Nunito',sans-serif;
+}
+.calendar .hour{
+	padding-left: 5px;
+	color: #00b523;
+	font-size: 26px;
+	vertical-align: middle;
+	font-family: 'Nunito',sans-seri;
+}
+
+.calendar .time_layer{
+	position:relative;
+	display: inline;
+	vertical-align: middle;
+
+}
+
+.button_icons.btnselection{
+	width: 14px;
+	height: 8px;
+	background-position: -284px -71px;
+	font-size: 0;
+	border: none;	
+
+}
+.popup{
+	position: absolute;
+	z-index: 9999;
+
+
+}
+.calendar .time_layer .popup{
+	top: 30px;
+	right:15px;
+
+}
+.popup .time_list{
+	list-style-type: none;
+	left: 515px;
+    position: absolute;
+    display:none;
+	
+}
+.calendar>.btnselection:hover>.popup{
+
+	width: 82px;
+    height: 205px;
+	left: 515px;
+    position: absolute;
+}
+
+.calendar>.btnselection:hover>.popup ul.time_list{
+	
+	border: 1px solid #e5e5e5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    font-size: 12px;
+    left: 515px;
+    position: absolute;
+    overflow-y: auto;
+}
 
 </style>
 
@@ -1151,192 +1352,345 @@ ul.first_child span.m5:hover{
 			</div>
 </div>
 
-content영역
+<!-- content영역 -->
 
-<div>
-<h2>TOP100</h2>
-</div>
-<div>
-<button>물음표</button>
-</div>
-
-<div>
-<span> 2022.08.26</spann>
-<span>14:00</span>
-<button>화살표</button>
-
-</div>
-
-
-<div>
-	<form>
-	셔플듣기 전체 듣기 듣기 담기 다운 FLAC선물 
-	<div>
-		<button>담기</button>
-		<button>전체듣기</button>
-		<button>듣기</button>
-		<button>담기</button>
-		<button>다운</button>
-		<button>FLAC</button>
-		<button>선물</button>
-		
-	</div>
-	<div>
-		<button>새로고침</button>
-	</div>
-	
-	음원 순위*(본문)
-	
-	<table>
-		<thead>
-		<tr>
-		<th>
-			<div>
-			<input type="checkbox">
+<div id="cont_wrap">
+	<div id="contens_section">
+		<div id="conts">
+			<div class="page_header">
+			
+				<h2 class="title">TOP100</h2>
+			
+				<div class="tooltip">
+					<button type="button" class="button_icons tooltip">
+					<span  class=" none">툴팁보기</span>
+					</button>
+					<div class="layer_popup" role="dialog">
+						<p class="desc">
+							최근 24시간 동안의 이용량과 최근 1시간의 이용량을 반영한 차트이며, 이용량은 스트리밍 40%+다운로드 60%를 기준으로 집계, 매 시간 업데이트 됩니다.<br>
+							
+									차트 왜곡을 막기 위해 이용자가 적은 심야와 이른 오전 01시~07시에는 최근 24시간 이용량을 100% 반영한 차트를 발행합니다.<br>
+									
+									반영 비율이 달라지는 01시·08시 차트에는 순위 변화를 제공하지 않습니다.
+								
+							<button type="button" class="button_icons close"> 
+								<span class="close">닫기</span>
+							
+							</button>
+						</p>
+					</div>
+				</div>
 			</div>
-		</th>
+				
+			<div class="muti_row">
+				<div class="calendar">
+					<span class="year">2022.09.09</span>
+					<span class="hour">14:00</span>
+					<div class="time_layer">
+						<button type="button" title="시간선택" class="button_icons btnselection">
+						 <span>시간선택</span>
+						</button>
+					</div>
+					<div class="popup">
+						<div class="box_scroll">
+							<ul class="time_list">
+								<li>
+									<a href="">
+									<span>17:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>16:00</span>
+								</li>
+								<li>
+									<a href="">
+									<span>15:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>14:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>13:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>12:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>11:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>10:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>09:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>08:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>07:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>06:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>05:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>04:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>03:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>02:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>01:00</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+									<span>00:00</span>
+									</a>
+								</li>
+							
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="top3 button_group">
+					<button type="button" id="chart_Refresh">
+					<span class="text">새로고침</span>
+					<span class="button_icons refresh"></span>
+					</button>
+		
+				</div>
+			</div>
+			
 		
 		
-		<th>순위</th>
-		<th>순위등락</th>
-		<th>앨범이미지</th>
-		<th>앨범정보</th>
-		<th>곡 상세 가기</th>
-		<th>곡정보</th>
-		<th>앨범</th>
-		<th>좋아요</th>
-		<th>듣기</th>
-		<th>담기</th>
-		<th>뮤비</th>
-		</tr>
+		<!--버튼 (본문 상단)  -->
 		
-		</thead>
-		
-		<tbody>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-		<!--  1~10 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		11~20		
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 			21~30	 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		31~40 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		41~50	 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		51~60		 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		61~70 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		71~80	 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		81~90 
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-<!-- 		91~100 
-		
-		</tbody>
-	
-	
-	</table>
-	
-	</form>
-	
-
-
+		<div class="tb_list">
+			<form class="service_list song_list"> 
+			<div class="btn_tb top">
+				<button type="button" title="셔플듣기" class="button_rbox">
+					<span class="button_icons shuffle"></span>
+					<span class="cnt">셔플듣기</span>
+				</button>
+				<button type="button" title="전체듣기" class="button_rbox">
+					<span class="button_icons type02 play"></span>
+					<span class="cnt" >전체듣기</span>
+				</button>
+				
+				<button type="button" title="선택된 곡 듣기" class="button_rbox">
+					<span class="button_icons type02 play"></span>
+					<span class="cnt">듣기</span>
+				</button>
+				
+				<button type="button" title="선택된 곡 담기" class="butto_rbox">
+					<span class="button_icons type02 scrap"></span>				
+					<span class="cnt">담기</span>
+				</button> 
+				
+				<button type="button" title="선택된 곡 다운로드" class="button_robx">
+						<span class="button_icons type02 download"></span>
+						<span class="cnt">다운</span>
+				</button>
+				<button type="button" title="선택된 곡 선물하기" class="button_rbox">
+					<span class="button_icons type02 download"></span>
+					<span class="cnt">	FLAC</span>
+				</button>
+				<button type="button" title="선택된 곡 선물하기" class="button_robx">
+					<span class="button_icons type02 gift"></span>
+					<span class="cnt">선물</span>
+				</button>
+				
+			</div>
+			
+			음원 순위*(본문)
+			
+			<table>
+				<thead>
+				<tr>
+				<th>
+					<div>
+					<input type="checkbox">
+					</div>
+				</th>
+				
+				
+				<th>순위</th>
+				<th>순위등락</th>
+				<th>앨범이미지</th>
+				<th>앨범정보</th>
+				<th>곡 상세 가기</th>
+				<th>곡정보</th>
+				<th>앨범</th>
+				<th>좋아요</th>
+				<th>듣기</th>
+				<th>담기</th>
+				<th>뮤비</th>
+				</tr>
+				
+				</thead>
+				
+				<tbody>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!-- 	  1~10  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!--  		11~20		 -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!-- 		21~30	  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!--  		31~40  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!--		41~50	  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!-- 		51~60		  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!-- 		61~70  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!-- 		71~80	  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!-- 		81~90  -->
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+		<!-- 		91~100  -->
+				
+				</tbody>
+			
+			
+			</table>
+			
+			</form>
+		</div>
+	</div>
+	</div>
 </div>
 
 <!-- <hr> -->
-<footer>
+<!-- <footer> -->
 <!-- <div> -->
 <!-- 	<div> -->
 <!-- 	<ul> -->
