@@ -1080,6 +1080,173 @@ div.page_move ul li.f_ch a {
 div.page_move ul li.f_ch a:hover {
 	text-decoration: underline;
 }
+/* 최신영상 섹션 */
+div.tv_ltwrap {
+	padding-bottom: 17px;
+	border-bottom: 1px solid #cecece;
+	margin-top: 16px;
+	height: 905px;
+}
+#d_rel_videos {
+	margin: 0 0 0 -16px;
+	padding: 0;
+	list-style: none;
+	font-weight: normal;
+}
+.vdo_li01 {
+	height: 181px;
+	width: 172px;
+	float: left;
+	margin-left: 15px;
+}
+div.wrap_video01 {
+	width: 172px;
+	height: 161px;
+}
+div.wrap_video01 > a {
+	border: 1px solid rgba(0, 0, 0, 28%);
+    width: 172px;
+}
+div.wrap_video01 a {
+	letter-spacing: -1px;
+	widows: 172px;
+	height: 97px;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	color: #1a1a1a;
+}
+div.wrap_video01 a img {
+	border: 0;
+	width: 172px;
+	height: 97px;
+}
+div.wrap_video01 a .playtime {
+	display: block;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	margin-left: 24px;
+	height: 16px;
+	background: url("//cdnimg.melon.co.kr/resource/image/web/common/bg_playtime.png")
+					no-repeat right 0;
+	font: inherit;
+}
+div.wrap_video01 a .playtime .time {
+	display: block;
+    position: relative;
+    top: 0;
+    left: -24px;
+    height: 16px;
+    margin-right: -19px;
+    padding-left: 23px;
+    background: url(//cdnimg.melon.co.kr/resource/image/web/common/bg_playtime.png) no-repeat 0 0;
+    color: #fff;
+    font-size: 11px;
+    line-height: 16px;
+    font-family: Arial,"Apple Gothic",sans-serif;
+}
+div.wrap_video01 dl {
+	height: 54px;
+}
+div.wrap_video01 dl dt {
+	height: 14px;
+	margin: 10px 0 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    font-family: "Dotum","Apple Gothic",sans-serif;
+}
+div.wrap_video01 dl dt .vdo_title {
+	display: block;
+    width: 100%;
+    height: 14px;
+    white-space: nowrap;
+    color: #333;
+    
+}
+div.wrap_video01 dl dt .vdo_title span {
+	margin: 0;
+    padding: 0;
+    border: 0;
+}
+div.wrap_video01 dl dt .vdo_title span .age_all {
+	display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+div.wrap_video01 dl dt .vdo_title span .age_12 {
+	background-position: -18px 0;
+}
+div.wrap_video01 dl dt .vdo_title span a {
+	margin: 0;
+	padding: 0;
+	width: 153.83px;
+	height: 12px;
+	color: #555;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	display: inline-block;
+    vertical-align: baseline;
+}
+div.wrap_video01 dl .artistname {
+	position: static;
+    height: 14px;
+    margin: 0;
+    padding: 3px 0 0 0;
+}
+div.wrap_video01 dl .artistname .ellipsis {
+	float: left;
+    width: 147px;
+    color: #7aa64d;
+}
+div.wrap_video01 dl .artistname .ellipsis a {
+	color: #79a54c;
+	height: 12px;
+}
+#s_art {
+	top: -11px;
+    right: -31px;
+	position: relative;
+}
+div.wrap_video01 dl .like {
+	position: absolute;
+	margin: 5px 0 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	width: 170px;
+	height: 18px;
+}
+div.wrap_video01 dl .like a{
+	width: 6px;
+	height: 14px;
+	display: inline;
+}
+div.wrap_video01 dl .like .bar {
+	margin: 0 3px;
+    color: #ccc;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 14px;
+    font: inherit;
+    font-family: "Dotum","Apple Gothic",sans-serif;
+}
+div.wrap_video01 dl .like .cnt_view {
+	color: #777;
+    font-size: 12px;
+    line-height: 14px;
+    font: inherit;
+    vertical-align: baseline;
+	font-family: "Dotum","Apple Gothic",sans-serif;
+}
+div.wrap_video01 dl .like .cnt_view span {
+	letter-spacing: -1px;
+}
+
+
 
 /* footer */
 #footer {
