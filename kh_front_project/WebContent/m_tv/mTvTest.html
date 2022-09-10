@@ -109,6 +109,17 @@ $(document).ready(function() {
 		$top_search.attr("placeholder", "")
 	})
 	
+	/* right_date 어제날짜로 설정 */
+	var $right_date = $(".right_date")
+	var $today = new Date();
+	
+	var year = $today.getFullYear();
+	var month = ("0" + ($today.getMonth()+1));
+	var day = ("0" + ($today.getDate()-1));
+	
+	$right_date.html( year + "." + month.slice(-2) + "." + day.slice(-2) + " 일간 기준" )
+	
+	
 })// End of ready
 
 /* 우측 매거진 좌우버튼 */
@@ -727,7 +738,7 @@ function hiddenLine(idx) {
 											<dt>
 												<span class="vdo_title">
 													<span>
-														<span class="age_all"></span>
+<!-- 														<span class="age_all"></span> -->
 														<a href="" title="곧 만나자 - 도리토리 (Teaser) - 페이지 이동">곧 만나자 - 도리토리 (Teaser)</a>
 													</span>
 												</span>
@@ -1422,11 +1433,185 @@ function hiddenLine(idx) {
 						</div>
 					</div>
 					<div id="pageObj">
-					
+						<div class="paginate">
+							<a href="" class="btn_first"></a>
+							<a href="" class="btn_pre"></a>
+							<span class="page_num">
+								<strong>1</strong>
+								<a href="">2</a>							
+								<a href="">3</a>							
+								<a href="">4</a>							
+								<a href="">5</a>							
+								<a href="">6</a>							
+								<a href="">7</a>							
+								<a href="">8</a>							
+								<a href="">9</a>							
+								<a href="">10</a>							
+							</span>
+							<a href="" class="btn_next"></a>
+							<a href="" class="btn_last"></a>
+						</div>
 					</div>
 				</div>
 				<div class="rtcont">
-				
+					<div class="right_wrap">
+						<div class="title_wrap">
+							<h4></h4>
+						</div>
+						<span class="right_date">2022.09.09 일간 기준</span>
+						<ul class="mov_wrap">
+							<!-- 우측 영상1 -->
+							<li class="move_list">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253839&menuId=60010101" title="John Legend - All She Wanna Do (ft. Saweetie) 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/839/50253839_1_20220907182534_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:16</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253839&menuId=60010101" title="John Legend - All She Wanna Do (ft. Saweetie) 재생">John Legend - All She Wanna Do (ft. Saweetie)</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=168255" title="John Legend - 페이지 이동">John Legend</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<em class="bar" style="margin-right: 4px;">|</em>
+										<span class="cnt_view">
+											<span>조회</span>
+											8,847
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상2 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253211&menuId=60010101" title="After LIKE 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/211/50253211_20220822173216_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:01</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253211&menuId=60010101" title="After LIKE 재생">After LIKE</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=3055146" title="IVE (아이브) - 페이지 이동">IVE (아이브)</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											4,702
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상3 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50247948&menuId=60010101" title="LOVE DIVE 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/47/948/50247948_20220405163332_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">02:59</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50247948&menuId=60010101" title="LOVE DIVE 재생">LOVE DIVE</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=3055146" title="IVE (아이브) - 페이지 이동">IVE (아이브)</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											2,575
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상4 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253725&menuId=60010101" title="[Spotlight] 존 레전드(John Legend)에게 무엇이든 물어보세요! 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/725/50253725_4_20220905152908_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">04:08</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis" style="width: 104px; height: 28px; overflow: visible; word-break: break-all; white-space: inherit;">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253725&menuId=60010101" title="[Spotlight] 존 레전드(John Legend)에게 무엇이든 물어보세요! 재생"
+											 style="width: 117px; height: 28px;">[Spotlight] 존 레전드(Joh...</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=168255" title="John Legend - 페이지 이동">John Legend</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											2,328
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상5 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253117&menuId=60010101" title="Pink Venom 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/117/50253117_20220819133728_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:14</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253117&menuId=60010101" title="Pink Venom 재생">Pink Venom</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=995169" title="BLACKPINK - 페이지 이동">BLACKPINK</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											2,029
+										</span>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="program_wrap">
+					
+					</div>
 				</div>
 			</div>
 		</div>

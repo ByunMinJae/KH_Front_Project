@@ -1245,8 +1245,288 @@ div.wrap_video01 dl .like .cnt_view {
 div.wrap_video01 dl .like .cnt_view span {
 	letter-spacing: -1px;
 }
-
-
+/* 페이지 버튼 */
+div#pageObj {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+div.paginate {
+	margin-top: 24px;
+    text-align: center;
+}
+a.btn_first {
+	letter-spacing: -1px;
+	margin-right: -2px;
+	display: inline-block;
+	position: relative;
+	width: 24px;
+	height: 24px;
+	background: url("//cdnimg.melon.co.kr/resource/image/web/common/btn_paginate.png")
+					no-repeat 0 -108px;
+	vertical-align: middle;
+}
+a.btn_first:hover {
+	background-position: 0 -36px;
+}
+a.btn_pre {
+	letter-spacing: -1px;
+	display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/btn_paginate.png")
+    				no-repeat -26px -108px;
+    vertical-align: middle;
+}
+a.btn_pre:hover {
+	background-position: -26px -36px;
+}
+span.page_num {
+	display: inline-block;
+	margin: 0 0 0 2px;
+	color: #666;
+	font-size: 12px;
+    line-height: 1.2em;
+    font-family: "돋움","dotum",sans-serif,"Apple Gothic",sans-serif;
+    vertical-align: middle;
+}
+span.page_num strong {
+	position: relative;
+	display: inline-block;
+	min-width: 10px;
+	padding: 5px 6px 3px;
+	border: 1px solid #80ba00;
+	background-color: #fff;
+	font-weight: bold;
+	color: #80ba00;
+	vertical-align: middle;
+	text-decoration: none;
+}
+span.page_num a {
+	letter-spacing: -1px;
+	position: relative;
+	margin-left: -4px;
+	color: #666;
+    text-indent: 0;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/bg_paginate.png")
+    				no-repeat 0 4px;
+    display: inline-block;
+    padding: 5px 6px 3px;
+    width: auto;
+    height: auto;
+    min-width: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+span.page_num a:hover {
+	color: #80ba00;
+    text-decoration: underline;
+}
+a.btn_next {
+	display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/btn_paginate.png")
+    				no-repeat -84px 0;
+    vertical-align: middle;
+}
+a.btn_next:hover {
+	background-position: -84px -36px;
+}
+a.btn_last {
+	margin-left: -2px;
+	display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/btn_paginate.png")
+    				no-repeat -110px 0;
+    vertical-align: middle;
+}
+a.btn_last:hover {
+	background-position: -110px -36px;
+}
+/* 오른쪽 영역 */
+div {
+	margin: 0;
+    padding: 0;
+    border: 0;
+	font: inherit;
+    vertical-align: baseline;
+}
+div.rtcont {
+	float: right;
+	margin: 0 0 0 32px;
+	width: 224px;
+	padding: 0 0 0 16px;
+}
+.right_wrap {
+	width: 223px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid #e2e6e5;
+}
+.title_wrap {
+	height: 15px;
+}
+.title_wrap h4 {
+	float: left;
+	width: 150px;
+    height: 15px;
+    margin: 0;
+	letter-spacing: -1px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/h4_title.png")
+    				no-repeat 0 -346px;
+}
+span.right_date {
+	font-size: 11px;
+    font-family: "Dotum", "Apple Gothic",sans-serif;
+    color: #999999;
+}
+ul.mov_wrap {
+	clear: left;
+	margin: 0;
+	height: 479px;
+    padding: 0 0 21px 0;
+    width: 240px;
+    list-style: none;
+    font-weight: normal;
+}
+ul.mov_wrap .move_list {
+	position: relative;
+	width: 223px;
+	height: 163px;
+	float: left;
+	min-height: 130px;
+	margin: 12px 15px 0 0;
+}
+.move_list dl {
+	margin: 0;
+}
+.move_list dl dd {
+	margin: 0;
+}
+.move_list dl dd a {
+	width: 223px;
+    height: 125px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+.move_list dl dd a img {
+	margin: 0;
+    padding: 0;
+    font: inherit;
+    vertical-align: baseline;
+    width: 223px;
+    height: 125px;
+}
+.move_list dl dd a .playtime {
+	display: block;
+    position: absolute;
+    
+    bottom: 5px;
+    right: 5px;
+    margin-left: 24px;
+    height: 16px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/bg_playtime.png")
+    				no-repeat right 0;
+}
+.move_list dl dd a .playtime .time {
+	display: block;
+    position: relative;
+    top: 0;
+    left: -24px;
+    height: 16px;
+    letter-spacing: -1px;
+    margin-right: -19px;
+    padding-left: 23px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/bg_playtime.png")
+    				no-repeat 0 0;
+    color: #fff;
+    font-size: 11px;
+    line-height: 16px;
+    font-family: Arial, "Apple Gothic", sans-serif;
+}
+.move_list dl dt {
+	width: 223px;
+    margin: 7px 0 0;
+    height: 14px;
+    max-height: 28px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    font-family: "Dotum", "Apple Gothic", sans-serif;
+    word-break: break-all;
+}
+.move_list dl dt a {
+	text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: normal;
+}
+.move_list dl dt .ellipsis {
+	display: block;
+    height: 14px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: normal;
+    padding-right: 1px;
+}
+.move_list dl dt .ellipsis a {
+	color: #555;
+	font: inherit;
+	letter-spacing: -1px;
+}
+.move_list dl dd.artistname {
+	width: 55.81px;
+	float: left;
+	position: relative;
+	margin-top: 3px;
+	padding: 0 18px 0 0;
+    font-size: 11px;
+    line-height: 14px;
+}
+.move_list dl dd.artistname .ellipsis {
+	width: 52.813px;
+	height: 14px;
+	font-family: "맑은 고딕","Malgun Gothic","돋움",Dotum,"Apple Gothic",sans-serif;
+}
+.move_list dl dd.artistname .ellipsis a {
+	width: 52.813px;
+	height: 14px;
+}
+.move_list dl dd.like {
+	float: left;
+	margin-top: 2px;
+    color: #999;
+    font-size: 12px;
+    line-height: 14px;
+    font-family: "Dotum", "Apple Gothic", sans-serif;
+}
+.move_list dl dd.like span.cnt_view span {
+	letter-spacing: -1px;
+}
+li.mini {
+	margin: 12px 15px 0 0 !important;
+	padding: 0 !important;
+	width: 104px !important;
+	height: 130px !important;
+}
+li.mini dl dd a {
+    top: 0;
+    left: 0;
+    width: 104px;
+    height: 59px;
+}
+li.mini dl dd a img {
+	width: 104px;
+    height: 59px;
+}
 
 /* footer */
 #footer {
