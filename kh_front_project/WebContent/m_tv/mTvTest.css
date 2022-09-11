@@ -1527,6 +1527,114 @@ li.mini dl dd a img {
 	width: 104px;
     height: 59px;
 }
+/* 우측 프로그램 바로가기 */
+div.program_wrap {
+	width: 224px;
+	height: 706px;
+}
+div.title_wrap {
+	height: 15px;
+	color: #666;
+}
+div.program_wrap .title_wrap .title20 {
+	letter-spacing: -1px;
+	float: left;
+    height: 15px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/common/h4_title.png")
+    				no-repeat 0 0;
+    width: 110px;
+    background-position: 0 -585px;
+}
+ul.wrap_rtprogram {
+	margin: 14px 0 0 0;
+    padding: 0;
+    border: 0;
+	list-style: none;
+	font-weight: normal;
+}
+ul.wrap_rtprogram li {
+	line-height: 0;
+}
+ul.wrap_rtprogram li a.btn_program {
+	letter-spacing: -1px;
+	display: block;
+    height: 27px;
+    border-top: 1px solid #5e980d;
+    border-bottom: 1px solid #e5e5e5;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+ul.wrap_rtprogram li a.btn_program:hover .cnt {
+    text-decoration: underline;
+}
+ul.wrap_rtprogram li a.btn_program .add_span {
+	margin-top: 7px;
+    vertical-align: top;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/tv/ico_program.png")
+    				no-repeat 0 0;
+}
+ul.wrap_rtprogram li a.btn_program .cnt {
+	display: inline-block;
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 15px;
+    vertical-align: top;
+    color: #666;
+}
+ul.wrap_rtprogram li a.btn_program .more_rt {
+	margin-top: 11px;
+    vertical-align: top;
+    display: inline-block;
+    width: 4px;
+    height: 7px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/tv/bul_arrow_right.png")
+    				no-repeat 0 0;
+}
+ul.wrap_rtprogram li ul {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    font-weight: normal;
+	padding-bottom: 14px;
+	font: inherit;
+    vertical-align: baseline;
+}
+ul.wrap_rtprogram li ul li {
+	height: 13px;
+    margin-top: 8px;
+    list-style: none;
+    font-weight: normal;
+}
+ul.wrap_rtprogram li ul li a {
+	letter-spacing: -1px;
+	display: inline-block;
+    padding: 0 3px 0 19px;
+    color: #555;
+    font-size: 12px;
+    line-height: 15px;
+    background: url("//cdnimg.melon.co.kr/resource/image/web/tv/bul_dot.png")
+    				no-repeat 9px 5px;
+    max-width: 182px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+    text-decoration: none;
+}
+ul.wrap_rtprogram li ul li a:hover {
+    text-decoration: underline;
+}
 
 /* footer */
 #footer {
