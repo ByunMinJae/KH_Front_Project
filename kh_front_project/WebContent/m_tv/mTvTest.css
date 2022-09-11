@@ -786,9 +786,12 @@ div.s_tit .hotissue {
 }
 div.tv_main {
 	position: relative;
+	height: auto;
+    overflow: hidden;
 }
 div.hot_issue {
-	height: 496.500px;
+	height: auto;
+    overflow: hidden;
 	margin: 0;
 	border: 1px solid #e1e1e1;
 	background: #f5f5f5;
