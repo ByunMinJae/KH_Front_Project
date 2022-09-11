@@ -3,75 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/khfp/m_tv/mTvTest.css">
 
-<link rel="stylesheet" href="/khfp/m_tv/mTv.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
 <script type="text/javascript">
-window.onload = function() {
-	var num = 1
-	function roll() {
+$(document).ready(function() {
+	
+	/* 실시간 업슬라이드 */
+	var $slider_list = $("#slider li")
+	
+	//#sliderbox의 높이 만큼 top조절
+	$slider_list.css("top", $("#sliderbox").css("height"))
+	
+	//첫번째 이미지
+	$slider_list.eq(0).css("top", 0) 
+	
+	var curSlide = 0;
+	function slideOn() {
 		
-		var number = document.getElementById("num")
-		var name = document.getElementById("name")
-		var icon = document.getElementById("icon")
-		var viwesNum = document.getElementById("viwesNum")
+		var nextSlide = curSlide + 1;
+		nextSlide %= $slider_list.length;
 		
-		num++
+		$slider_list.eq( curSlide ).animate({ "top": "-="+$("#sliderbox").css("height") })
 		
-		if(num==1) {
-			number.innerHTML = "1."
-			number.style = "color: #e55e4a"
-			name.innerHTML = "상어가족"
-			viwesNum.innerHTML = "14"
-		} else if(num==2) {
-			number.innerHTML = "2."
-			name.innerHTML = "신호등"
-			viwesNum.innerHTML = "8"
-		} else if(num==3) {
-			number.innerHTML = "3."
-			name.innerHTML = "김범수"
-			viwesNum.innerHTML = "7"
-		} else if(num==4) {
-			number.innerHTML = "4."
-			number.style = "color: #777"
-			name.innerHTML = "다시 사랑이"
-			icon.style = "width: 21px; background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -169px;"
-			viwesNum.innerHTML = ""
-		} else if(num==5) {
-			number.innerHTML = "5."
-			name.innerHTML = "해요"
-			icon.style = "background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -155px;"
-			viwesNum.innerHTML = "28"
-		} else if(num==6){
-			number.innerHTML = "6."
-			name.innerHTML = "미아"
-			icon.style = "width: 21px; background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -169px;"
-			viwesNum.innerHTML = ""
-		} else if(num==7){
-			number.innerHTML = "7."
-			name.innerHTML = "metallica"
-			icon.style = "background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_realtime_search.png) no-repeat 0 -155px;"
-			viwesNum.innerHTML = "205"
-		} else if(num==8){
-			number.innerHTML = "8."
-			name.innerHTML = "김필"
-			viwesNum.innerHTML = "26"
-		} else if(num==9){
-			number.innerHTML = "9."
-			name.innerHTML = "검정치마"
-			viwesNum.innerHTML = "157"
-		} else {
-			number.innerHTML = "10."
-			name.innerHTML = "Tomboy"
-			viwesNum.innerHTML = "108"
-			num = 0
-		}
+		$slider_list.eq( nextSlide ).css("top", $("#sliderbox").css("height"))
+		
+		$slider_list.eq( nextSlide ).animate({ "top": "-="+$("#sliderbox").css("height") })
+		
+		curSlide++;
+		curSlide %= $slider_list.length;
 		
 	}
 	
-	setInterval( roll, 4000 )
+	var tid = setInterval( slideOn, 3000 )
 	
-	//----------------------------------------------------------------
-
+	/* 마우스 오버아웃시 hidden에 하이라이트 & tid 초기화 */
+	hiddenEvent()
+	
+	/* End of 실시간 업슬라이드 */
+	
+	/* 우측 매거진 좌우버튼 */
+	$("#left_button").click( left_click )
+	$("#right_button").click( right_click )
+	/* End of 우측 매거진 좌우버튼 */
+	
+	/* 네비 이벤트 */
 	navHover(0, 0)
 	navHover(1, "-87px")
 	navHover(2, "-174px")
@@ -81,70 +58,179 @@ window.onload = function() {
 	navHover(6, "-513px")
 	navHover(7,"-583px")
 	navHover(8, "-684px")
+	/* End of 네비 이벤트 */
 	
-//----------------------------------------------------------------
-
+	/* 서브 네비 이벤트 */
 	subHover(1, "-102px")
 	subHover(2, "-193px")
 	subHover(3, "-301px")
 	subHover(4, "-438px")
+	/* End of 서브 네비 이벤트 */
+	
+	/* hiddenBox underline */
+	hiddenLine(0)
+	hiddenLine(1)
+	hiddenLine(2)
+	hiddenLine(3)
+	hiddenLine(4)
+	hiddenLine(5)
+	hiddenLine(6)
+	hiddenLine(7)
+	hiddenLine(8)
+	hiddenLine(9)
+	/* End of hiddenBox underline */
+	
+	/* hiddenEvent Function */
+	function hiddenEvent() {
+		
+		$(".hidden").mouseover(function() {
+			clearInterval( tid )
+			subHE("underline", "bold")
+		})
+		$(".hidden").mouseout(function() {
+			tid = setInterval( slideOn, 3000 )
+			subHE("none","normal")
+		})
+		
+	}
+	
+	function subHE(textDec, fontWei) {
+		var $curSong = $(".songline")
+		$curSong.eq(curSlide).css({
+			"text-decoration": textDec
+			,"font-weight": fontWei
+		})
+	}
+	/* End of hiddenEvent Function */
+	
+	/* 검색창 클릭시 placeholder 제거 */ 
+	var $top_search = $("#top_search")
+	
+	$top_search.click(function() {
+		$top_search.attr("placeholder", "")
+	})
+	
+	/* right_date 어제날짜로 설정 */
+	var $right_date = $(".right_date")
+	var $today = new Date();
+	
+	var year = $today.getFullYear();
+	var month = ("0" + ($today.getMonth()+1));
+	var day = ("0" + ($today.getDate()-1));
+	
+	$right_date.html( year + "." + month.slice(-2) + "." + day.slice(-2) + " 일간 기준" )
+	
+	/* footer flr mouseoverEvent */
+	footer_flr(0, "-843px")
+	footer_flr(1, "-948px")
+	footer_flr(2, "-515px")
+	footer_flr(3, "-627px")
+	footer_flr(4, "-708px")
+	footer_flr(5, "-461px")
+	
+	//팝업 클릭시 상단이동 막기
+	$('#pop_up').click(function(e) {
+    	e.preventDefault();
+	});
+	
+})// End of ready
 
+/* 우측 매거진 좌우버튼 */
+function left_click() {
+	
+	var $button = $("#left_button")
+	nextImg( $button )
 }
-//----------------------------------------------------------------
-/* 매거진 클릭 이벤트 */
-function clicked1() {
+
+function right_click() {
 	
-	var button = document.getElementById("left_button")
-	
-	nextImg( button )
-	
+	var $button = $("#right_button")
+	nextImg( $button )
 }
-function clicked2() {
-	
-	var button = document.getElementById("right_button")
-	
-	nextImg( button )
-	
-}
-var count = 0
+
+//버튼 기능 함수
+var count = 0;
 function nextImg( button ) {
-	var img = document.getElementById("img")
+	var $mg_img = $("#mg_img")
 	
-	button.click = count++
+	if(button.selector == "#right_button") {
+		button.click = count--;
+	} else {
+		button.click = count++;
+	}
+	
+	if(count == -1) {
+		count = 2;
+	} else if(count == -2) {
+		count = 1;
+	}
+	
+	console.log( count )
 	
 	if(count==0) {
-		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg"
+		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg")
 	} else if(count==1) {
-		img.src = "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220815075000.png"
+		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220906051324.png")
 	} else {
-		img.src =  "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg"
+		$mg_img.attr("src", "https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035422.jpg")
 		count = -1
 	}
 }
-//----------------------------------------------------------------
+/* End of 우측 매거진 좌우버튼 */
+
 /* 네비 이벤트 */
-function navHover(idx, height) {
-	var ons = document.getElementsByClassName("ons")
+ function navHover(idx, height) {
+	var $ons = $(".ons")
 	
-	ons[idx].onmouseover = function() {
-		ons[idx].style = "background-position: " + height + " -70px;"
-	}
-	ons[idx].onmouseout = function() {
-		ons[idx].style = "background-position: " + height + " 0;"
-	}
+	$ons.eq(idx).mouseover(function() {
+		$ons.eq(idx).css("background-position", height + " -70px")
+	})
+	$ons.eq(idx).mouseout(function() {
+		$ons.eq(idx).css("background-position", height + " 0")
+	})
 }
-//----------------------------------------------------------------
+/* End of 네비 이벤트 */
+
 /* 서브 네비 이벤트 */
 function subHover(idx, height) {
-	var suba =  document.getElementsByClassName("suba")
+	var $suba = $(".suba")
 	
-	suba[idx].onmouseover = function() {
-		suba[idx].style = "background: url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -349px;"
-	}
-	suba[idx].onmouseout = function() {
-		suba[idx].style = "background: url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -309px;"
-	}
+	$suba.eq(idx).mouseover(function() {
+		$suba.eq(idx).css("background", "url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -349px")
+	})
+	$suba.eq(idx).mouseout(function() {
+		$suba.eq(idx).css("background", "url('//cdnimg.melon.co.kr/resource/image/web/common/bg_menu_sub_200521.png') no-repeat " + height + " -309px")
+	}) 
 }
+/* End of 서브 네비 이벤트 */
+
+/* hiddenBox underline */
+function hiddenLine(idx) {
+	var $songline = $(".songline")
+	
+	$songline.eq(idx).mouseover(function() {
+		$songline.eq(idx).css("text-decoration", "underline")
+	})
+	$songline.eq(idx).mouseout(function() {
+		$songline.eq(idx).css("text-decoration", "none")
+	})
+} 
+/* End of hiddenBox underline */
+
+/* footer flr mouseoverEvent */
+function footer_flr(idx, x) {
+	var $fmi = $(".footer_menu_img")
+	
+	$fmi.eq(idx).mouseover(function() {
+		$fmi.eq(idx).css("background-position", x + " -21px")
+	})
+	$fmi.eq(idx).mouseout(function() {
+		$fmi.eq(idx).css("background-position", x + " 0")
+	})
+}
+/* End of footer flr mouseoverEvent */
+ 
+
 </script>
 
 </head>
@@ -216,14 +302,86 @@ function subHover(idx, height) {
 			<div class="realtime">
 				<span class="timeUp"></span>
 				<div></div>
-				<div class="rollingBar">
-					<ul>
+				<div id="sliderbox">
+					<ul id="slider">
 						<li>
 							<strong id="num" class="num" style="color: #e55e4a">1.</strong>
-							<a id="name" href="" class="songName">상어가족</a>
+							<a id="name" href="" class="songName">IVE (아이브)</a>
 							<span class="viwes">
-								<span id="icon" class="icon"></span>
-								<span id="viwesNum" class="viwesNum">14</span>
+								<span class="icon" class="icon"></span>
+								<span class="viwesNum" class="viwesNum">124</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num" style="color: #e55e4a">2.</strong>
+							<a href="" class="songName">신호등</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">234</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num" style="color: #e55e4a">3.</strong>
+							<a href="" class="songName">김범수</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">7</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">4.</strong>
+							<a href="" class="songName">다시 사랑이</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">5.</strong>
+							<a href="" class="songName">해요</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">28</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">6.</strong>
+							<a href="" class="songName">미아</a>
+							<span class="viwes">
+								<span class="icon newIcon"></span>
+								<span class="viwesNum"></span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">7.</strong>
+							<a href="" class="songName">너의 모든 순간</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">205</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">8.</strong>
+							<a href="" class="songName">김필</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">26</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">9.</strong>
+							<a href="" class="songName">검정치마</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">157</span>
+							</span>
+						</li>
+						<li>
+							<strong class="num">10.</strong>
+							<a href="" class="songName">Tomboy</a>
+							<span class="viwes">
+								<span class="icon"></span>
+								<span class="viwesNum">108</span>
 							</span>
 						</li>
 					</ul>
@@ -233,23 +391,23 @@ function subHover(idx, height) {
 						<ul>
 							<li>
 								<strong class="num">1</strong>
-								<a href="" class="songName">상어가족</a>
+								<a href="" class="songName songline">IVE (아이브)</a>
 								<span class="viwes">
 									<span class="icon"></span>
-									<span class="viwesNum">14</span>
+									<span class="viwesNum">124</span>
 								</span>
 							</li>
 							<li>
 								<strong class="num">2</strong>
-								<a href="" class="songName">신호등</a>
+								<a href="" class="songName songline">신호등</a>
 								<span class="viwes">
 									<span class="icon"></span>
-									<span class="viwesNum">8</span>
+									<span class="viwesNum">234</span>
 								</span>
 							</li>
 							<li>
 								<strong class="num">3</strong>
-								<a href="" class="songName">김범수</a>
+								<a href="" class="songName songline">김범수</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">7</span>
@@ -257,7 +415,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">4</strong>
-								<a href="" class="songName">다시 사랑이</a>
+								<a href="" class="songName songline">다시 사랑이</a>
 								<span class="viwes">
 									<span class="icon newIcon"></span>
 									<span class="viwesNum"></span>
@@ -265,7 +423,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">5</strong>
-								<a href="" class="songName">해요</a>
+								<a href="" class="songName songline">해요</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">28</span>
@@ -273,7 +431,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">6</strong>
-								<a href="" class="songName">미아</a>
+								<a href="" class="songName songline">미아</a>
 								<span class="viwes">
 									<span class="icon newIcon"></span>
 									<span class="viwesNum"></span>
@@ -281,7 +439,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">7</strong>
-								<a href="" class="songName">너의 모든 순간</a>
+								<a href="" class="songName songline">너의 모든 순간</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">205</span>
@@ -289,7 +447,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">8</strong>
-								<a href="" class="songName">김필</a>
+								<a href="" class="songName songline">김필</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">26</span>
@@ -297,7 +455,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">9</strong>
-								<a href="" class="songName">검정치마</a>
+								<a href="" class="songName songline">검정치마</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">157</span>
@@ -305,7 +463,7 @@ function subHover(idx, height) {
 							</li>
 							<li>
 								<strong class="num">10</strong>
-								<a href="" class="songName">Tomboy</a>
+								<a href="" class="songName songline">Tomboy</a>
 								<span class="viwes">
 									<span class="icon"></span>
 									<span class="viwesNum">108</span>
@@ -316,13 +474,15 @@ function subHover(idx, height) {
 				</div>
 			</div>
 			<!-- 매거진 -->
-			<div class="mg_banner"> 
-				<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
-					<img id="img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg">
-				</a>
+			<div id="mg_banner"> 
+				<div id="mg_slider">
+					<a href="https://www.melon.com/musicstory/detail.htm?mstorySeq=12885">
+						<img id="mg_img" width="280px" height="75px" alt="" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20220831035337.jpg">
+					</a>
+				</div>
 				<div id="mg_button">
-					<input type="button" id="left_button" title="이전 이벤트 보기" onclick="clicked1()">
-					<input type="button" id="right_button" title="다음 이벤트 보기" onclick="clicked2()">
+					<input type="button" id="left_button" title="이전 이벤트 보기">
+					<input type="button" id="right_button" title="다음 이벤트 보기">
 				</div>
 			</div>
 		</div>
@@ -389,14 +549,1295 @@ function subHover(idx, height) {
 
 <div id="cont_wrap" class="clfix"> <!-- clfix : clearfix -->
 	<div id="conts_section" class="my_fold">
-		<p>test</p>
+		<div id="conts" class="cont_type">
+			<div class="f_tit">
+				<h2 class="today">
+					<span title="오늘은 뭘 볼까"></span>
+				</h2>
+				<p class="info_txt"></p>
+			</div>
+			<div class="s_tit">
+				<h3 class="hotissue">
+					<span title="핫이슈"></span>
+				</h3>
+			</div>
+			<div class="tv_main">
+				<div class="hot_issue">
+					<div class="wrap_hot">
+						<ul class="d_video" style="display: block;">
+							<li class="f_child">
+								<a id="va" href="https://www.melon.com/video/detail2.htm?mvId=50253778&menuId=60010101" title="SURRENDER - 페이지 이동">
+									<span class="back"></span>
+									<span class="playtime">
+										<span class="time">03:17</span>
+									</span>
+									<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/778/50253778_20220906165104_640.jpg/melon/resize/480/quality/80/optimize">
+								</a>
+								<dl>
+									<dt>
+										<span class="vdo_name">
+											<strong>[</strong>
+											<a href="https://www.melon.com/tv/mv/index.htm" title="뮤직비디오 - 페이지 이동">뮤직비디오</a>
+											<strong>]</strong>
+										</span>
+										<span class="vdo_title">
+											<span>
+												<span class="age_all"></span>
+												<a href="" title="SURRENDER - 페이지 이동">SURRENDER</a>
+											</span>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=672288" title="이창섭 - 페이지 이동">이창섭</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<a href="" title="SURRENDER 좋아요">
+											<span class="like_icon"></span>
+											145
+										</a>
+										<em class="bar">|</em>
+										<span class="cnt_view">
+											<span>조회</span>
+											1,334
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<li class="s_child">
+								<a id="va" href="https://www.melon.com/video/detail2.htm?mvId=50253734&menuId=60010101" title="Same Scent - 페이지 이동">
+									<span class="back"></span>
+									<span class="playtime">
+										<span class="time">03:19</span>
+									</span>
+									<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/734/50253734_20220905164244_640.jpg/melon/resize/480/quality/80/optimize">
+								</a>
+								<dl>
+									<dt>
+										<span class="vdo_name">
+											<strong>[</strong>
+											<a href="https://www.melon.com/tv/mv/index.htm" title="뮤직비디오 - 페이지 이동">뮤직비디오</a>
+											<strong>]</strong>
+										</span>
+										<span class="vdo_title">
+											<span>
+												<span class="age_all"></span>
+												<a href="" title="Same Scent - 페이지 이동">Same Scent</a>
+											</span>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=672288" title="원어스 (ONEUS) - 페이지 이동">원어스 (ONEUS)</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<a href="" title="Same Scent 좋아요">
+											<span class="like_icon"></span>
+											68
+										</a>
+										<em class="bar">|</em>
+										<span class="cnt_view">
+											<span>조회</span>
+											1,099
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<li class="t_child">
+								<a id="va" href="https://www.melon.com/video/detail2.htm?mvId=50253589&menuId=60010101" title="B에게 쓰는 편지 - 페이지 이동">
+									<span class="back"></span>
+									<span class="playtime">
+										<span class="time">05:33</span>
+									</span>
+									<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/589/50253589_20220831155327_640.jpg/melon/resize/480/quality/80/optimize">
+								</a>
+								<dl>
+									<dt>
+										<span class="vdo_name">
+											<strong>[</strong>
+											<a href="https://www.melon.com/tv/mv/index.htm" title="뮤직비디오 - 페이지 이동">뮤직비디오</a>
+											<strong>]</strong>
+										</span>
+										<span class="vdo_title">
+											<span>
+												<span class="age_all"></span>
+												<a href="" title="B에게 쓰는 편지 - 페이지 이동">B에게 쓰는 편지</a>
+											</span>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=672288" title="박재정 - 페이지 이동">박재정</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<a href="" title="B에게 쓰는 편지 좋아요">
+											<span class="like_icon"></span>
+											637
+										</a>
+										<em class="bar">|</em>
+										<span class="cnt_view">
+											<span>조회</span>
+											4,191
+										</span>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="cont_area">
+				<div class="ltcont">
+					<div class="s_tit">
+						<h3 class="all_vdo">
+							<span></span>
+						</h3>
+					</div>
+					<div class="page_move">
+						<ul>
+							<li class="f_ch">
+								<a href="" title="최신 영상 - 페이지 이동" class="link_tab">
+									<span class="cntt">최신 영상</span>
+								</a>
+							</li>
+							<li class="l_ch">
+								<a href="" title="인기 영상 - 페이지 이동" class="link_tab">
+									<span class="cntt">인기 영상</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="tv_ltwrap">
+						<div id="pageList">
+							<ul id="d_rel_videos">
+								<!-- #최신영상1 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253844&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/844/50253844_20220908102329_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:47</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all" title="전체 이용가능"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253844&menuId=60010101" title="다시 만나는 날에 (Teaser) - 페이지 이동">[MV]다시 만나는 날에 (Teaser)</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=672809" title="황민현 - 페이지 이동">황민현</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="다시 만나는 날에 (Teaser) 좋아요">
+													<span class="like_icon"></span>
+													6
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													 61
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상2 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253698&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/698/50253698_10_20220904150720_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:24</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+<!-- 														<span class="age_all"></span> -->
+														<a href="" title="곧 만나자 - 도리토리 (Teaser) - 페이지 이동">곧 만나자 - 도리토리 (Teaser)</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/video/detail2.htm?mvId=50253698&menuId=60010101" title="도리토리 - 페이지 이동">도리토리</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="곧 만나자 - 도리토리 (Teaser) 좋아요">
+													<span class="like_icon"></span>
+													10
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													110
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상3 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/784/50253784_20220907102144_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:30</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all age_12"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253784&menuId=60010101" title="KISS YOU (Teaser) - 페이지 이동">[MV]KISS YOU (Teaser)</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=673448" title="라비 (RAVI) - 페이지 이동">라비 (RAVI)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="KISS YOU (Teaser) 좋아요">
+													<span class="like_icon"></span>
+													78
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													38
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상4 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253790&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/790/50253790_1_20220907111659_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">13:25</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253790&menuId=60010101" title="3YE(써드아이) | 하이(HIGH)은 EP 02. 지쳤ㅎ나요? 네 지쳤어요 ㅎ - 페이지 이동">3YE(써드아이) | 하이(HIGH)은 EP 02. 지쳤ㅎ나요? 네 지쳤어요 ㅎ</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=2643867" title="3YE (써드아이) - 페이지 이동">3YE (써드아이)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="3YE(써드아이) | 하이(HIGH)은 EP 02. 지쳤ㅎ나요? 네 지쳤어요 ㅎ 좋아요">
+													<span class="like_icon"></span>
+													62
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													 191
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상5 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253806&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/806/50253806_5_20220907123311_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:21</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+<!-- 														<span class="age_all"></span> -->
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253806&menuId=60010101" title="ONE OK ROCK 앨범 [Luxury Disease] 발매 기념 메시지 - 페이지 이동">ONE OK ROCK 앨범 [Luxury Disease] 발매 기념 메시지</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=551100" title="ONE OK ROCK - 페이지 이동">ONE OK ROCK</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="ONE OK ROCK 앨범 [Luxury Disease] 발매 기념 메시지 좋아요">
+													<span class="like_icon"></span>
+													4
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													 17
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상6 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253857&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/857/50253857_20220908133832_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">04:56</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253857&menuId=60010101" title="I Wish (바람) - 페이지 이동">[MV]I Wish (바람)</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=3048099" title="Teddy_M - 페이지 이동">Teddy_M</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="I Wish (바람) 좋아요">
+													<span class="like_icon"></span>
+													67
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													124
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상7 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253853&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/853/50253853_20220908114643_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">04:13</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253853&menuId=60010101" title="Fire In The Hole - 페이지 이동">[MV]Fire In The Hole</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=3114621" title="딥블루(Deep Blue) - 페이지 이동">딥블루(Deep Blue)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="Fire In The Hole 좋아요">
+													<span class="like_icon"></span>
+													17
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													43
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상8 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253852&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/852/50253852_20220908114221_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:35</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253852&menuId=60010101" title="Fly Away - 페이지 이동">[MV]Fly Away</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=3114621" title="딥블루(Deep Blue) - 페이지 이동">딥블루(Deep Blue)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="Fly Away 좋아요">
+													<span class="like_icon"></span>
+													2
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													46
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상9 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253851&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/851/50253851_20220908113835_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">04:09</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253851&menuId=60010101" title="딥블루(Deep Blue) - 페이지 이동">딥블루(Deep Blue)</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=3114621" title="딥블루(Deep Blue) - 페이지 이동">딥블루(Deep Blue)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="봄비 좋아요">
+													<span class="like_icon"></span>
+													0
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													21
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상10 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253789&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/789/50253789_20220907111505_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:20</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253789&menuId=60010101" title="끝없이 밀려오는 파도처럼 - 페이지 이동">[MV]끝없이 밀려오는 파도처럼</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=2085545" title="마르슬랭 (Marcellin) - 페이지 이동">마르슬랭 (Marcellin)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="끝없이 밀려오는 파도처럼 좋아요">
+													<span class="like_icon"></span>
+													27
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													245
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상11 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253787&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/787/50253787_1_20220907104515_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:54</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253787&menuId=60010101" title="B.I.G(비아이지) - 2022 추석 인사 메시지 - 페이지 이동">B.I.G(비아이지) - 2022 추석 인사 메시지</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=777394" title="비아이지 (B.I.G) - 페이지 이동">비아이지 (B.I.G)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="B.I.G(비아이지) - 2022 추석 인사 메시지 좋아요">
+													<span class="like_icon"></span>
+													81
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													89
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상12 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253786&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/786/50253786_1_20220907103135_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:34</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253786&menuId=60010101" title="3YE(써드아이) - 2022 추석 인사 메시지 - 페이지 이동">3YE(써드아이) - 2022 추석 인사 메시지</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=2643867" title="3YE (써드아이) - 페이지 이동">3YE (써드아이)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="3YE(써드아이) - 2022 추석 인사 메시지 좋아요">
+													<span class="like_icon"></span>
+													6
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													13
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상13 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253725&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/725/50253725_4_20220905152908_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">04:08</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+<!-- 														<span class="age_all"></span> -->
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253725&menuId=60010101" title="[Spotlight] 존 레전드(John Legend)에게 무엇이든 물어보세요! - 페이지 이동">[Spotlight] 존 레전드(John Legend)에게 무엇이든 물어보세요!</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=168255" title="John Legend - 페이지 이동">John Legend</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="[Spotlight] 존 레전드(John Legend)에게 무엇이든 물어보세요! 좋아요">
+													<span class="like_icon"></span>
+													223
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													2,448
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상14 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253723&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/723/50253723_4_20220905152323_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">01:58</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+<!-- 														<span class="age_all"></span> -->
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253723&menuId=60010101" title="B아티스트는 뭘 듣니 'John Legend (존 레전드)' 편 - 페이지 이동">아티스트는 뭘 듣니 'John Legend (존 레전드)' 편</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=168255" title="John Legend - 페이지 이동">John Legend</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="아티스트는 뭘 듣니 'John Legend (존 레전드)' 편 좋아요">
+													<span class="like_icon"></span>
+													7
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													1,242
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상15 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253721&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/721/50253721_1_20220905151142_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:11</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+<!-- 														<span class="age_all"></span> -->
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253721&menuId=60010101" title="[Spotlight] John Legend (존 레전드) [LEGEND] 인사 영상 - 페이지 이동">[Spotlight] John Legend (존 레전드) [LEGEND] 인사 영상</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=168255" title="John Legend - 페이지 이동">John Legend</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="[Spotlight] John Legend (존 레전드) [LEGEND] 인사 영상 좋아요">
+													<span class="like_icon"></span>
+													3
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													661
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상16 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253855&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/855/50253855_1_20220908120537_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">05:38</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+<!-- 														<span class="age_all"></span> -->
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253855&menuId=60010101" title="[W.W.C] 원어스의 내적 댄스 유발하는 전 세계 HIT SONG - 페이지 이동">[W.W.C] 원어스의 내적 댄스 유발하는 전 세계 HIT SONG</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=2298864" title="원어스 (ONEUS) - 페이지 이동">원어스 (ONEUS)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="[W.W.C] 원어스의 내적 댄스 유발하는 전 세계 HIT SONG 좋아요">
+													<span class="like_icon"></span>
+													8
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													107
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상17 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253849&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/849/50253849_20220908112128_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:52</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253849&menuId=60010101" title="머물러 있는 것 또한 아름다울 수 있는 건 - 페이지 이동">[MV]머물러 있는 것 또한 아름다울 수 있는 건</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=2006587" title="SOLE (쏠) - 페이지 이동">SOLE (쏠)</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="머물러 있는 것 또한 아름다울 수 있는 건 좋아요">
+													<span class="like_icon"></span>
+													134
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													430
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상18 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253847&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/847/50253847_20220908105530_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">00:29</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253847&menuId=60010101" title="술이 뭐길래 (Teaser) - 페이지 이동">[MV]술이 뭐길래 (Teaser)</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=227595" title="지아 - 페이지 이동">지아,</a>
+													<a id="s_art" href="https://www.melon.com/artist/timeline.htm?artistId=28801" title="허각 - 페이지 이동"> 허각</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="술이 뭐길래 (Teaser) 좋아요">
+													<span class="like_icon"></span>
+													6
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													387
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상19 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253760&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/760/50253760_20220906140936_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">02:15</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253760&menuId=60010101" title="Cold As Ice - 페이지 이동">[MV]Cold As Ice</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=2915733" title="LAD - 페이지 이동">LAD</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="Cold As Ice 좋아요">
+													<span class="like_icon"></span>
+													12
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													41
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<!-- #최신영상20 -->
+								<li class="vdo_li01">
+									<div class="wrap_video01">
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253819&menuId=60010101">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/819/50253819_20220907152240_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:15</span>
+											</span>
+										</a>
+										<dl>
+											<dt>
+												<span class="vdo_title">
+													<span>
+														<span class="age_all"></span>
+														<a href="https://www.melon.com/video/detail2.htm?mvId=50253819&menuId=60010101" title="내가 뭐라고 - 페이지 이동">[MV]내가 뭐라고</a>
+													</span>
+												</span>
+											</dt>
+											<dd class="artistname">
+												<div class="ellipsis">
+													<a href="https://www.melon.com/artist/timeline.htm?artistId=1384447" title="신현우 - 페이지 이동">신현우 - 페이지 이동</a>
+												</div>
+											</dd>
+											<dd class="like">
+												<a href="" title="내가 뭐라고 좋아요">
+													<span class="like_icon"></span>
+													34
+												</a>
+												<em class="bar">|</em>
+												<span class="cnt_view">
+													<span>조회</span>
+													78
+												</span>
+											</dd>
+										</dl>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="pageObj">
+						<div class="paginate">
+							<a href="" class="btn_first"></a>
+							<a href="" class="btn_pre"></a>
+							<span class="page_num">
+								<strong>1</strong>
+								<a href="">2</a>							
+								<a href="">3</a>							
+								<a href="">4</a>							
+								<a href="">5</a>							
+								<a href="">6</a>							
+								<a href="">7</a>							
+								<a href="">8</a>							
+								<a href="">9</a>							
+								<a href="">10</a>							
+							</span>
+							<a href="" class="btn_next"></a>
+							<a href="" class="btn_last"></a>
+						</div>
+					</div>
+				</div>
+				<div class="rtcont">
+					<div class="right_wrap">
+						<div class="title_wrap">
+							<h4></h4>
+						</div>
+						<span class="right_date">2022.09.09 일간 기준</span>
+						<ul class="mov_wrap">
+							<!-- 우측 영상1 -->
+							<li class="move_list">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253839&menuId=60010101" title="John Legend - All She Wanna Do (ft. Saweetie) 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/839/50253839_1_20220907182534_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:16</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253839&menuId=60010101" title="John Legend - All She Wanna Do (ft. Saweetie) 재생">John Legend - All She Wanna Do (ft. Saweetie)</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=168255" title="John Legend - 페이지 이동">John Legend</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<em class="bar" style="margin-right: 4px;">|</em>
+										<span class="cnt_view">
+											<span>조회</span>
+											8,847
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상2 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253211&menuId=60010101" title="After LIKE 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/211/50253211_20220822173216_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:01</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253211&menuId=60010101" title="After LIKE 재생">After LIKE</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=3055146" title="IVE (아이브) - 페이지 이동">IVE (아이브)</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											4,702
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상3 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50247948&menuId=60010101" title="LOVE DIVE 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/47/948/50247948_20220405163332_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">02:59</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50247948&menuId=60010101" title="LOVE DIVE 재생">LOVE DIVE</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=3055146" title="IVE (아이브) - 페이지 이동">IVE (아이브)</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											2,575
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상4 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253725&menuId=60010101" title="[Spotlight] 존 레전드(John Legend)에게 무엇이든 물어보세요! 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/725/50253725_4_20220905152908_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">04:08</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis" style="width: 104px; height: 28px; overflow: visible; word-break: break-all; white-space: inherit;">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253725&menuId=60010101" title="[Spotlight] 존 레전드(John Legend)에게 무엇이든 물어보세요! 재생"
+											 style="width: 117px; height: 28px;">[Spotlight] 존 레전드(Joh...</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=168255" title="John Legend - 페이지 이동">John Legend</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											2,328
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<!-- 우측 영상5 -->
+							<li class="move_list mini">
+								<dl>
+									<dd>
+										<a href="https://www.melon.com/video/detail2.htm?mvId=50253117&menuId=60010101" title="Pink Venom 재생">
+											<img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/53/117/50253117_20220819133728_640.jpg/melon/resize/240/quality/80/optimize">
+											<span class="playtime">
+												<span class="time">03:14</span>
+											</span>
+										</a>
+									</dd>
+									<dt>
+										<span class="ellipsis">
+											<a href="https://www.melon.com/video/detail2.htm?mvId=50253117&menuId=60010101" title="Pink Venom 재생">Pink Venom</a>
+										</span>
+									</dt>
+									<dd class="artistname">
+										<div class="ellipsis">
+											<a href="https://www.melon.com/artist/timeline.htm?artistId=995169" title="BLACKPINK - 페이지 이동">BLACKPINK</a>
+										</div>
+									</dd>
+									<dd class="like">
+										<span class="cnt_view">
+											<span>조회</span>
+											2,029
+										</span>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="program_wrap">
+						<div class="title_wrap">
+							<h4 class="title20"></h4>
+						</div>
+						<ul class="wrap_rtprogram">
+							<li>
+								<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=0" class="btn_program" title="멜론 오리지널 - 페이지로 이동">
+									<span class="add_span"></span>
+									<strong class="cnt">멜론 오리지널</strong>
+									<span class="more_rt"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=482" title="트랙제로 - 페이지 이동">트랙제로</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=472" title="아이돌등판 - 페이지 이동">아이돌등판</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=471" title="1theKILLPO - 페이지 이동">1theKILLPO</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=473" title="런웨이 (LEARN WAY) - 페이지 이동">런웨이 (LEARN WAY)</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=470" title="The Booth - 페이지 이동">The Booth</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=469" title="멜론뮤직다방 - 페이지 이동">멜론뮤직다방</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=460" title="멜론스테이션 - 페이지 이동">멜론스테이션</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=454" title="오리지널 클립 - 페이지 이동">오리지널 클립</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=450" title="내돌의 온도차 - 페이지 이동">내돌의 온도차</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=452" title="MR은 거들뿐 - 페이지 이동">MR은 거들뿐</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=451" title="수트댄스 - 페이지 이동">수트댄스</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=453" title="본인등판 - 페이지 이동">본인등판</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=357" title="떴다! 더보이즈 - 페이지 이동">떴다! 더보이즈</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=212" title="Special Clip - 페이지 이동">Special Clip</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=1&progSeq=61" title="멜론뮤직어워드 - 페이지 이동">멜론뮤직어워드</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=0" class="btn_program" title="방송 - 페이지로 이동">
+									<span class="add_span"></span>
+									<strong class="cnt">방송</strong>
+									<span class="more_rt"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=481" title="그림자 미녀 - 페이지 이동">그림자 미녀</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=480" title="찐경규 - 페이지 이동">찐경규</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=479" title="톡이나 할까? - 페이지 이동">톡이나 할까?</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=478" title="더듬이TV: 우당탕탕 안테나 - 페이지 이동">더듬이TV: 우당탕탕 안테나</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=477" title="며느라기2…ing - 페이지 이동">며느라기2…ing</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=476" title="며느라기 - 페이지 이동">며느라기</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=475" title="플레이유 - 페이지 이동">플레이유</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=474" title="THE ORIGIN - A, B, Or What? - 페이지 이동">THE ORIGIN - A, B, Or What?</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=3&progSeq=285" title="SBS 인기가요 - 페이지 이동">SBS 인기가요</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=4&progSeq=0" class="btn_program" title="아티스트 업데이트 - 페이지로 이동">
+									<span class="add_span"></span>
+									<strong class="cnt">아티스트 업데이트</strong>
+									<span class="more_rt"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=4&progSeq=41" title="재즈월드 - 페이지 이동">재즈월드</a>
+									</li>
+									<li>
+										<a href="https://www.melon.com/tv/menu/index.htm?menuSeq=4&progSeq=29" title="오프더레코드 - 페이지 이동">오프더레코드</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
 <!-- footer -->
 <div id="footer" class="my_fold">
 	<div class="footer_cont">
-	
+		<div class="footer_menu">
+			<ul class="fl_right">
+				<li style="width: 99px;">
+					<a href="https://www.melon.com/m6/campaign.htm">
+						<span id="flr1" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li style="width: 76px;">
+					<a href="https://studio.melon.com/">
+						<span id="flr2" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li style="width: 107px;">
+					<a href="https://www.melon.com/customer/serviceintro/index.htm">
+						<span id="flr3" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li style="width: 76px;">
+					<a href="https://www.melon.com/customer/serviceintro/multi_pc_web.htm">
+						<span id="flr4" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li style="width: 27px;">
+					<a href="https://www.melon.com/customer/serviceintro/ipad.htm">
+						<span id="flr5" class="footer_menu_img"></span>
+					</a>
+				</li>
+				<li style="width: 49px;">
+					<a href="https://faqs2.melon.com/customer/index.htm">
+						<span id="flr6" class="footer_menu_img"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<ul class="footer_policy">
+			<li class="foot_c1">
+				<a href="https://info.melon.com/terms/web/terms1_1.html" title="이용약관" target="_blank">이용약관</a>
+			</li>
+			<li class="foot_c2">
+				<a href="https://info.melon.com/terms/web/terms1_3.html" title="위치기반서비스 이용약관" target="_blank">
+					<strong>위치기반서비스 이용약관</strong>
+				</a>
+			</li>
+			<li class="foot_c3">
+				<a href="https://info.melon.com/terms/web/terms3.html" title="개인정보처리방침" target="_blank">
+					<strong>개인정보처리방침</strong>
+				</a>
+			</li>
+			<li class="foot_c4">
+				<a href="https://info.melon.com/terms/web/terms5_1.html" title="청소년보호정책" target="_blank">청소년보호정책</a>
+			</li>
+			<li class="foot_c5">
+				<a href="https://faqs2.melon.com/customer/faq/informFaq.htm?no=1&faqId=QUES20140616000001&SEARCH_KEY=&SEARCH_PAR_CATEGORY=CATE20130909000006&SEARCH_CATEGORY=CATE20130909000021" title="제휴/프로모션문의" target="_blank">제휴/프로모션문의</a>
+			</li>
+			<li class="foot_c6">
+				<a onclick="window.open('https://www.melon.com/emailCollectionReject.html', '_blank', 'width=384, height=330');" style="cursor: pointer;" title="이메일주소무단수집거부" id="pop_up">이메일주소무단수집거부</a>
+			</li>
+			<li class="foot_c7">
+				<a href="https://partner.melon.com/partrct/login/web/login_loginProcess.htm?t=s" id="pop_up" title="파트너센터" target="_blank">파트너센터</a>
+			</li>
+		</ul>
+		<p>
+			<span class="fb_first">
+				<strong>(주)카카오엔터테인먼트</strong>
+				&nbsp;&nbsp;경기도 성남시 분당구 판교역로 221
+			</span>
+			<span>대표이사 : 이진수, 김성수</span>
+			<span>사업자등록번호 : 220-88-02594</span>
+			<span>
+				통신판매업신고번호 : 2018-성남분당B-0004
+				<a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208802594" title="사업자정보확인" class="btn_arrow" target="_blank">사업자정보확인</a>
+			</span>
+			<br>
+			<span class="fb_first">문의전화 : 1566-7727 (평일 09:00-18:00, 유료)</span>
+			<span>
+				이메일 : 
+				<a href="mailto:melon_info@kakaoent.com" class="btn_footer_mail">melon_info@kakaoent.com</a>
+			</span>
+			<span>호스팅서비스사업자 : (주)카카오엔터테인먼트</span>
+			<span>
+				<a href="https://kakaoent.com/" class="btn_footer_mail" target="_blank">© Kakao Entertainment Corp.</a>
+			</span>
+		</p>
 	</div>
 </div>
 <!-- //footer -->
