@@ -7,8 +7,15 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+<!-- + jQuery UI 1.13.2 CDN -->
+<script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- + jQuery UI Base Theme CDN -->
+<link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
 <script type="text/javascript">
 $(document).ready(function() {
+	
 	/* 실시간 업슬라이드 */
 	var $slider_list = $("#slider li")
 	
@@ -119,6 +126,18 @@ $(document).ready(function() {
 	
 	$right_date.html( year + "." + month.slice(-2) + "." + day.slice(-2) + " 일간 기준" )
 	
+	/* footer flr mouseoverEvent */
+	footer_flr(0, "-843px")
+	footer_flr(1, "-948px")
+	footer_flr(2, "-515px")
+	footer_flr(3, "-627px")
+	footer_flr(4, "-708px")
+	footer_flr(5, "-461px")
+	
+	//팝업 클릭시 상단이동 막기
+	$('#pop_up').click(function(e) {
+    	e.preventDefault();
+	});
 	
 })// End of ready
 
@@ -204,6 +223,18 @@ function hiddenLine(idx) {
 } 
 /* End of hiddenBox underline */
 
+/* footer flr mouseoverEvent */
+function footer_flr(idx, x) {
+	var $fmi = $(".footer_menu_img")
+	
+	$fmi.eq(idx).mouseover(function() {
+		$fmi.eq(idx).css("background-position", x + " -21px")
+	})
+	$fmi.eq(idx).mouseout(function() {
+		$fmi.eq(idx).css("background-position", x + " 0")
+	})
+}
+/* End of footer flr mouseoverEvent */
 
 
 </script>
@@ -1732,40 +1763,87 @@ function hiddenLine(idx) {
 	<div class="footer_cont">
 		<div class="footer_menu">
 			<ul class="fl_right">
-				<li>
+				<li style="width: 99px;">
 					<a href="https://www.melon.com/m6/campaign.htm">
 						<span id="flr1" class="footer_menu_img"></span>
 					</a>
 				</li>
-				<li>
+				<li style="width: 76px;">
 					<a href="https://studio.melon.com/">
 						<span id="flr2" class="footer_menu_img"></span>
 					</a>
 				</li>
-				<li>
+				<li style="width: 107px;">
 					<a href="https://www.melon.com/customer/serviceintro/index.htm">
 						<span id="flr3" class="footer_menu_img"></span>
 					</a>
 				</li>
-				<li>
+				<li style="width: 76px;">
 					<a href="https://www.melon.com/customer/serviceintro/multi_pc_web.htm">
 						<span id="flr4" class="footer_menu_img"></span>
 					</a>
 				</li>
-				<li>
+				<li style="width: 27px;">
 					<a href="https://www.melon.com/customer/serviceintro/ipad.htm">
 						<span id="flr5" class="footer_menu_img"></span>
 					</a>
 				</li>
-				<li>
+				<li style="width: 49px;">
 					<a href="https://faqs2.melon.com/customer/index.htm">
 						<span id="flr6" class="footer_menu_img"></span>
 					</a>
 				</li>
 			</ul>
 		</div>
-		<div class="footer_policy">
-		</div>
+		<ul class="footer_policy">
+			<li class="foot_c1">
+				<a href="https://info.melon.com/terms/web/terms1_1.html" title="이용약관" target="_blank">이용약관</a>
+			</li>
+			<li class="foot_c2">
+				<a href="https://info.melon.com/terms/web/terms1_3.html" title="위치기반서비스 이용약관" target="_blank">
+					<strong>위치기반서비스 이용약관</strong>
+				</a>
+			</li>
+			<li class="foot_c3">
+				<a href="https://info.melon.com/terms/web/terms3.html" title="개인정보처리방침" target="_blank">
+					<strong>개인정보처리방침</strong>
+				</a>
+			</li>
+			<li class="foot_c4">
+				<a href="https://info.melon.com/terms/web/terms5_1.html" title="청소년보호정책" target="_blank">청소년보호정책</a>
+			</li>
+			<li class="foot_c5">
+				<a href="https://faqs2.melon.com/customer/faq/informFaq.htm?no=1&faqId=QUES20140616000001&SEARCH_KEY=&SEARCH_PAR_CATEGORY=CATE20130909000006&SEARCH_CATEGORY=CATE20130909000021" title="제휴/프로모션문의" target="_blank">제휴/프로모션문의</a>
+			</li>
+			<li class="foot_c6">
+				<a onclick="window.open('https://www.melon.com/emailCollectionReject.html', '_blank', 'width=384, height=330');" style="cursor: pointer;" title="이메일주소무단수집거부" id="pop_up">이메일주소무단수집거부</a>
+			</li>
+			<li class="foot_c7">
+				<a href="https://partner.melon.com/partrct/login/web/login_loginProcess.htm?t=s" id="pop_up" title="파트너센터" target="_blank">파트너센터</a>
+			</li>
+		</ul>
+		<p>
+			<span class="fb_first">
+				<strong>(주)카카오엔터테인먼트</strong>
+				&nbsp;&nbsp;경기도 성남시 분당구 판교역로 221
+			</span>
+			<span>대표이사 : 이진수, 김성수</span>
+			<span>사업자등록번호 : 220-88-02594</span>
+			<span>
+				통신판매업신고번호 : 2018-성남분당B-0004
+				<a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208802594" title="사업자정보확인" class="btn_arrow" target="_blank">사업자정보확인</a>
+			</span>
+			<br>
+			<span class="fb_first">문의전화 : 1566-7727 (평일 09:00-18:00, 유료)</span>
+			<span>
+				이메일 : 
+				<a href="mailto:melon_info@kakaoent.com" class="btn_footer_mail">melon_info@kakaoent.com</a>
+			</span>
+			<span>호스팅서비스사업자 : (주)카카오엔터테인먼트</span>
+			<span>
+				<a href="https://kakaoent.com/" class="btn_footer_mail" target="_blank">© Kakao Entertainment Corp.</a>
+			</span>
+		</p>
 	</div>
 </div>
 <!-- //footer -->
