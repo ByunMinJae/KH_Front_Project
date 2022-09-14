@@ -1513,11 +1513,212 @@ service_list .ellipsis.rank01{
 }
 
 #footer{
-	width: 100%;
-	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_footer_210109.jpg);
-	background-repeat: repeat-x;
+    width: 100%;
+    background: url(https://cdnimg.melon.co.kr/resource/image/web/common/bg_footer_210109.jpg);
+    background-repeat: repeat-x;
+    position: relative;
+    top: 53px;
 
 }
+
+#footer.my_fold .footer_cont{
+	width: 1008px;
+	padding: 0 20px;
+	height: auto;
+	margin: 0 auto;
+	min-height: 204px;
+}
+#footer .footer_menu{
+	overflow: hidden;
+}
+.f_right{
+	float: right;
+    position: relative;
+    top: -16px;
+
+}
+
+.f_right ul, .f_right li{
+	list-style: none;
+}
+
+.f_right li{
+	float:left;
+	position:relative;
+	margin-left: 22px;
+}
+
+#footer .footer_menu li a{
+
+	display: inline-block;
+	padding: 18px 0 15px;
+	cursor: pointer;
+	background: 0;
+	line-height: 0;
+	font-size:0;
+}
+
+#footer .footer_menu li a span{
+	display: block;
+	height: 19px;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/footer_menu_210109.png);
+	font-size: 0;
+	line-height: 0;
+	text-indent: -9999px;
+}
+
+#footer .footer_menu .menu05 a span{
+
+	width: 99px;
+	background-position: -843px 0;
+}
+#footer .footer_menu .menu05 a span:hover{
+
+	width: 99px;
+	background-position: -843px 19px;
+}
+#footer .footer_menu .menu10 a span{
+	width: 76px;
+	background-position: -948px 0;
+}
+#footer .footer_menu .menu10 a span:hover{
+	width: 76px;
+	background-position: -948px 19px;
+}
+
+#footer .footer_menu .menu06 a span{
+	width: 107px;
+	background-position: -515px 0;
+}
+
+#footer .footer_menu .menu06 a span:hover{
+	width: 107px;
+	background-position: -515px 19px;
+}
+#footer .footer_menu .menu07 a span{
+	width: 76px;
+	background-position: -627px 0;
+}
+#footer .footer_menu .menu07 a span:hover{
+	width: 76px;
+	background-position: -627px 19px;
+}
+#footer .footer_menu .menu09 a span{
+	width: 27px;
+	background-position: -708px 0;
+}
+#footer .footer_menu .menu09 a span:hover{
+	width: 27px;
+	background-position: -708px 19;
+}
+
+#footer .footer_menu .menu08 a span{
+	width: 49px;
+	background-position: -461px 0;
+}
+#footer .footer_menu .menu08 a span:hover{
+	width: 49px;
+	background-position: -461px 19px;
+}
+
+#footer .footer_policy{
+	overflow: hidden;
+	margin-top : 26px;
+	margin-left: 1px;
+	font-size: 0;
+	line-height: 0;
+	padding: 0;
+
+}
+
+#footer .clifix{
+	display: block;
+}
+#footer .footer_policy ul, .footer_policy li{
+	list-style: none;
+	font-weight: normal;
+}
+
+#footer .footer_policy li {
+	float: left;
+	padding: 0 0 0 6px;
+	margin-left:4px;
+	background: url(	https://cdnimg.melon.co.kr/resource/image/web/common/bg_gray_line03.png);
+	background-repeat:no-repeat;
+	background-position: left;
+	background-size: 1px;
+	
+	
+}
+
+#footer .footer_policy li.first_child{
+	margin-left: 0;
+	padding-left: 0;
+	background:0;
+
+}
+
+#footer .footer_policy li a{
+	display: inline-block;
+	padding: 0 3px;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: "돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	color: #505050;
+}
+
+.clfix:after{
+
+	content: ".";
+	display: block;
+	height: 0;
+	clear: bodth;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+}
+
+#footer p {
+	margin : 19px 9 54px;
+	font-size: 11px;
+	line-height: 20px;
+	color:#909090;
+	font-family: "돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	letter-spacing: -0.5px;
+}
+
+#footer p span{
+
+	display: inline-block;
+	padding: 0 8px 0 8px;
+	font-size: 11px;
+	background: "돋움",Dotum,"맑은 고딕","Malgun Gothic","Apple Gothic",sans-serif;
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: 4px;
+	vertical-align: middle;
+}
+#footer p span.first{
+
+	background: 0;
+	padding-left: 0;
+}
+
+#footer p span a.btn_footer_mail{
+	color: #909090;
+}
+
+#footer p span a.btn_arrow{
+	padding-right: 7px;
+	margin-left: 3px;
+	background: url(https://cdnimg.melon.co.kr/resource/image/web/common/icon_arrow_footer.png);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	color: #909090;
+
+}
+
+
 
 </style>
 
@@ -1660,15 +1861,10 @@ service_list .ellipsis.rank01{
 				 </a>
 			</div>
 			 
-			<!--  <a href="https://www.melon.com/buy/pamphlet/discount.htm" title="50%discount" class="mlog">
-			 <img src="https://www.melon.com/buy/pamphlet/discount.htm" alt="배너"> -->
-			<!--  </a> -->
-			
 			<div class="banner_btn">
 				 <a href="" class="banner_next_btn" title="next">다음 이벤트 보기 </a>
 				 <a href=" "class="banner_prev_btn" title="before">이전 이벤트 보기</a>
 			
-			 <!--이미지이동 버튼은 javascript로 구현   =>나중에 하기... 
 			   --> 
 			 </div>
 		</div>
@@ -2264,7 +2460,6 @@ service_list .ellipsis.rank01{
 					<!-- 2위 -->
 					
 					<tr class="lst50" id="lst50">
-						<tr class="lst50" id="lst50">
 						<td>
 							<div class="wrap t_right">
 								<input type="checkbox" title="Pink Venom 곡 선택" class="input_check" name="input_check" value="35542908">
@@ -12757,68 +12952,101 @@ service_list .ellipsis.rank01{
 </div>
 
 
-<footer>
-<div id="footer" class="my_fold">
-	<div class="btn_top">
-		<a href="" class="btn_top" title="맨 위로가기">
-			<span>맨 위로 가기</span>
-		</a>
-	</div>
-	
-	<div class="real_footer">
-			<div class="fotter_menu">
-				<ul class="f1_right">
-					<li class="menu05" id="melon6">
-						<a href="https://www.melon.com/m6/campaign.htm">
-							<span>멜론6.0둘러보기</span>
-						</a>
-					</li>
-					
-					<li>멜론스튜디오</li>
-					<li>Windows플레이어</li>
-					<li>Mac 플레이어 </li>
-					<li>iPad</li>
-					<li>고객센터</li>
-					
+	<footer>
+	<div id="footer" class="my_fold">
+		
+				<div class="footer_menu">
+					<ul class="f_right">
+						<li class="menu05" id="melon6">
+							<a href="https://www.melon.com/m6/campaign.htm">
+								<span>멜론6.0둘러보기</span>
+							</a>
+						</li>
+						
+						
+						<li class="menu10">
+							<a href="https://studio.melon.com/">
+								<span>멜론스튜디오</span>
+							</a>
+						</li>
+						<li class="menu06">
+							<a href="https://www.melon.com/customer/serviceintro/index.htm">
+							<span>Windows플레이어</span>
+							</a>
+						</li>
+						
+						<li class="menu07">
+							<a href="https://www.melon.com/customer/serviceintro/multi_pc_web.htm">
+							<span>Mac 플레이어</span>
+							</a>
+						 </li>
+						<li class="menu09">
+							<a href="https://www.melon.com/customer/serviceintro/ipad.htm">
+								<span>iPad</span>
+							</a>
+						</li>
+						<li class="menu08">
+							<a href="https://www.melon.com/customer/serviceintro/ipad.htm">
+								<span>고객센터</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+		
+			
+			
+			
+			<ul class="footer_policy clifix">
+				<li class=" first_child">
+					<a href="https://info.melon.com/terms/web/terms1_1.html" title="이용약관">이용약관</a>
+				</li>
 				
-				</ul>
-			</div>
+				<li >
+					<a href="https://info.melon.com/terms/web/terms1_3.html" title="위치기반서비스">
+					<strong>위치기반서비스 이용약관</strong>
+					</a>
+				</li>
+				<li>
+					<a href="https://info.melon.com/terms/web/terms3.html" title="개인정보처리방침">
+					<strong>개인정보처리방침</strong></a>
+				</li>
+				<li>
+				 	<a href="https://info.melon.com/terms/web/terms5_1.html" title="청소년보호정책">청소년보호정책</a></li>
+				<li>
+					<a href="https://faqs2.melon.com/customer/faq/informFaq.htm?no=1&faqId=QUES20140616000001&SEARCH_KEY=&SEARCH_PAR_CATEGORY=CATE20130909000006&SEARCH_CATEGORY=CATE20130909000021" title="제휴/프로모션문의">제휴/프로모션문의</a>
+				</li>
+				<li>
+					<a href="" title="이메일주소무단수집거부">이메일주소무단수집거부</a>
+				</li>
+				<li class="last_child">
+					<a href="https://partner.melon.com/partrct/login/web/login_loginProcess.htm?t=s" title="파트너센터">파트너센터</a>
+				</li>
+			</ul>
+			
+			<p>
+				<span class="first">
+					<strong>(주)카카오엔터테인먼트</strong>&nbsp;&nbsp; 경기도 성남시 분당구 판교역로2221
+				</span>
+				<span>대표이사 : 이진수,김성수</span>
+				<span>사업자등록번호 : 220-9-02594</span>
+				<span>통신판매업신고번호 : 2018-성남분당B-0004 
+				<a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208802594https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208802594" title="사업자정보확인" class="btn_arrow" >사업자정보확인 </a>
+				</span><br>
+				<span class="first">문의전화 : 1566-7727( 평일 9:00-18:00 유료)</span>
+				<span>이메일 : 
+				<a href="melon_info@kakaoent.com" class="btn_footer_mail">melon_info@kakaoent.com</a>
+				</span>
+				<span>호스팅서비스사업자 : (주)카카오엔터테인먼트</span>
+				<span>
+					<a href="https://kakaoent.com/" class="btn_footer_mail">© Kakao Entertainment Corp.</a>
+				 </span>
+			
+			</p>
+			
+			</div>	
 		</div>
-		<div>
-		<ul>
-			<li>이용약관</li>
-			<li>위치기반서비스 이용약관</li>
-			<li>개인정보처리방침</li>
-			<li>청소년보호정책</li>
-			<li>제휴/프로모션문의</li>
-			<li>이메일주소무단수집거부</li>
-			<li>파트너센터</li>
-		</ul>
 		
-		<p>
-			<span>(주)카카오엔터테인먼트 경기도 성남시 분당구 판교역로2221</span>
-			<span>대표이사 : 이진수,김성수</span>
-			<span>사업자등록번호 : 220-9-02594</span>
-			<span>통신판매업신고번호 : 2018-성남분당B-0004 사업자정보확인 ></span>
-			<span>문의전화 : 1566-7727( 평일 9:00-18:00 유료)</span>
-			<span>이메일 : melon_info@kakaoent.com</span>
-			<span>호스팅서비스사업자 : (주)카카오엔터테인먼트</span>
-			<span>&copy; Entertainment Corp. </span>
-		
-		</p>
-		
-		</div>
-	
-	
-	
-
-</div>
-
-
-
-
-
-</footer>
+	</footer>
 
 </body>
 </html>
